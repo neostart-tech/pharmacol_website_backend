@@ -404,12 +404,12 @@ Fondée en 1996 par Abel ACOLATSE, PHARMACOL est une agence spécialisée dans l
             <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
                 <img src="images/Page index/5v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
                 <div class="font-bold text-lg md:text-2xl text-center">Marketing Communication</div>
-                <div class="font-normal text-sm md:text-base text-center">Phasellus neque nibh, cursus<br>ullamcorper at.</div>
+                <div class="font-normal text-sm md:text-base text-center">Promotion stratégique et visibilité optimale des produits.</div>
             </a>
             <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
                 <img src="images/Page index/6v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
                 <div class="font-bold text-lg md:text-2xl text-center">Etude de faisabilité Consulting</div>
-                <div class="font-normal text-sm md:text-base text-center">Phasellus neque nibh, cursus<br>ullamcorper at.</div>
+                <div class="font-normal text-sm md:text-base text-center">Analyses stratégiques et conseils personnalisés performants.</div>
             </a>
             <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
                 <img src="images/Page index/7v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
