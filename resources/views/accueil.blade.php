@@ -563,64 +563,55 @@
 
 
 
-    <section class="py-16 md:py-24 bg-white">
+        <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <div class="flex items-center justify-center gap-3 mb-4">
                     <img src="images/Page prestations 1/adn.png" alt="ADN" class="w-10 h-10">
-                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Notre processus de
-                        travail</span>
+                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Notre processus de travail</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des
-                    résultats optimaux</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Notre méthodologie éprouvée garantit l'efficacité et la
-                    qualité de nos services</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des résultats optimaux</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Notre méthodologie éprouvée garantit l'efficacité et la qualité de nos services</p>
             </div>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
                 <!-- Ligne de connexion (desktop seulement) -->
                 <div class="hidden md:block absolute left-0 right-0 top-20 h-0.5 bg-gray-200 z-0"></div>
-
+                
                 <!-- Étape 1 -->
                 <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up">
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">01</span>
                     </div>
                     <h3 class="font-bold text-lg mb-3">Brief et Projet Clients</h3>
-                    <p class="text-gray-600 text-sm">Analyse approfondie des besoins pour une stratégie personnalisée
-                    </p>
+                    <p class="text-gray-600 text-sm">Analyse approfondie des besoins pour une stratégie personnalisée</p>
                 </div>
-
+                
                 <!-- Étape 2 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up"
-                    data-aos-delay="100">
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">02</span>
                     </div>
                     <h3 class="font-bold text-lg mb-3">Le laboratoire élabore une proposition</h3>
-                    <p class="text-gray-600 text-sm">Conception de solutions innovantes adaptées à vos objectifs
-                        spécifiques</p>
+                    <p class="text-gray-600 text-sm">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
                 </div>
-
+                
                 <!-- Étape 3 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up"
-                    data-aos-delay="200">
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">03</span>
                     </div>
                     <h3 class="font-bold text-lg mb-3">Tests Début des tests</h3>
                     <p class="text-gray-600 text-sm">Lancement et évaluation pour garantir la performance optimale</p>
                 </div>
-
+                
                 <!-- Étape 4 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up"
-                    data-aos-delay="300">
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">04</span>
                     </div>
                     <h3 class="font-bold text-lg mb-3">Rapports livrés</h3>
-                    <p class="text-gray-600 text-sm">Présentation de résultats détaillés pour une prise de décision
-                        éclairée</p>
+                    <p class="text-gray-600 text-sm">Présentation de résultats détaillés pour une prise de décision éclairée</p>
                 </div>
             </div>
         </div>
@@ -647,7 +638,9 @@
                         class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
                         <img src="{{ asset('images/Page index/10.png') }}" alt="Pays" class="w-8 h-8" />
                     </div>
-                    <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $general['pays_couverts'] ?? 3 }}">0
+                 <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $general['pays_couverts'] ?? 3 }}">3
+
+                    {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $general['pays_couverts'] ?? 3 }}">0 --}}
                     </div>
                     <div class="text-sm font-medium">Pays couverts</div>
                 </div>
@@ -659,7 +652,7 @@
                         class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
                         <img src="{{ asset('images/Page index/11.png') }}" alt="Collaborateurs" class="w-8 h-8" />
                     </div>
-                    <div class="text-4xl font-bold mb-2 count-up" data-count="4">0</div>
+                    <div class="text-4xl font-bold mb-2 count-up" data-count="103">103</div>
 
                     {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $collaborateurs }}">0</div> --}}
                     <div class="text-sm font-medium">Collaborateurs terrain mobilisés</div>
@@ -672,7 +665,9 @@
                         class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
                         <img src="{{ asset('images/Page index/12.png') }}" alt="Partenaires" class="w-8 h-8" />
                     </div>
-                    <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $laboratoires }}">0</div>
+                <div class="text-4xl font-bold mb-2 count-up" data-count="{{  7 }}">7</div>
+
+                    {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $laboratoires }}">0</div> --}}
                     <div class="text-sm font-medium">Entreprises pharmaceutiques partenaires</div>
                 </div>
 
@@ -684,7 +679,9 @@
                         <img src="{{ asset('images/Page index/13.png') }}" alt="Expérience" class="w-8 h-8" />
                     </div>
                     <div class="text-4xl font-bold mb-2">+<span class="count-up"
-                            data-count="{{ $general['annees_experience'] ?? 28 }}">0</span></div>
+                            data-count="{{ $general['annees_experience'] ?? 29 }}">29</span></div>
+                    {{-- <div class="text-4xl font-bold mb-2">+<span class="count-up"
+                            data-count="{{ $general['annees_experience'] ?? 28 }}">0</span></div> --}}
                     <div class="text-sm font-medium">Années d'expérience</div>
                 </div>
             </div>
@@ -960,24 +957,16 @@
         </div>
     </div>
 
-    <!-- Animations personnalisées -->
-    <style>
-        @keyframes fade-slide {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-slide {
-            animation: fade-slide 0.8s ease-out forwards;
-        }
-    </style>
+<!-- Animations personnalisées -->
+<style>
+@keyframes fade-slide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-slide {
+  animation: fade-slide 0.8s ease-out forwards;
+}
+</style>
 
 
     <!-- Section blog -->
