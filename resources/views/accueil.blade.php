@@ -303,327 +303,532 @@
 
         </section>
 
-        <!-- Section À propos -->
-        <section class="flex flex-col lg:flex-row justify-center items-center gap-10 px-4 py-10 mb-16">
+        <section id="apropos" class="py-20 bg-white relative">
+    <div class="container mx-auto px-4 max-w-7xl">
         
-            <!-- Texte -->
-            <div class="flex flex-col justify-start items-center w-full lg:w-[700px] gap-4 text-center">
-                <div class="text-sm font-medium text-[#437305]">A PROPOS DE NOUS</div>
-                <div class="text-3xl sm:text-4xl font-bold leading-snug">
-                    Promotion de vos produits pharmaceutiques en Afrique de l'Ouest
-                </div>
-                <div class="text-base font-medium text-[#6A6A6A]">
-                    Notre expertise au service de votre succès au Togo, Bénin et Niger
-                </div>
-                <div class=" px-2 text-sm sm:text-base text-justify sm:text-center text-[#6A6A6A]">
-Fondée en 1996 par Abel ACOLATSE, PHARMACOL est une agence spécialisée dans la représentation pharmaceutique et la promotion médicale. Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.
-
-                    <br><br>
-                  PHARMACOL, votre levier de croissance : nous vous accompagnons  dans toutes les étapes de votre développement local, depuis l’obtention des autorisations de mise sur le marché, la mise en place et la commercialisation de produits, jusqu’au renforcement et à l’expansion de votre présence locale.
-               <br><br>
-               Notre mission : Offrir un accompagnement stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la région.
-                </div>
-        
-            <!-- Bloc satisfaction -->
-            <div class="flex flex-row items-start gap-4 mt-4">
-                <img src="images/Page index/vector.png" alt="" class="w-14 h-14">
-                <div class="flex flex-col gap-1">
-                <div class="text-lg font-bold">Satisfaction à 100 % Précision</div>
-                <div class="text-sm text-[#6A6A6A] font-medium">
-                    Nos laboratoires et équipes qualifiées assurent des services précis et fiables, pour votre entière satisfaction.
-                </div>
-                </div>
-            </div>
-        
-            <!-- Bouton -->
-            <a href="#" class="bg-[#437305] hover:bg-[#365c04] transition px-8 py-3 text-white text-sm w-fit mt-6">
-                Télécharger notre plaquette
-            </a>
-            </div>
-        
-            <!-- Image et encarts -->
-            <div class="relative w-full lg:w-auto">
-            <!-- Image principale -->
-            <img src="{{ asset('images/Page index/image3.png') }}" class="w-full max-w-[650px] h-auto object-cover" alt="À propos">
-        
-            <!-- Encart vert - Années d'expérience -->
-            <div class="absolute bottom-0 right-4 sm:right-20 bg-[#437305] w-[180px] h-[100px] sm:w-[250px] sm:h-[250px] text-white hidden flex-col items-center justify-center px-4 sm:px-6 gap-2 sm:gap-4 overflow-flex shadow-lg">
-                <img src="images/Page index/vector2.png" alt="" class="absolute w-full h-full object-cover opacity-20">
-                <div class="relative z-10 text-2xl sm:text-5xl font-bold">
-                    +{{ $general['annees_experience'] ?? '-' }}
-                </div>
-                <div class="relative z-10 text-xs sm:text-lg font-bold text-center">Années d’Expérience</div>
-            </div>
-        
-            <!-- Encart contact -->
-            <div class="absolute -bottom-16 left-1/2 -translate-x-[105%] -translate-y-[130%] sm:translate-x-0 sm:translate-y-0 sm:bottom-0 sm:left-[10px] bg-[#437305] w-[180px] h-[50px] sm:w-[310px] sm:h-[80px] text-white flex items-center gap-2 sm:gap-4 px-3 sm:px-6 shadow-lg">
-                <img src="images/Page index/chat.png" alt="Chat" class="w-7 h-7 sm:w-10 sm:h-10">
-                <div>
-                    <div class="text-xs sm:text-sm font-medium">Appel aux questions</div>
-                    <div class="text-base sm:text-xl font-bold">+228 22 50 75 10</div>
-                </div>
-            </div>
-            </div>
-        
-        </section>
-
-        <div class="flex flex-col justify-center text-center gap-8">
-            <div class="flex flex-row justify-center gap-2 items-center">
-                <img src="images/Page prestations 1/adn.png" alt="adn" class="w-10 h-10 md:w-12 md:h-12">
-                <div class="text-green-600 uppercase tracking-widest text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium">
-                    Nos services
-                </div>
-            </div>
-            <div class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#3C74A8]">
-                Notre expertise et savoir- <br> faire a votre disposition
-            </div>
+        <!-- En-tête centré -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-[#437305] font-semibold text-sm uppercase tracking-wider mb-3 block">
+                À PROPOS DE NOUS
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Promotion de vos produits pharmaceutiques en Afrique de l'Ouest
+            </h2>
+            <p class="text-lg text-gray-600">
+                Notre expertise au service de votre succès au Togo, Bénin et Niger
+            </p>
         </div>
 
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-8 px-4 md:px-[10%] gap-6">
+        <!-- Contenu en deux colonnes -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Colonne texte - Transformée en carte design -->
+            <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div class="prose prose-lg text-gray-600 max-w-none">
+                    <p class="mb-6 leading-relaxed text-base md:text-lg">Fondée en 1996 par Abel ACOLATSE, PHARMACOL est une agence spécialisée dans la représentation pharmaceutique et la promotion médicale. Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.</p>
+                    <p class="mb-6 leading-relaxed text-base md:text-lg">PHARMACOL, votre levier de croissance : nous vous accompagnons dans toutes les étapes de votre développement local, depuis l'obtention des autorisations de mise sur le marché, la mise en place et la commercialisation de produits, jusqu'au renforcement et à l'expansion de votre présence locale.</p>
+                    <p class="mb-8 leading-relaxed text-base md:text-lg">Notre mission : Offrir un accompagnement stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la région.</p>
+                </div>
 
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/1v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Promotion médicale Parapharmaceutique</div>
-                <div class="font-normal text-sm md:text-base text-center">Sensibilisation et information des professionnels santé.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/2b.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Recrutement Encadrement de la force de vente</div>
-                <div class="font-normal text-sm md:text-base text-center">Talents commerciaux recrutés et encadrés efficacement.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/3v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Représentation pharmaceutique</div>
-                <div class="font-normal text-sm md:text-base text-center">Valorisation et suivi des produits pharmaceutiques.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/4v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Règlementation, autorisation de mise sur le marché</div>
-                <div class="font-normal text-sm md:text-base text-center">Respect des normes pour mise sur marché efficace.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/5v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Marketing Communication</div>
-                <div class="font-normal text-sm md:text-base text-center">Promotion stratégique et visibilité optimale des produits.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/6v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Etude de faisabilité Consulting</div>
-                <div class="font-normal text-sm md:text-base text-center">Analyses stratégiques et conseils personnalisés performants.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/7v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Reporting Pharmacovigilance</div>
-                <div class="font-normal text-sm md:text-base text-center">Analyse et reporting des événements indésirables médicaux.</div>
-            </a>
-            <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
-                <img src="images/Page index/8v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
-                <div class="font-bold text-lg md:text-2xl text-center">Veille concurentielle</div>
-                <div class="font-normal text-sm md:text-base text-center">Analyse régulière du marché et concurrents.</div>
-            </a>
-        </div>
+                <!-- Séparateur -->
+                <div class="border-t border-gray-200 my-8"></div>
 
-        <div class="flex flex-col justify-center text-center gap-10 mt-10">
-            <div class="flex flex-row justify-center gap-2 items-center">
-                <img src="images/Page prestations 1/adn.png" alt="adn" class="w-10 h-10 md:w-12 md:h-12">
-                <div class="text-green-600 uppercase tracking-widest text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium">
-                    Notre processus de travail
-                </div>
-            </div>
-            <div class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#3C74A8]">
-                Une approche structurée pour des <br> résultats optimaux
-            </div>
-        </div>
-
-        <!-- Processus de travail -->
-        <div class="relative flex flex-col md:flex-row justify-center mb-20 md:mb-40 gap-6 md:gap-3 mt-10 md:mt-16 px-4">
-            <!-- Traits horizontaux entre les étapes (uniquement sur desktop) -->
-            <div class="hidden md:block absolute left-0 top-[15%] w-full h-0 pointer-events-none z-0">
-                <div class="flex w-full h-0">
-                    <div class="flex-1"></div>
-                    <div class="flex-1 border-t-2 border-[#DBDBDB]"></div>
-                    <div class="flex-1 border-t-2 border-[#DBDBDB]"></div>
-                    <div class="flex-1 border-t-2 border-[#DBDBDB]"></div>
-                    <div class="flex-1"></div>
-                </div>
-            </div>
-            <!-- Étape 1 -->
-            <div class="flex flex-col gap-4 md:gap-6 w-full md:w-[20%] z-10">
-                <div class="relative self-center mb-2 bg-white rounded-full">
-                    <img src="images/hexagon.png" alt="Étape 1" class="w-20 h-20 md:w-24 md:h-24 mb-2 md:mb-4" />
-                    <div class="text-white absolute top-[22px] md:top-[30px] left-[28px] md:left-[35px] font-bold text-lg md:text-[24px]">01</div>
-                </div>
-                <div class="flex flex-col gap-4 md:gap-16 pb-4 md:pb-10 p-4 md:p-5 md:pl-16 border-l border-gray-200 bg-white rounded-lg shadow-sm">
-                    <h4 class="font-bold text-base md:text-[20px]">Brief et Projet Clients</h4>
-                    <p class="text-sm text-gray-600">Analyse approfondie des besoins pour une stratégie personnalisée</p>
-                </div>
-            </div>
-            <!-- Étape 2 -->
-            <div class="flex flex-col gap-4 md:gap-6 w-full md:w-[20%] z-10">
-                <div class="relative self-center mb-2 bg-white rounded-full">
-                    <img src="images/hexagon.png" alt="Étape 2" class="w-20 h-20 md:w-24 md:h-24 mb-2 md:mb-4" />
-                    <div class="text-white absolute top-[22px] md:top-[30px] left-[28px] md:left-[35px] font-bold text-lg md:text-[24px]">02</div>
-                </div>
-                <div class="flex flex-col gap-4 md:gap-16 pb-4 md:pb-10 p-4 md:p-5 md:pl-16 border-l border-gray-200 bg-white rounded-lg shadow-sm">
-                    <h4 class="font-bold text-base md:text-[20px]">Le laboratoire élabore une proposition</h4>
-                    <p class="text-sm text-gray-600">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
-                </div>
-            </div>
-            <!-- Étape 3 -->
-            <div class="flex flex-col gap-4 md:gap-6 w-full md:w-[20%] z-10">
-                <div class="relative self-center mb-2 bg-white rounded-full">
-                    <img src="images/hexagon.png" alt="Étape 3" class="w-20 h-20 md:w-24 md:h-24 mb-2 md:mb-4" />
-                    <div class="text-white absolute top-[22px] md:top-[30px] left-[28px] md:left-[35px] font-bold text-lg md:text-[24px]">03</div>
-                </div>
-                <div class="flex flex-col gap-4 md:gap-16 pb-4 md:pb-10 p-4 md:p-5 md:pl-16 border-l border-gray-200 bg-white rounded-lg shadow-sm">
-                    <h4 class="font-bold text-base md:text-[20px]">Tests Début des tests</h4>
-                    <p class="text-sm text-gray-600">Lancement et évaluation pour garantir la performance optimale</p>
-                </div>
-            </div>
-            <!-- Étape 4 -->
-            <div class="flex flex-col gap-4 md:gap-6 w-full md:w-[20%] z-10">
-                <div class="relative self-center mb-2 bg-white rounded-full">
-                    <img src="images/hexagon.png" alt="Étape 4" class="w-20 h-20 md:w-24 md:h-24 mb-2 md:mb-4" />
-                    <div class="text-white absolute top-[22px] md:top-[30px] left-[28px] md:left-[35px] font-bold text-lg md:text-[24px]">04</div>
-                </div>
-                <div class="flex flex-col gap-4 md:gap-16 pb-4 md:pb-10 p-4 md:p-5 md:pl-16 border-l border-gray-200 bg-white rounded-lg shadow-sm">
-                    <h4 class="font-bold text-base md:text-[20px]">Rapports livrés</h4>
-                    <p class="text-sm text-gray-600">Présentation de résultats détaillés pour une prise de décision éclairée</p>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Section avec fond image et grid centrée -->
-        <section class="w-full h-screen bg-cover bg-center relative" style="background-image: url('images/Page index/portrait-female-pharmacist-working-drugstore.jpg');">
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div class="relative z-10 flex items-center justify-center h-full">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-                    <!-- Élément 1 -->
-                    <div class="flex flex-col items-center justify-center text-white gap-2">
-                        <img src="images/Page index/10.png" class="w-16 h-16 mb-4" alt="Icone 1">
-                        <div class="text-3xl font-bold">{{ $general['pays_couverts'] ?? 3 }}</div>
-                        <div class="text-sm text-center">Pays couverts</div>
+                <!-- Bloc satisfaction -->
+                <div class="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div class="bg-[#437305]/10 p-3 rounded-full flex-shrink-0">
+                        <img src="{{ asset('images/Page index/vector.png') }}" class="w-6 h-6" alt="Satisfaction" />
                     </div>
-                    <!-- Élément 2 -->
-                    <div class="flex flex-col items-center justify-center text-white gap-2">
-                        <img src="images/Page index/11.png" class="w-16 h-16 mb-4" alt="Icone 2">
-                        <div class="text-3xl font-bold">{{ $collaborateurs }}</div>
-                        <div class="text-sm text-center">Collaborateurs terrain mobilisés</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Satisfaction à 100 % Précision</h3>
+                        <p class="text-gray-600">Nos laboratoires et équipes qualifiées assurent des services précis et fiables, pour votre entière satisfaction.</p>
                     </div>
-                    <!-- Élément 3 -->
-                    <div class="flex flex-col items-center justify-center text-white gap-2">
-                        <img src="images/Page index/12.png" class="w-16 h-16 mb-4" alt="Icone 3">
-                        <div class="text-3xl font-bold">{{ $laboratoires }}</div>
-                        <div class="text-sm text-center">Entreprises pharmaceutiques partenaires</div>
+                </div>
+            </div>
+
+            <!-- Colonne image -->
+            <div class="relative w-full">
+                <div class="rounded-2xl overflow-hidden shadow-xl mb-8">
+                    <img src="{{ asset('images/Page index/image3.png') }}" alt="À propos de Pharmacol" class="w-full h-auto object-cover" />
+                </div>
+
+                <!-- Carte contact avec espacement ajouté -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5 mt-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-[#437305]/10 p-3 rounded-full">
+                            <img src="{{ asset('images/Page index/chat.png') }}" class="w-8 h-8" alt="Contact" />
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">Appel aux questions</p>
+                            <p class="font-bold text-gray-800">+228 22 50 75 10</p>
+                        </div>
                     </div>
-                    <!-- Élément 4 -->
-                    <div class="flex flex-col items-center justify-center text-white gap-2">
-                        <img src="images/Page index/13.png" class="w-16 h-16 mb-4" alt="Icone 4">
-                        <div class="text-3xl font-bold">+{{ $general['annees_experience'] ?? '-' }}</div>
-                        <div class="text-sm text-center">Années d’expérience</div>
+                </div>
+
+                <!-- Bouton dans la colonne image -->
+                <a href="#"
+                   class="inline-flex items-center justify-center bg-[#437305] hover:bg-[#365c04] text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg gap-3 w-full text-center mt-6 mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Télécharger notre plaquette</span>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+       <!-- Section Services -->
+       <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <img src="{{ asset('images/Page prestations 1/adn.png') }}" alt="ADN" class="w-10 h-10">
+                        <span class="text-[#437305] uppercase tracking-widest font-medium text-lg">Nos services</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Notre expertise et savoir-faire à votre disposition</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Découvrez l'ensemble de nos services conçus pour répondre à tous vos besoins pharmaceutiques en Afrique de l'Ouest</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/1v.png') }}" alt="Promotion médicale" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Promotion médicale Parapharmaceutique</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Sensibilisation et information des professionnels santé.</p>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/2b.png') }}" alt="Recrutement" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Recrutement Encadrement de la force de vente</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Talents commerciaux recrutés et encadrés efficacement.</p>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/3v.png') }}" alt="Représentation" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Représentation pharmaceutique</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Valorisation et suivi des produits pharmaceutiques.</p>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/4v.png') }}" alt="Règlementation" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Règlementation, autorisation de mise sur le marché</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Respect des normes pour mise sur marché efficace.</p>
+                    </div>
+                    
+                    <!-- Services supplémentaires (grille 2ème ligne) -->
+                    <!-- Service 5 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/5v.png') }}" alt="Marketing" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Marketing Communication</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Promotion stratégique et visibilité optimale des produits.</p>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/6v.png') }}" alt="Étude" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Étude de faisabilité Consulting</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Analyses stratégiques et conseils personnalisés performants.</p>
+                    </div>
+                    
+                    <!-- Service 7 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/7v.png') }}" alt="Reporting" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Reporting Pharmacovigilance</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Analyse et reporting des événements indésirables médicaux.</p>
+                    </div>
+                    
+                    <!-- Service 8 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover group hover:bg-[#437305] transition-colors duration-300">
+                        <div class="bg-[#437305] bg-opacity-10 group-hover:bg-white group-hover:bg-opacity-20 p-4 rounded-full w-20 h-20 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/8v.png') }}" alt="Veille" class="w-10 h-10 group-hover:invert" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-3 group-hover:text-white">Veille concurentielle</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-white">Analyse régulière du marché et concurrents.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section Pourquoi nous choisir -->
-        <section class="flex flex-col md:flex-row items-center justify-center px-4 md:px-10 py-10 md:py-20 gap-6 md:gap-10 bg-white">
-            <img class="w-full max-w-xs md:max-w-none md:w-1/3 h-48 md:h-auto rounded-xl object-cover mb-6 md:mb-0" src="images/Page index/medical-doctor-girl-working-with-microscope-young-female-scientist-doing-vaccine-research.jpg" alt="Pourquoi nous choisir" />
+      
 
-            <!-- Colonne droite -->
-            <div class="w-full md:w-1/2 grid grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto] gap-4">
-                <!-- Ligne 1 : Titre -->
-                <div class="text-[#437305] font-semibold uppercase text-xs md:text-sm tracking-wide">Pourquoi nous choisir</div>
-                <!-- Ligne 2 : Sous-titre -->
-                <div class="text-[#6A6A6A] text-xs md:text-[14px]">une maîtrise parfaite de l’écosystème sanitaire et de la réglementation pharmaceutique au Togo, Bénin, Niger</div>
-                <!-- Colonne gauche : Icône + "Nos valeurs" -->
-                <div class="bg-[#437305] text-white flex flex-row gap-4 md:gap-6 justify-center items-center p-4 md:p-8 rounded">
-                    <img src="images/Page index/14.png" alt="Valeurs" class="w-10 h-10 md:w-16 md:h-16">
-                    <div class="flex flex-col gap-2 md:gap-4 p-2 md:p-4">
-                        <div class="text-lg md:text-xl font-bold">Nos valeurs</div>
-                        <div class="text-xs md:text-[14px]">réactivité, adaptabilité, rigueur et transparence font partie intégrantes de notre leitmotiv</div>
+
+        <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <img src="images/Page prestations 1/adn.png" alt="ADN" class="w-10 h-10">
+                    <span class="text-[#437305] uppercase tracking-widest font-medium text-lg">Notre processus de travail</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des résultats optimaux</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Notre méthodologie éprouvée garantit l'efficacité et la qualité de nos services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Ligne de connexion (desktop seulement) -->
+                <div class="hidden md:block absolute left-0 right-0 top-20 h-0.5 bg-gray-200 z-0"></div>
+                
+                <!-- Étape 1 -->
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up">
+                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
+                        <span class="text-xl font-bold">01</span>
                     </div>
+                    <h3 class="font-bold text-lg mb-3">Brief et Projet Clients</h3>
+                    <p class="text-gray-600 text-sm">Analyse approfondie des besoins pour une stratégie personnalisée</p>
                 </div>
-                <!-- Ligne 1 -->
-                <div class="flex items-start gap-2">
-                    <img src="images/Page index/tick.png" alt="Check" class="w-4 h-4 md:w-5 md:h-5 mt-1">
-                    <div class="text-xs md:text-[14px] text-[#6A6A6A]">
-                        La pérennité de Pharmacol {{ $general['experience'] ?? '-' }} ans d’expertise et de présence terrain
+                
+                <!-- Étape 2 -->
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
+                        <span class="text-xl font-bold">02</span>
                     </div>
+                    <h3 class="font-bold text-lg mb-3">Le laboratoire élabore une proposition</h3>
+                    <p class="text-gray-600 text-sm">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
                 </div>
-                <!-- Ligne 2 -->
-                <div class="flex items-start gap-2">
-                    <img src="images/Page index/tick.png" alt="Check" class="w-4 h-4 md:w-5 md:h-5 mt-1">
-                    <div class="text-xs md:text-[14px] text-[#6A6A6A]">
-                        Une force de vente composée de {{ $collaborateurs }} délégués médicaux compétents et expérimentés
+                
+                <!-- Étape 3 -->
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
+                        <span class="text-xl font-bold">03</span>
                     </div>
+                    <h3 class="font-bold text-lg mb-3">Tests Début des tests</h3>
+                    <p class="text-gray-600 text-sm">Lancement et évaluation pour garantir la performance optimale</p>
                 </div>
-                <!-- Ligne 4 -->
-                <div class="flex items-start gap-2">
-                    <img src="images/Page index/tick.png" alt="Check" class="w-4 h-4 md:w-5 md:h-5 mt-1">
-                    <div class="text-xs md:text-[14px] text-[#6A6A6A]">Des moyens et outils d’aide à la vente de dernière génération</div>
-                </div>
-                <!-- Ligne 5 -->
-                <div class="flex items-start gap-2">
-                    <img src="images/Page index/tick.png" alt="Check" class="w-4 h-4 md:w-5 md:h-5 mt-1">
-                    <div class="text-xs md:text-[14px] text-[#6A6A6A]">Une maîtrise parfaite du réseau des structures sanitaires et pharmaceutiques sur chaque zone géographique en charge</div>
-                </div>
-                <!-- Ligne 8 : 3 boutons côte à côte -->
-                <div class="flex flex-col sm:flex-row gap-2 md:gap-4 mt-4">
-                    <a href="{{ route('accueil.togo') }}" class="bg-[#437305] text-white px-6 py-2 md:px-10 md:py-4 text-xs md:text-sm font-semibold rounded text-center">Togo</a>
-                    <a href="{{ route('accueil.benin') }}" class="bg-[#437305] text-white px-6 py-2 md:px-10 md:py-4 text-xs md:text-sm font-semibold rounded text-center">Bénin</a>
-                    <a href="{{ route('accueil.niger') }}" class="bg-[#437305] text-white px-6 py-2 md:px-10 md:py-4 text-xs md:text-sm font-semibold rounded text-center">Niger</a>
+                
+                <!-- Étape 4 -->
+                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
+                        <span class="text-xl font-bold">04</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">Rapports livrés</h3>
+                    <p class="text-gray-600 text-sm">Présentation de résultats détaillés pour une prise de décision éclairée</p>
                 </div>
             </div>
-        </section>
-          
+        </div>
+    </section>
 
-        <!-- Section bleue principale -->
-        <section class="bg-[#31689B] text-white py-10 md:py-16 px-4 md:px-8 ">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center flex-wrap gap-6">
-                <!-- Texte principal -->
-                <div class="max-w-4xl mb-6 md:mb-0 text-center md:text-left w-full md:w-auto">
-                    <div class="text-xs md:text-sm tracking-widest uppercase mb-2 md:mb-4">Intégrer Pharmacol</div>
-                    <h2 class="text-xl md:text-3xl lg:text-4xl font-bold leading-snug">
-                        Vous souhaitez assurer l’information médicale et promouvoir les produits pharmaceutiques et leur bon usage dans le respect de l’éthique auprès des professionnels de santé de votre zone géographique
-                    </h2>
+
+  <!-- Section Statistiques -->
+        <section class="py-16 md:py-24 bg-cover bg-center bg-fixed relative" style="background-image: url('{{ asset('images/Page index/portrait-female-pharmacist-working-drugstore.jpg') }}');">
+            <div class="absolute inset-0 bg-[#3C74A8] bg-opacity-90"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pharmacol en chiffres</h2>
+                    <p class="text-white text-opacity-80 max-w-3xl mx-auto">Notre présence et notre impact à travers l'Afrique de l'Ouest</p>
                 </div>
-                <!-- Bouton centré -->
-                <div class="flex w-full md:w-auto justify-center md:justify-end items-center">
-                    <a href="{{ route('recrutement') }}"
-                    class="bg-white text-[#31689B] px-8 py-3 md:px-8 md:py-4 font-semibold shadow-md hover:bg-gray-100 transition rounded text-lg md:text-xl text-center w-full md:w-auto">
-                        Nous rejoindre
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Stat 1 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 text-center text-white stat-card border border-white border-opacity-20">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/10.png') }}" alt="Pays" class="w-8 h-8" />
+                        </div>
+                        <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $general['pays_couverts'] ?? 3 }}">0</div>
+                        <div class="text-sm font-medium">Pays couverts</div>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 text-center text-white stat-card border border-white border-opacity-20">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/11.png') }}" alt="Collaborateurs" class="w-8 h-8" />
+                        </div>
+                        <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $collaborateurs }}">0</div>
+                        <div class="text-sm font-medium">Collaborateurs terrain mobilisés</div>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 text-center text-white stat-card border border-white border-opacity-20">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/12.png') }}" alt="Partenaires" class="w-8 h-8" />
+                        </div>
+                        <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $laboratoires }}">0</div>
+                        <div class="text-sm font-medium">Entreprises pharmaceutiques partenaires</div>
+                    </div>
+                    
+                    <!-- Stat 4 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 text-center text-white stat-card border border-white border-opacity-20">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
+                            <img src="{{ asset('images/Page index/13.png') }}" alt="Expérience" class="w-8 h-8" />
+                        </div>
+                        <div class="text-4xl font-bold mb-2">+<span class="count-up" data-count="{{ $general['annees_experience'] ?? 28 }}">0</span></div>
+                        <div class="text-sm font-medium">Années d'expérience</div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16">
+                    <a href="{{ route('contact') }}" class="inline-flex items-center bg-white text-[#3C74A8] hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <span>Découvrir notre expertise</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Section des cartes (non verticales ici) -->
-        <div class="bg-white py-12 px-4 md:px-8">
-            <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                <!-- Card 1 -->
-                <a href="{{ route('recrutement') }}" class="bg-white shadow-md p-6 flex-1 border border-gray-200 relative w-full mb-8 md:mb-0">
-                    <div class="w-16 h-16 md:w-20 md:h-20 absolute -top-8 left-6">
-                        <img src="images/Page index/icon1.png" alt="Délégués" class="w-full h-full object-contain" />
+
+<!-- Script pour l'animation des compteurs -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation des compteurs
+        const counters = document.querySelectorAll('.count-up');
+        const speed = 2000; // Plus la valeur est basse, plus c'est rapide
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const count = +counter.innerText;
+            const increment = Math.ceil(target / speed);
+            
+            function updateCount() {
+                if (count < target) {
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+            
+            // Démarrer l'animation lorsque l'élément est dans le viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCount();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(counter);
+        });
+    });
+</script>
+
+        <!-- Section Pourquoi nous choisir -->
+ 
+ <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="inline-block text-[#437305] font-semibold uppercase tracking-wider text-sm mb-3">
+                    Pourquoi nous choisir
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Une maîtrise parfaite de l'écosystème sanitaire
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Expertise en réglementation pharmaceutique au Togo, Bénin et Niger
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
+                <!-- Image Column -->
+                <div class="h-full flex flex-col" data-aos="fade-right">
+                    <div class="h-full rounded-2xl overflow-hidden shadow-xl flex-1 flex">
+                        <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" 
+                             src="images/Page index/medical-doctor-girl-working-with-microscope-young-female-scientist-doing-vaccine-research.jpg" 
+                             alt="Expertise Pharmacol en Afrique de l'Ouest">
                     </div>
-                    <h3 class="text-lg md:text-xl font-semibold mb-2 text-[#31689B] pt-10 md:pt-12">Des délégués de terrains</h3>
-                    <p class="text-gray-600 text-xs md:text-sm">
-                        Chargé de représenter l’entreprise directement auprès des partenaires, clients ou structures locales, le délégué sur le terrain assure la coordination, le suivi et la mise en œuvre des actions sur le terrain. Il est le lien essentiel entre le siège et les réalités locales.
-                    </p>
-                </a>
-                <!-- Card 2 -->
-                <a href="{{ route('recrutement') }}" class="bg-white shadow-md p-6 flex-1 border border-gray-200 relative w-full">
-                    <div class="w-16 h-16 md:w-20 md:h-20 absolute -top-8 left-6">
-                        <img src="images/Page index/icon2.png" alt="Assistants" class="w-full h-full object-contain" />
+                </div>
+
+                <!-- Content Column -->
+                <div class="flex flex-col h-full" data-aos="fade-left">
+                    <!-- Values Card -->
+                    <div class="bg-[#437305] rounded-2xl p-6 md:p-8 text-white shadow-lg mb-8">
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <div class="flex-shrink-0 bg-black/20 p-4 rounded-2xl">
+                                <img src="images/Page index/14.png" alt="Nos valeurs" class="w-12 h-12 md:w-16 md:h-16">
+                            </div>
+                            <div class="text-center md:text-left">
+                                <h3 class="text-xl md:text-2xl font-bold mb-2">Nos valeurs</h3>
+                                <p>
+                                    Réactivité, adaptabilité, rigueur et transparence font partie intégrantes de notre leitmotiv
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-lg md:text-xl font-semibold mb-2 text-[#31689B] pt-10 md:pt-12">Des assistants médicaux</h3>
-                    <p class="text-gray-600 text-xs md:text-sm">
-                        L’assistant médical accompagne les professionnels de santé dans la gestion administrative et la préparation des consultations. Il facilite le parcours du patient en assurant l’accueil, la prise de rendez-vous et la saisie des dossiers médicaux.
-                    </p>
-                </a>
+
+                    <!-- Advantages List -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                        <div class="flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
+                            <div class="flex-shrink-0 bg-[#437305]/10 p-2 rounded-full">
+                                <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Expertise confirmée</h4>
+                                <p class="text-gray-600 text-sm">
+                                    La pérennité de Pharmacol 28 ans d'expertise et de présence terrain
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
+                            <div class="flex-shrink-0 bg-[#437305]/10 p-2 rounded-full">
+                                <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Équipe qualifiée</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Une force de vente composée de 50 délégués médicaux compétents et expérimentés
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
+                            <div class="flex-shrink-0 bg-[#437305]/10 p-2 rounded-full">
+                                <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Outils modernes</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Des moyens et outils d'aide à la vente de dernière génération
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
+                            <div class="flex-shrink-0 bg-[#437305]/10 p-2 rounded-full">
+                                <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Réseau étendu</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Une maîtrise parfaite du réseau des structures sanitaires et pharmaceutiques
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Country Buttons -->
+                    <div class="mt-auto">
+                        <p class="text-gray-600 text-sm mb-4 text-center md:text-left">Découvrez notre présence dans chaque pays :</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#" class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+                                <img src="https://flagcdn.com/w20/tg.png" alt="Togo" class="w-5 h-5 rounded-sm">
+                                <span>Togo</span>
+                            </a>
+                            <a href="#" class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+                                <img src="https://flagcdn.com/w20/bj.png" alt="Bénin" class="w-5 h-5 rounded-sm">
+                                <span>Bénin</span>
+                            </a>
+                            <a href="#" class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+                                <img src="https://flagcdn.com/w20/ne.png" alt="Niger" class="w-5 h-5 rounded-sm">
+                                <span>Niger</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+<!-- Section bleue principale - Version améliorée -->
+<section class="bg-[#31689B] text-white py-12 md:py-16 px-4 md:px-8 relative overflow-hidden">
+    <!-- Éléments décoratifs -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-5">
+        <div class="absolute top-10% left-5% w-40 h-40 rounded-full bg-white"></div>
+        <div class="absolute bottom-10% right-5% w-32 h-32 rounded-full bg-white"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+        <!-- Texte principal -->
+        <div class="max-w-3xl text-center md:text-left w-full md:w-auto">
+            <div class="text-xs md:text-sm tracking-widest uppercase mb-3 opacity-80 font-semibold">Intégrer Pharmacol</div>
+            <h2 class="text-xl md:text-3xl lg:text-4xl font-bold leading-snug mb-2">
+                Vous souhaitez assurer l'information médicale et promouvoir les produits pharmaceutiques et leur bon usage dans le respect de l'éthique auprès des professionnels de santé de votre zone géographique
+            </h2>
+            <div class="h-1 w-16 bg-white/30 rounded-full mt-5 mx-auto md:mx-0"></div>
+        </div>
+        
+        <!-- Bouton avec design amélioré -->
+        <div class="flex w-full md:w-auto justify-center md:justify-end items-center">
+            <a href="{{ route('recrutement') }}"
+            class="bg-white text-[#31689B] px-8 py-3 md:px-10 md:py-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg text-lg md:text-xl text-center w-full md:w-auto hover:-translate-y-1 transform">
+                Nous rejoindre
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+        <!-- Section des cartes -->
+<div class="bg-white py-16 px-4 md:px-8">
+  <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 relative">
+    
+    <!-- Card 1 -->
+    <a href="{{ route('recrutement') }}" 
+       class="bg-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 p-6 flex-1 border border-gray-100 relative w-full mb-8 md:mb-0 rounded-2xl group opacity-0 animate-fade-slide">
+       
+      <!-- Icône -->
+      <div class="w-16 h-16 md:w-20 md:h-20 absolute -top-8 left-6 flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-200 to-blue-50 shadow-md group-hover:scale-110 transition-transform duration-500">
+        <img src="images/Page index/icon1.png" alt="Délégués" class="w-10 md:w-12 object-contain" />
+      </div>
+      
+      <!-- Titre -->
+      <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#31689B] pt-10 md:pt-12 group-hover:text-blue-700 transition-colors duration-300">
+        Des délégués de terrains
+      </h3>
+      
+      <!-- Texte -->
+      <p class="text-gray-600 text-xs md:text-sm leading-relaxed">
+        Chargé de représenter l’entreprise directement auprès des partenaires, clients ou structures locales, le délégué sur le terrain assure la coordination, le suivi et la mise en œuvre des actions sur le terrain. Il est le lien essentiel entre le siège et les réalités locales.
+      </p>
+    </a>
+    
+    <!-- Card 2 -->
+    <a href="{{ route('recrutement') }}" 
+       class="bg-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 p-6 flex-1 border border-gray-100 relative w-full rounded-2xl group opacity-0 animate-fade-slide [animation-delay:0.2s]">
+       
+      <!-- Icône -->
+      <div class="w-16 h-16 md:w-20 md:h-20 absolute -top-8 left-6 flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-200 to-blue-50 shadow-md group-hover:scale-110 transition-transform duration-500">
+        <img src="images/Page index/icon2.png" alt="Assistants" class="w-10 md:w-12 object-contain" />
+      </div>
+      
+      <!-- Titre -->
+      <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#31689B] pt-10 md:pt-12 group-hover:text-blue-700 transition-colors duration-300">
+        Des assistants médicaux
+      </h3>
+      
+      <!-- Texte -->
+      <p class="text-gray-600 text-xs md:text-sm leading-relaxed">
+        L’assistant médical accompagne les professionnels de santé dans la gestion administrative et la préparation des consultations. Il facilite le parcours du patient en assurant l’accueil, la prise de rendez-vous et la saisie des dossiers médicaux.
+      </p>
+    </a>
+    
+  </div>
+</div>
+
+<!-- Animations personnalisées -->
+<style>
+@keyframes fade-slide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-slide {
+  animation: fade-slide 0.8s ease-out forwards;
+}
+</style>
+
 
         <!-- Section blog -->
         <section class="py-16 bg-[#f7fafc] flex flex-col items-center" id="blog-home">
