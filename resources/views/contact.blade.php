@@ -326,7 +326,7 @@
 
                 <form action="https://formspree.io/f/xzzrwanv" method="POST" class="w-full md:w-[816px] bg-white shadow-lg p-6 md:p-10 flex flex-col mb-10">
                     <h4 class="text-green-700 text-lg font-medium mb-2 uppercase tracking-wide">🧬 Nous contacter</h4>
-                    <h2 class="text-2xl md:text-[40px] font-bold text-black mb-6 md:mb-10">N'hésitez pas à nous écrire à tout moment</h2>
+                    <h2 class="text-2xl md:text-[40px] font-bold text-black mb-6 md:mb-10">N'hésitez pas à nous écrire</h2>
                     <div class="flex flex-col md:flex-row gap-4 mb-4">
                         <input type="text" name="nom" placeholder="Votre nom"
                             class="bg-[#F3F3F3] placeholder-[#6A6A6A] font-medium text-[16px] outline-none p-4 w-full md:w-1/2 rounded" required />
