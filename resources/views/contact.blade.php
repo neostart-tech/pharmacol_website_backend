@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon" href="{{ asset('images/Page contact/logo-350100.png') }}" type="image/x-icon">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         tailwind.config = {

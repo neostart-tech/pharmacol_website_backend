@@ -6,6 +6,7 @@
         <title>Pharmacol</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <script src="{{ asset('js/main.js') }}"></script>
+        <link rel="shortcut icon" href="{{ asset('images/Page contact/logo-350100.png') }}" type="image/x-icon">
         <script src="https://cdn.tailwindcss.com"></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
