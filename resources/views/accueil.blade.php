@@ -69,7 +69,7 @@
                     <div class="flex space-x-5 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
                         <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="{{ $general['linkedin_url'] ?? 'https://www.linkedin.com/company/agence-pharmacol/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BzfxkDdV5SxKTPnSu4MfK%2BQ%3D%3D' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -1033,7 +1033,7 @@
                         <li class="flex gap-5 mt-2 justify-center md:justify-start">
                             <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                             <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                            <a href="{{ $general['linkedin_url'] ?? 'https://www.linkedin.com/company/agence-pharmacol/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BzfxkDdV5SxKTPnSu4MfK%2BQ%3D%3D' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                            <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                             <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                         </li>
                     </ul>
