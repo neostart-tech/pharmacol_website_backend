@@ -350,7 +350,7 @@
 
             <!-- Les autres articles, 2 par ligne, sans bug d'affichage -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                @foreach($autres as $i => $article)
+                @forelse($autres as $i => $article)
                     <article class="relative bg-gradient-to-br from-[#f7fafc] via-white to-[#eaf6ff] rounded-2xl shadow-lg overflow-hidden flex flex-col animate-fade-in-up blog-card border border-[#e0e7ef] hover:shadow-2xl transition-all duration-300 group">
                         @if($article->image)
                             <div class="overflow-hidden h-56">
@@ -376,7 +376,27 @@
                             {{ \Carbon\Carbon::parse($article->date)->translatedFormat('d M Y') }}
                         </div>
                     </article>
-                @endforeach
+                    @empty
+                    <div class="col-span-full flex flex-col items-center justify-center text-center bg-gray-50 border border-gray-200 rounded-xl p-10 shadow-sm mb-10 animate-fade-in-up">
+    <!-- Icône (par exemple une icône de document ou blog vide) -->
+    <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.5"
+         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M19.5 14.25v-6.75a2.25 2.25 0 00-2.25-2.25h-10.5A2.25 2.25 0 004.5 7.5v9a2.25 2.25 0 002.25 2.25h5.379c.207 0 .404.08.55.225l2.621 2.621c.419.419 1.129.122 1.129-.47V18.75a.75.75 0 01.75-.75h.321A2.25 2.25 0 0019.5 15.75v-1.5z"/>
+    </svg>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-semibold text-gray-700 mb-2">
+        Aucun article disponible
+    </h3>
+
+    <!-- Texte secondaire -->
+    <p class="text-gray-500 max-w-md">
+        Il n'y a actuellement aucun article dans cette section. Revenez plus tard ou consultez une autre catégorie.
+    </p>
+</div>
+
+                @endforelse
             </div>
         </section>
 

@@ -268,7 +268,7 @@
         </header>
 
         <div id="Offres" class="flex flex-col justify-center items-center mt-8">
-            @foreach ($postes as $poste)
+            @forelse ($postes as $poste)
                 <a href="{{ route('recrutement.formulaire', $poste->id) }}" class="block w-[80%] bg-white shadow-md rounded-lg p-6 mb-6 hover:shadow-lg transition">
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ $poste->titre }}</h3>
                     <p class="text-gray-700 mb-4">{!! nl2br(e($poste->descriptif)) !!}</p>
@@ -277,7 +277,24 @@
                         {{ $poste->localisation }}
                     </p>
                 </a>
-            @endforeach
+            @empty
+<div class="flex flex-col items-center justify-center bg-gray-50 text-gray-600 py-12 px-6 rounded-md shadow-md mb-10">
+  <!-- Icône (Heroicons - Briefcase) -->
+  <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.5"
+       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M3 9a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+  </svg>
+
+  <!-- Texte -->
+  <h3 class="text-xl font-semibold mb-2 text-gray-700">Aucune offre d'emploi</h3>
+  <p class="text-center max-w-md">
+    Il n'y a actuellement aucune offre d'emploi disponible. Revenez plus tard ou activez les notifications pour être informé(e) des nouvelles offres.
+  </p>
+</div>
+
+
+            @endforelse
         </div>
 
         <!-- Footer -->
