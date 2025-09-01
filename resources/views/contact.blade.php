@@ -383,59 +383,6 @@
         </div>
     </div>
 
-    <!-- Informations de contact en bas -->
-    <div class="bg-gradient-to-br from-[#437305] to-[#365c04] text-white rounded-xl shadow-lg p-6 md:p-8">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Informations de contact</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div class="flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-map-marker-alt text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">Adresse</h3>
-                <p>184 Rue Agnan<br>Quartier Djidjolé, Lomé</p>
-            </div>
-            
-            <div class="flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-phone-alt text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">Téléphone</h3>
-                <p>(+228) 22 50 75 10</p>
-            </div>
-            
-            <div class="flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-envelope text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">Email</h3>
-                <p class="break-all">{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</p>
-            </div>
-            
-            <div class="flex flex-col items-center text-center">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-clock text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">Horaires</h3>
-                <p>Lun-Ven: 7h30-12h<br>14h30-18h</p>
-            </div>
-        </div>
-        
-        <div class="flex justify-center space-x-4 pt-6 border-t border-white/20">
-            <a href="{{ $general['facebook_url'] ?? '#' }}" class="w-12 h-12 bg-white text-[#437305] rounded-full flex items-center justify-center hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="{{ $general['instagram_url'] ?? '#' }}" class="w-12 h-12 bg-white text-[#437305] rounded-full flex items-center justify-center hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="{{ $general['linkedin_url'] ?? '#' }}" class="w-12 h-12 bg-white text-[#437305] rounded-full flex items-center justify-center hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="{{ $general['youtube_url'] ?? '#' }}" class="w-12 h-12 bg-white text-[#437305] rounded-full flex items-center justify-center hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
-    </div>
 </main>
 
     <!-- Section FAQ -->
