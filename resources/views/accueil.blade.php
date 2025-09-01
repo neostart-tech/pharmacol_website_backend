@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Accueil</title>
+        <title>Pharmacol</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -280,7 +280,7 @@
                     <img src="{{ asset('images/Page index/chemistry1.png') }}" class="w-14 h-14" />
                     <div class="flex flex-col gap-5">
                         <div class="font-bold text-base md:text-[20px]">Derniers équipements</div>
-                        <div class="font-extralight text-xs md:text-[14px]">Nos laboratoires disposent d’équipements modernes pour développer et fournir des médicaments fiables.</div>
+                        <div class="font-extralight text-base md:text-lg">Nos laboratoires disposent d’équipements modernes pour développer et fournir des médicaments fiables.</div>
                     </div>
                 </div>
 
@@ -288,7 +288,7 @@
                     <img src="images/Page index/research1.png" class="w-14 h-14" />
                     <div class="flex flex-col gap-5">
                         <div class="font-bold text-base md:text-[20px]">Recrutement des forces de ventes</div>
-                        <div class="font-extralight text-xs md:text-[14px]">Le pilier de la stratégie d’implantation : une équipe professionnelle</div>
+                        <div class="font-extralight text-base md:text-lg">Le pilier de la stratégie d’implantation : une équipe professionnelle</div>
                     </div>
                 </div>
 
@@ -296,7 +296,7 @@
                     <img src="images/Page index/safe.png" class="w-14 h-14" />
                     <div class="flex flex-col gap-5">
                         <div class="font-bold text-base md:text-[20px]">Promotion Médicale</div>
-                        <div class="font-extralight text-xs md:text-[14px]">Le merchandising et la formation des équipes officinales</div>
+                        <div class="font-extralight text-base md:text-lg">Le merchandising et la formation des équipes officinales</div>
                     </div>
                 </div>
             </div>
@@ -308,10 +308,10 @@
         
         <!-- En-tête centré -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-[#437305] font-semibold text-sm uppercase tracking-wider mb-3 block">
+            <span class="text-[#437305] font-semibold text-lg uppercase tracking-wider mb-3 block">
                 À PROPOS DE NOUS
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                 Promotion de vos produits pharmaceutiques en Afrique de l'Ouest
             </h2>
             <p class="text-lg text-gray-600">
@@ -325,9 +325,9 @@
             <!-- Colonne texte - Transformée en carte design -->
             <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100 hover:shadow-2xl transition-all duration-300">
                 <div class="prose prose-lg text-gray-600 max-w-none">
-                    <p class="mb-6 leading-relaxed text-base md:text-lg">Fondée en 1996 par Abel ACOLATSE, PHARMACOL est une agence spécialisée dans la représentation pharmaceutique et la promotion médicale. Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.</p>
-                    <p class="mb-6 leading-relaxed text-base md:text-lg">PHARMACOL, votre levier de croissance : nous vous accompagnons dans toutes les étapes de votre développement local, depuis l'obtention des autorisations de mise sur le marché, la mise en place et la commercialisation de produits, jusqu'au renforcement et à l'expansion de votre présence locale.</p>
-                    <p class="mb-8 leading-relaxed text-base md:text-lg">Notre mission : Offrir un accompagnement stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la région.</p>
+                    <p class="mb-6 leading-relaxed text-lg md:text-xl">Fondée en 1996 par Abel ACOLATSE, PHARMACOL est une agence spécialisée dans la représentation pharmaceutique et la promotion médicale. Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.</p>
+                    <p class="mb-6 leading-relaxed text-lg md:text-xl">PHARMACOL, votre levier de croissance : nous vous accompagnons dans toutes les étapes de votre développement local, depuis l'obtention des autorisations de mise sur le marché, la mise en place et la commercialisation de produits, jusqu'au renforcement et à l'expansion de votre présence locale.</p>
+                    <p class="mb-8 leading-relaxed text-lg md:text-xl">Notre mission : Offrir un accompagnement stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la région.</p>
                 </div>
 
                 <!-- Séparateur -->
@@ -386,7 +386,7 @@
                 <div class="text-center mb-16">
                     <div class="flex items-center justify-center gap-3 mb-4">
                         <img src="{{ asset('images/Page prestations 1/adn.png') }}" alt="ADN" class="w-10 h-10">
-                        <span class="text-[#437305] uppercase tracking-widest font-medium text-lg">Nos services</span>
+                        <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Nos services</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Notre expertise et savoir-faire à votre disposition</h2>
                     <p class="text-gray-600 max-w-3xl mx-auto">Découvrez l'ensemble de nos services conçus pour répondre à tous vos besoins pharmaceutiques en Afrique de l'Ouest</p>
@@ -477,7 +477,7 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <div class="flex items-center justify-center gap-3 mb-4">
                     <img src="images/Page prestations 1/adn.png" alt="ADN" class="w-10 h-10">
-                    <span class="text-[#437305] uppercase tracking-widest font-medium text-lg">Notre processus de travail</span>
+                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Notre processus de travail</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des résultats optimaux</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto">Notre méthodologie éprouvée garantit l'efficacité et la qualité de nos services</p>
@@ -628,7 +628,7 @@
  <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <span class="inline-block text-[#437305] font-semibold uppercase tracking-wider text-sm mb-3">
+                <span class="inline-block text-[#437305] font-semibold uppercase tracking-wider text-gray-800 mb-4  ">
                     Pourquoi nous choisir
                 </span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
