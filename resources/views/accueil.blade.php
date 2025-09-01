@@ -69,7 +69,7 @@
                     <div class="flex space-x-5 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
                         <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="{{ $general['linkedin_url'] ?? 'https://www.linkedin.com/company/agence-pharmacol/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BzfxkDdV5SxKTPnSu4MfK%2BQ%3D%3D' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -472,59 +472,76 @@
       
 
 
-        <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <div class="flex items-center justify-center gap-3 mb-4">
-                    <img src="images/Page prestations 1/adn.png" alt="ADN" class="w-10 h-10">
-                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Notre processus de travail</span>
+        <section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50/30">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <div class="inline-flex items-center justify-center gap-3 mb-4 px-5 py-2 bg-[#437305]/10 rounded-full">
+                <img src="images/Page prestations 1/adn.png" alt="ADN" class="w-8 h-8">
+                <span class="text-[#437305] uppercase tracking-widest font-semibold text-lg">Notre processus de travail</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des résultats optimaux</h2>
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg">Notre méthodologie éprouvée garantit l'efficacité et la qualité de nos services</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <!-- Ligne de connexion améliorée (desktop seulement) -->
+            <div class="hidden md:block absolute left-10 right-10 top-20 h-1 bg-gradient-to-r from-[#437305]/20 via-[#437305]/40 to-[#437305]/20 z-0"></div>
+            
+            <!-- Points de connexion -->
+            <div class="hidden md:block absolute left-1/4 transform -translate-x-1/2 top-20 w-3 h-3 rounded-full bg-[#437305] z-10"></div>
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-20 w-3 h-3 rounded-full bg-[#437305] z-10"></div>
+            <div class="hidden md:block absolute left-3/4 transform -translate-x-1/2 top-20 w-3 h-3 rounded-full bg-[#437305] z-10"></div>
+            
+            <!-- Étape 1 -->
+            <div class="flex flex-col items-center text-center relative z-10 group" data-aos="fade-up">
+                <div class="bg-gradient-to-br from-[#437305] to-[#365c04] text-white w-24 h-24 flex items-center justify-center mb-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                    <span class="text-2xl font-bold">01</span>
+                    <div class="absolute -inset-2 bg-[#437305]/20 rounded-2xl blur-md group-hover:opacity-75 transition-opacity -z-10"></div>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des résultats optimaux</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Notre méthodologie éprouvée garantit l'efficacité et la qualité de nos services</p>
+                <h3 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-[#437305] transition-colors">Brief et Projet Clients</h3>
+                <p class="text-gray-600">Analyse approfondie des besoins pour une stratégie personnalisée</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <!-- Ligne de connexion (desktop seulement) -->
-                <div class="hidden md:block absolute left-0 right-0 top-20 h-0.5 bg-gray-200 z-0"></div>
-                
-                <!-- Étape 1 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up">
-                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
-                        <span class="text-xl font-bold">01</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-3">Brief et Projet Clients</h3>
-                    <p class="text-gray-600 text-sm">Analyse approfondie des besoins pour une stratégie personnalisée</p>
+            <!-- Étape 2 -->
+            <div class="flex flex-col items-center text-center relative z-10 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-gradient-to-br from-[#437305] to-[#365c04] text-white w-24 h-24 flex items-center justify-center mb-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                    <span class="text-2xl font-bold">02</span>
+                    <div class="absolute -inset-2 bg-[#437305]/20 rounded-2xl blur-md group-hover:opacity-75 transition-opacity -z-10"></div>
                 </div>
-                
-                <!-- Étape 2 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
-                        <span class="text-xl font-bold">02</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-3">Le laboratoire élabore une proposition</h3>
-                    <p class="text-gray-600 text-sm">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
+                <h3 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-[#437305] transition-colors">Proposition du laboratoire</h3>
+                <p class="text-gray-600">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
+            </div>
+            
+            <!-- Étape 3 -->
+            <div class="flex flex-col items-center text-center relative z-10 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-gradient-to-br from-[#437305] to-[#365c04] text-white w-24 h-24 flex items-center justify-center mb-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                    <span class="text-2xl font-bold">03</span>
+                    <div class="absolute -inset-2 bg-[#437305]/20 rounded-2xl blur-md group-hover:opacity-75 transition-opacity -z-10"></div>
                 </div>
-                
-                <!-- Étape 3 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
-                        <span class="text-xl font-bold">03</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-3">Tests Début des tests</h3>
-                    <p class="text-gray-600 text-sm">Lancement et évaluation pour garantir la performance optimale</p>
+                <h3 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-[#437305] transition-colors">Tests et évaluation</h3>
+                <p class="text-gray-600">Lancement et évaluation pour garantir la performance optimale</p>
+            </div>
+            
+            <!-- Étape 4 -->
+            <div class="flex flex-col items-center text-center relative z-10 group" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-gradient-to-br from-[#437305] to-[#365c04] text-white w-24 h-24 flex items-center justify-center mb-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                    <span class="text-2xl font-bold">04</span>
+                    <div class="absolute -inset-2 bg-[#437305]/20 rounded-2xl blur-md group-hover:opacity-75 transition-opacity -z-10"></div>
                 </div>
-                
-                <!-- Étape 4 -->
-                <div class="flex flex-col items-center text-center relative z-10" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
-                        <span class="text-xl font-bold">04</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-3">Rapports livrés</h3>
-                    <p class="text-gray-600 text-sm">Présentation de résultats détaillés pour une prise de décision éclairée</p>
-                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-[#437305] transition-colors">Livraison des rapports</h3>
+                <p class="text-gray-600">Présentation de résultats détaillés pour une prise de décision éclairée</p>
             </div>
         </div>
-    </section>
+        
+        <!-- Indicateurs de progression (mobile) -->
+        <div class="md:hidden flex justify-center mt-8 space-x-2">
+            <div class="w-3 h-3 rounded-full bg-[#437305]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#437305]/40"></div>
+            <div class="w-3 h-3 rounded-full bg-[#437305]/40"></div>
+            <div class="w-3 h-3 rounded-full bg-[#437305]/40"></div>
+        </div>
+    </div>
+</section>
 
 
   <!-- Section Statistiques -->
@@ -827,6 +844,9 @@
 .animate-fade-slide {
   animation: fade-slide 0.8s ease-out forwards;
 }
+.hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
 </style>
 
 
@@ -1013,7 +1033,7 @@
                         <li class="flex gap-5 mt-2 justify-center md:justify-start">
                             <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                             <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                            <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                            <a href="{{ $general['linkedin_url'] ?? 'https://www.linkedin.com/company/agence-pharmacol/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BzfxkDdV5SxKTPnSu4MfK%2BQ%3D%3D' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                             <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                         </li>
                     </ul>
