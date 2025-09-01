@@ -316,9 +316,12 @@
                     Notre expertise au service de votre succès au Togo, Bénin et Niger
                 </div>
                 <div class=" px-2 text-sm sm:text-base text-justify sm:text-center text-[#6A6A6A]">
-                    Créée en 1996, par Abel ACOLATSE, PHARMACOL est spécialisée dans la représentation pharmaceutique et la promotion médicale. Présente en Afrique de l'ouest : Togo, Bénin, Niger. Son siège est basé à Lomé au Togo.
+Fondée en 1996 par Abel ACOLATSE, PHARMACOL est une agence spécialisée dans la représentation pharmaceutique et la promotion médicale. Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.
+
                     <br><br>
-                    PHARMACOL, votre levier de croissance : Obtention d'autorisation de mise sur le marché, Mise en place, Commercialisation, Développement de votre présence locale au Togo, au Bénin et au Niger.
+                  PHARMACOL, votre levier de croissance : nous vous accompagnons  dans toutes les étapes de votre développement local, depuis l’obtention des autorisations de mise sur le marché, la mise en place et la commercialisation de produits, jusqu’au renforcement et à l’expansion de votre présence locale.
+               <br><br>
+               Notre mission : Offrir un accompagnement stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la région.
                 </div>
         
             <!-- Bloc satisfaction -->
@@ -327,7 +330,7 @@
                 <div class="flex flex-col gap-1">
                 <div class="text-lg font-bold">Satisfaction à 100 % Précision</div>
                 <div class="text-sm text-[#6A6A6A] font-medium">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    Nos laboratoires et équipes qualifiées assurent des services précis et fiables, pour votre entière satisfaction.
                 </div>
                 </div>
             </div>
@@ -357,7 +360,7 @@
                 <img src="images/Page index/chat.png" alt="Chat" class="w-7 h-7 sm:w-10 sm:h-10">
                 <div>
                     <div class="text-xs sm:text-sm font-medium">Appel aux questions</div>
-                    <div class="text-base sm:text-xl font-bold">+92 3800 8060</div>
+                    <div class="text-base sm:text-xl font-bold">+228 22 50 75 10</div>
                 </div>
             </div>
             </div>
@@ -381,7 +384,7 @@
             <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
                 <img src="images/Page index/1v.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
                 <div class="font-bold text-lg md:text-2xl text-center">Promotion médicale Parapharmaceutique</div>
-                <div class="font-normal text-sm md:text-base text-center">Phasellus neque nibh, cursus<br>ullamcorper at.</div>
+                <div class="font-normal text-sm md:text-base text-center">Sensibilisation et information des professionnels santé.</div>
             </a>
             <a href="" class="flex flex-col gap-4 bg-white rounded-lg shadow-md p-5 hover:bg-[#437305] hover:cursor-pointer hover:text-white transition-all duration-500">
                 <img src="images/Page index/2b.png" alt="img" class="w-20 h-20 md:w-24 md:h-24 mx-auto">
