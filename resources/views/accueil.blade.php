@@ -844,17 +844,17 @@
                         <p class="text-gray-600 text-sm mb-4 text-center md:text-left">Découvrez notre présence dans
                             chaque pays :</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <a href="#"
+                            <a href="/togo"
                                 class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
                                 <img src="https://flagcdn.com/w20/tg.png" alt="Togo" class="w-5 h-5 rounded-sm">
                                 <span>Togo</span>
                             </a>
-                            <a href="#"
+                            <a href="/benin"
                                 class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
                                 <img src="https://flagcdn.com/w20/bj.png" alt="Bénin" class="w-5 h-5 rounded-sm">
                                 <span>Bénin</span>
                             </a>
-                            <a href="#"
+                            <a href="/niger"
                                 class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
                                 <img src="https://flagcdn.com/w20/ne.png" alt="Niger" class="w-5 h-5 rounded-sm">
                                 <span>Niger</span>
