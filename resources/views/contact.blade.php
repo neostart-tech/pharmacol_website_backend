@@ -137,7 +137,7 @@
                     </nav>
                 </div>
                 <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 sm:justify-center sm:pb-0 text-white text-center">
-                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">contact</h1>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">Contact</h1>
                 </div>
             </div>
             <script>
