@@ -324,6 +324,7 @@
     </button>
 
  <!-- Main content refait avec design moderne -->
+<!-- Main content refait avec design moderne -->
 <main class="max-w-7xl mx-auto px-4 py-12 md:py-16">
     <!-- En-tête de section -->
     <div class="text-center mb-12 md:mb-16">
@@ -367,10 +368,10 @@
             </form>
         </div>
 
-        <!-- Google Maps -->
+        <!-- Google Maps avec la localisation spécifique -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.258228783249!2d1.215200175956665!3d6.362397223700161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1021591a4a12a4a7%3A0x8b9c7b8c9d6e9b0f!2s184%20Rue%20Agnan%2C%20Lom%C3%A9%2C%20Togo!5e0!3m2!1sfr!2sfr!4v1642345678901!5m2!1sfr!2sfr" 
+                src="https://www.google.com/maps?q=Rue+Aflao+Gakli+69,+Lom%C3%A9,+Togo&output=embed" 
                 width="100%" 
                 height="100%" 
                 style="min-height: 400px; border:0;" 
