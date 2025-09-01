@@ -280,7 +280,8 @@
                     <img src="{{ asset('images/Page index/chemistry1.png') }}" class="w-14 h-14" />
                     <div class="flex flex-col gap-5">
                         <div class="font-bold text-base md:text-[20px]">Derniers équipements</div>
-                        <div class="font-extralight text-xs md:text-[14px]">There are inmny variations free passages of Lorem Ip available <br>inmny variations free </div>
+                        <div class="font-extralight text-xs md:text-[14px]"> Découvrez les technologies médicales les plus récentes<br>
+    pour un meilleur diagnostic et une prise en charge optimale.</div>
                     </div>
                 </div>
 
