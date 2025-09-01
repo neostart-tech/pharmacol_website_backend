@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Candidature à : {{ $poste->titre }}</title>
+        <link rel="shortcut icon" href="{{ asset('images/Page contact/logo-350100.png') }}" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     </head>
     <body class="bg-gray-100 p-4 sm:p-8">
