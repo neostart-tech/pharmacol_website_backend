@@ -665,7 +665,7 @@
                         class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
                         <img src="{{ asset('images/Page index/12.png') }}" alt="Partenaires" class="w-8 h-8" />
                     </div>
-                <div class="text-4xl font-bold mb-2 count-up" data-count="{{$laboratoires ??  7 }}">7</div>
+                <div class="text-4xl font-bold mb-2 count-up" data-count="{{$laboratoires ??  7 }}">0</div>
 
                     {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $laboratoires }}">0</div> --}}
                     <div class="text-sm font-medium">Entreprises pharmaceutiques partenaires</div>
