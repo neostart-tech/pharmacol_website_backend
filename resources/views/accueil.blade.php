@@ -113,7 +113,7 @@
                             <li class="qdropdown relative group">
                                 <a href="#"
                                     class="text hover:text-gray-900 flex items-center space-x-2 px-4 py-3 md:p-0">
-                                    <span>Nos Implentations</span>
+                                    <span>Nos Agences</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </a>
                                 <ul
@@ -296,7 +296,7 @@
             </script>
 
             <div class="absolute inset-0 flex flex-col gap-20 items-center justify-center text-white">
-                <h1 class="text-4xl md:text-5xl font-bold text-center">PHARMACOL, un réseau de <br> délégués médicaux
+                <h1 class="text-4xl md:text-5xl font-bold text-center">PHARMACOL, un réseau <br> dymamique 
                     sur le Togo, <br> le Bénin , le Niger</h1>
                 <a href="mailto:{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}" target="_blank"
                     rel="noopener noreferrer" class="bg-[#437305] p-4">Parlons de votre projet</a>
@@ -314,9 +314,8 @@
                 class="w-full md:w-[400px] h-[200px] bg-white flex flex-row py-8 px-6 md:px-10 gap-5 border-solid border-[1px] border-gray-200 mx-auto">
                 <img src="{{ asset('images/Page index/chemistry1.png') }}" class="w-14 h-14" />
                 <div class="flex flex-col gap-5">
-                    <div class="font-bold text-base md:text-[20px]">Derniers équipements</div>
-                    <div class="font-extralight text-base md:text-lg">Nos laboratoires disposent d’équipements modernes
-                        pour développer et fournir des médicaments fiables.</div>
+                    <div class="font-bold text-base md:text-[20px]">Une SFE up to date</div>
+                    <div class="font-extralight text-base md:text-lg">Notre équipe commerciale, professionnelle et proactive, est composée d’experts certifiés.</div>
                 </div>
             </div>
 
@@ -324,7 +323,7 @@
                 class="w-full md:w-[400px] h-[200px] bg-[#437305] flex flex-row py-8 px-6 md:px-10 gap-5 text-white mx-auto">
                 <img src="images/Page index/research1.png" class="w-14 h-14" />
                 <div class="flex flex-col gap-5">
-                    <div class="font-bold text-base md:text-[20px]">Recrutement des forces de ventes</div>
+                    <div class="font-bold text-base md:text-[20px]">Recrutement de la force de vente</div>
                     <div class="font-extralight text-base md:text-lg">Le pilier de la stratégie d’implantation : une
                         équipe professionnelle</div>
                 </div>
@@ -371,7 +370,7 @@
                             Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.</p>
                         <p class="mb-6 leading-relaxed text-lg md:text-xl">PHARMACOL, votre levier de croissance : nous
                             vous accompagnons dans toutes les étapes de votre développement local, depuis l'obtention
-                            des autorisations de mise sur le marché, la mise en place et la commercialisation de
+                            des autorisations de mise sur le marché, la mise en place et la commercialisation de vos
                             produits, jusqu'au renforcement et à l'expansion de votre présence locale.</p>
                         <p class="mb-8 leading-relaxed text-lg md:text-xl">Notre mission : Offrir un accompagnement
                             stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la
@@ -388,8 +387,8 @@
                                 alt="Satisfaction" />
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Satisfaction à 100 % Précision</h3>
-                            <p class="text-gray-600">Nos laboratoires et équipes qualifiées assurent des services
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Satisfaction à 100 % </h3>
+                            <p class="text-gray-600">Nos équipes qualifiées assurent des services
                                 précis et fiables, pour votre entière satisfaction.</p>
                         </div>
                     </div>
@@ -460,7 +459,7 @@
                     <h3 class="font-bold text-lg mb-3 group-hover:text-white">Promotion médicale Parapharmaceutique
                     </h3>
                     <p class="text-gray-600 text-sm group-hover:text-white">Sensibilisation et information des
-                        professionnels santé.</p>
+                        professionnels de la santé.</p>
                 </div>
 
                 <!-- Service 2 -->
@@ -471,7 +470,7 @@
                         <img src="{{ asset('images/Page index/2b.png') }}" alt="Recrutement"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Recrutement Encadrement de la force de
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Recrutement et Encadrement de la force de
                         vente</h3>
                     <p class="text-gray-600 text-sm group-hover:text-white">Talents commerciaux recrutés et encadrés
                         efficacement.</p>
@@ -513,7 +512,7 @@
                         <img src="{{ asset('images/Page index/5v.png') }}" alt="Marketing"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Marketing Communication</h3>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Marketing et Communication</h3>
                     <p class="text-gray-600 text-sm group-hover:text-white">Promotion stratégique et visibilité
                         optimale des produits.</p>
                 </div>
@@ -539,8 +538,8 @@
                         <img src="{{ asset('images/Page index/7v.png') }}" alt="Reporting"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Reporting Pharmacovigilance</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Analyse et reporting des événements
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Pharmacovigilance</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">Analyse des événements
                         indésirables médicaux.</p>
                 </div>
 
@@ -583,7 +582,7 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">01</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Brief et Projet Clients</h3>
+                    <h3 class="font-bold text-lg mb-3">Analyse du projet </h3>
                     <p class="text-gray-600 text-sm">Analyse approfondie des besoins pour une stratégie personnalisée</p>
                 </div>
                 
@@ -592,7 +591,7 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">02</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Le laboratoire élabore une proposition</h3>
+                    <h3 class="font-bold text-lg mb-3">Elaboration d'une proposition</h3>
                     <p class="text-gray-600 text-sm">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
                 </div>
                 
@@ -601,7 +600,7 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">03</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Tests Début des tests</h3>
+                    <h3 class="font-bold text-lg mb-3">Lancement test</h3>
                     <p class="text-gray-600 text-sm">Lancement et évaluation pour garantir la performance optimale</p>
                 </div>
                 
@@ -678,7 +677,7 @@
                         class="bg-white bg-opacity-10 p-4 rounded-full w-16 h-16 mx-auto mb-5 flex items-center justify-center">
                         <img src="{{ asset('images/Page index/13.png') }}" alt="Expérience" class="w-8 h-8" />
                     </div>
-                    <div class="text-4xl font-bold mb-2">+<span class="count-up"
+                    <div class="text-4xl font-bold mb-2"><span class="count-up"
                             data-count="{{ $general['annees_experience'] ?? 29 }}">29</span></div>
                     {{-- <div class="text-4xl font-bold mb-2">+<span class="count-up"
                             data-count="{{ $general['annees_experience'] ?? 28 }}">0</span></div> --}}
@@ -777,8 +776,8 @@
                             <div class="text-center md:text-left">
                                 <h3 class="text-xl md:text-2xl font-bold mb-2">Nos valeurs</h3>
                                 <p>
-                                    Réactivité, adaptabilité, rigueur et transparence font partie intégrantes de notre
-                                    leitmotiv
+                                    Réactivité, adaptabilité, rigueur et transparence font partie intégrante de notre
+                                    motivation.
                                 </p>
                             </div>
                         </div>
@@ -794,7 +793,7 @@
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-1">Expertise confirmée</h4>
                                 <p class="text-gray-600 text-sm">
-                                    La pérennité de Pharmacol 28 ans d'expertise et de présence terrain
+                                    La pérennité de Pharmacol: 28 ans d'expertise et de présence terrain
                                 </p>
                             </div>
                         </div>
@@ -807,7 +806,9 @@
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-1">Équipe qualifiée</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Une force de vente composée de 50 délégués médicaux compétents et expérimentés
+                                    {{-- Une force de vente composée de 50 délégués médicaux compétents et expérimentés --}}
+                                     Une force de vente composée de 97 délégués médicaux compétents et expérimentés
+
                                 </p>
                             </div>
                         </div>
@@ -903,7 +904,7 @@
     </section>
 
     <!-- Section des cartes -->
-    <div class="bg-white py-16 px-4 md:px-8">
+    {{-- <div class="bg-white py-16 px-4 md:px-8">
         <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 relative">
 
             <!-- Card 1 -->
@@ -955,7 +956,7 @@
             </a>
 
         </div>
-    </div>
+    </div> --}}
 
 <!-- Animations personnalisées -->
 <style>
