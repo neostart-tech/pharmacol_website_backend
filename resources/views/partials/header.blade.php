@@ -28,7 +28,7 @@
                     <i class="fas fa-phone text-[#3C74A8] text-lg font-bold"></i>
                 </div>
                 <div>
-                    <p class="text-xs">Appeler à tout moment</p>
+                    <p class="text-xs">{{ __('messages.call_anytime') }}</p>
                     <strong class="text-sm font-bold">(+228) 22 50 75 10</strong>
                 </div>
                 <div class="hidden md:block w-px h-6 bg-white"></div>
@@ -36,15 +36,17 @@
                     <button onclick="toggleSearch && toggleSearch()" class="absolute left-3">
                         <i class="fas fa-search text-[#3C74A8]"></i>
                     </button>
-                    <input id="searchInput" type="text" placeholder="Rechercher..." class="w-full pl-10 pr-4 py-2 rounded-full text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <input id="searchInput" type="text" placeholder="{{ __('messages.search_placeholder') }}" class="w-full pl-10 pr-4 py-2 rounded-full text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
                     <ul id="suggestions" class="absolute left-0 top-full w-full mt-1 bg-white text-black border border-gray-300 rounded shadow hidden z-50 text-sm max-h-60 overflow-y-auto"></ul>
                 </div>
             </div>
-            <div class="flex space-x-5 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
+            <div class="flex items-center space-x-4 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
                 <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                 <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                 <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                 <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
+                <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
             </div>
         </div>
     </div>
