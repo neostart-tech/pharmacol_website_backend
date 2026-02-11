@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Pharmacol</title>
+    <title>{{ __('messages.contact') }} | Pharmacol</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -78,17 +78,17 @@
         <div class="bg-gray-100 text-sm border-b border-gray-300 py-2">
             <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                 <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                    <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                    <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                     <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                 </div>
                 <div class="flex flex-col sm:flex-row items-center justify-center">
                     <span>
                         <i class="fas fa-clock text-green-700"></i>
-                        Lun-Ven: 7h30-12h 14h30-18h
+                        {{ __('messages.working_hours') }}
                         <span class="hidden sm:inline"> / </span>
                     </span>
                     <span class="sm:ml-1">
-                        Fermé les weekends et jours fériés
+                        {{ __('messages.closed_weekends') }}
                     </span>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                         <i class="fas fa-phone text-[#3C74A8] text-lg font-bold"></i>
                     </div>
                     <div>
-                        <p class="text-xs">Appeler à tout moment</p>
+                        <p class="text-xs">{{ __('messages.call_anytime') }}</p>
                         <strong class="text-sm font-bold">(+228) 22 50 75 10</strong>
                     </div>
                     <div class="hidden md:block w-px h-6 bg-white"></div>
@@ -111,15 +111,16 @@
                         <button onclick="toggleSearch()" class="absolute left-3">
                             <i class="fas fa-search text-[#3C74A8]"></i>
                         </button>
-                        <input id="searchInput" type="text" placeholder="Rechercher..." class="w-full pl-10 pr-4 py-2 rounded-full text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-500" oninput="updateSuggestions()" onkeydown="if(event.key === 'Enter') performSearch()">
+                        <input id="searchInput" type="text" placeholder="{{ __('messages.search_placeholder') }}" class="w-full pl-10 pr-4 py-2 rounded-full text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-500" oninput="updateSuggestions()" onkeydown="if(event.key === 'Enter') performSearch()">
                         <ul id="suggestions" class="absolute left-0 top-full w-full mt-1 bg-white text-black border border-gray-300 rounded shadow hidden z-50 text-sm max-h-60 overflow-y-auto"></ul>
                     </div>
                 </div>
-                <div class="flex space-x-5 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
+                <div class="flex items-center space-x-4 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
                     <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                     <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    @include('partials.language-switcher')
                 </div>
             </div>
         </div>
@@ -133,7 +134,7 @@
                         <!-- Logo -->
                         <a href="{{ route('accueil') }}" class="flex items-center space-x-2">
                             <div class="qlogo">
-                                <img src="images/Page prestations 2/logo-350100.png" alt="Logo Pharmacol" class="h-12 md:h-16">
+                                <img src="images/Page prestations 2/logo-350100.png" alt="{{ __('messages.logo_pharmacol_alt') }}" class="h-12 md:h-16">
                             </div>
                         </a>
                         <!-- Hamburger bouton mobile -->
@@ -144,37 +145,37 @@
                         <ul id="main-menu" class="hidden md:flex qnav-links md:items-center md:space-x-10 absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-40 transition-all duration-300 ease-in-out">
                             <li class="qdropdown relative group">
                                 <a href="#" class="text hover:text-gray-900 flex items-center space-x-2 px-4 py-3 md:p-0">
-                                    <span>Nos Implentations</span>
+                                    <span>{{ __('messages.nos_implantations') }}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </a>
                                 <ul class="qdropdown-menu absolute left-0 hidden bg-white border border-gray-300 rounded shadow-md w-48 group-hover:block md:mt-0 z-50">
                                     <li>
                                         <a href="{{ route('accueil.togo') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/tg.png" alt="Togo" class="w-5 h-auto"> Togo
+                                            <img src="https://flagcdn.com/w40/tg.png" alt="{{ __('messages.togo') }}" class="w-5 h-auto"> {{ __('messages.togo') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('accueil.benin') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/bj.png" alt="Benin" class="w-5 h-auto"> Benin
+                                            <img src="https://flagcdn.com/w40/bj.png" alt="{{ __('messages.benin') }}" class="w-5 h-auto"> {{ __('messages.benin') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('accueil.niger') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/ne.png" alt="Niger" class="w-5 h-auto"> Niger
+                                            <img src="https://flagcdn.com/w40/ne.png" alt="{{ __('messages.niger') }}" class="w-5 h-auto"> {{ __('messages.niger') }}
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('prestation') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">Prestations</a></li>
-                            <li><a href="{{ route('recrutement') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">Recrutement</a></li>
-                            <li><a href="{{ route('blog') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">Blog</a></li>
-                            <li><a href="{{ route('contact') }}" class="text-[#437305] hover:text-green-600 block px-4 py-3 md:p-0 font-bold">Contact</a></li>
+                            <li><a href="{{ route('prestation') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">{{ __('messages.prestations') }}</a></li>
+                            <li><a href="{{ route('recrutement') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">{{ __('messages.recrutement') }}</a></li>
+                            <li><a href="{{ route('blog') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">{{ __('messages.blog') }}</a></li>
+                            <li><a href="{{ route('contact') }}" class="text-[#437305] hover:text-green-600 block px-4 py-3 md:p-0 font-bold">{{ __('messages.contact') }}</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
-            <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 sm:justify-center sm:pb-0 text-white text-center">
-                <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">Contact</h1>
+                <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 sm:justify-center sm:pb-0 text-white text-center">
+                <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">{{ __('messages.contact') }}</h1>
             </div>
         </div>
         <script>
@@ -320,51 +321,50 @@
 
     <!-- Bouton scroll to top -->
     <button id="scrollToTopBtn" onclick="scrollToTop()" 
-        class="fixed bottom-6 right-6 w-12 h-12 bg-secondary-green text-white text-xl flex items-center justify-center rounded-full shadow-button hover:bg-secondary-darkgreen transition-smooth z-50" aria-label="Remonter en haut">
+        class="fixed bottom-6 right-6 w-12 h-12 bg-secondary-green text-white text-xl flex items-center justify-center rounded-full shadow-button hover:bg-secondary-darkgreen transition-smooth z-50" aria-label="{{ __('messages.scroll_to_top') }}">
         <i class="fas fa-arrow-up"></i>
     </button>
 
  <!-- Main content refait avec design moderne -->
-<!-- Main content refait avec design moderne -->
 <main class="max-w-7xl mx-auto px-4 py-12 md:py-16">
     <!-- En-tête de section -->
     <div class="text-center mb-12 md:mb-16">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contactez-nous</h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Nous sommes à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{{ __('messages.contact_us') }}</h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">{{ __('messages.contact_subtitle_full') }}</p>
     </div>
 
     <!-- Formulaire de contact et Google Maps côte à côte -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
         <!-- Formulaire de contact amélioré -->
         <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Envoyez-nous un message</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">{{ __('messages.send_us_message') }}</h2>
             <form action="https://formspree.io/f/xzzrwanv" method="POST" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label for="nom" class="block text-sm font-medium text-gray-700 mb-2">Votre nom</label>
+                        <label for="nom" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.your_name') }}</label>
                         <input type="text" id="nom" name="nom" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#437305] focus:border-transparent transition-all" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Votre email</label>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.your_email') }}</label>
                         <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#437305] focus:border-transparent transition-all" required>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label for="telephone" class="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                        <label for="telephone" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.phone') }}</label>
                         <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#437305] focus:border-transparent transition-all">
                     </div>
                     <div>
-                        <label for="sujet" class="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
+                        <label for="sujet" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.subject') }}</label>
                         <input type="text" id="sujet" name="sujet" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#437305] focus:border-transparent transition-all">
                     </div>
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Votre message</label>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.your_message') }}</label>
                     <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#437305] focus:border-transparent transition-all" required></textarea>
                 </div>
                 <button type="submit" class="bg-gradient-to-r from-[#437305] to-[#365c04] hover:from-[#365c04] hover:to-[#2a4903] text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full">
-                    Envoyer le message
+                    {{ __('messages.send_message') }}
                 </button>
             </form>
         </div>
@@ -389,38 +389,38 @@
     <!-- Section FAQ -->
     <section class="max-w-4xl mx-auto px-4 py-12 md:py-16">
         <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Questions fréquentes</h2>
-            <p class="text-neutral-darkgray">Trouvez rapidement des réponses à vos questions</p>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">{{ __('messages.faq') }}</h2>
+            <p class="text-neutral-darkgray">{{ __('messages.faq_subtitle') }}</p>
         </div>
 
         <div class="space-y-4">
             <div class="accordion-item bg-white rounded-lg shadow-card overflow-hidden">
                 <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-gray-800 hover:text-secondary-green transition-smooth">
-                    <span>Comment puis-je postuler à une offre d'emploi ?</span>
+                    <span>{{ __('messages.how_can_i_apply') }}</span>
                     <i class="fas fa-chevron-down text-sm transition-transform"></i>
                 </button>
                 <div class="accordion-content px-5">
-                    <p class="pb-5 text-gray-600">Vous pouvez consulter nos offres d'emploi dans la section Recrutement et postuler directement en ligne en remplissant le formulaire de candidature.</p>
+                    <p class="pb-5 text-gray-600">{{ __('messages.how_can_i_apply_answer') }}</p>
                 </div>
             </div>
 
             <div class="accordion-item bg-white rounded-lg shadow-card overflow-hidden">
                 <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-gray-800 hover:text-secondary-green transition-smooth">
-                    <span>Quels sont vos horaires d'ouverture ?</span>
+                    <span>{{ __('messages.opening_hours_question') }}</span>
                     <i class="fas fa-chevron-down text-sm transition-transform"></i>
                 </button>
                 <div class="accordion-content px-5">
-                    <p class="pb-5 text-gray-600">Nous sommes ouverts du lundi au vendredi de 7h30 à 12h et de 14h30 à 18h. Nous sommes fermés les weekends et jours fériés.</p>
+                    <p class="pb-5 text-gray-600">{{ __('messages.opening_hours_answer') }}</p>
                 </div>
             </div>
 
             <div class="accordion-item bg-white rounded-lg shadow-card overflow-hidden">
                 <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-gray-800 hover:text-secondary-green transition-smooth">
-                    <span>Dans quels pays êtes-vous présents ?</span>
+                    <span>{{ __('messages.which_countries') }}</span>
                     <i class="fas fa-chevron-down text-sm transition-transform"></i>
                 </button>
                 <div class="accordion-content px-5">
-                    <p class="pb-5 text-gray-600">Nous avons des implantations au Togo, au Bénin et au Niger. Vous pouvez consulter les détails de chaque implantation dans la section dédiée.</p>
+                    <p class="pb-5 text-gray-600">{{ __('messages.which_countries_answer') }}</p>
                 </div>
             </div>
         </div>
@@ -433,9 +433,9 @@
             <div class="space-y-4 relative flex flex-col items-center md:items-start">
                 <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
                 <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                 <div class="flex w-full max-w-xs">
-                    <input type="text" placeholder="Email"
+                    <input type="text" placeholder="{{ __('messages.email_placeholder') }}"
                         class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
                     <button class="bg-[#437305] px-4 py-2 border border-[#437305] rounded-r-md">
                         <i class="fas fa-arrow-up transform rotate-45 text-white"></i>
@@ -444,21 +444,21 @@
             </div>
             <!-- Liens rapides -->
             <div class="md:ml-8 flex flex-col items-center md:items-start">
-                <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links') }}</h2>
                 <ul class="space-y-2 text-center md:text-left">
-                    <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                    <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                    <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                    <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                    <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about') }}</a></li>
+                    <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services') }}</a></li>
+                    <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                    <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                    <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                 </ul>
             </div>
             <!-- Contact -->
             <div class="flex flex-col items-center md:items-start">
-                <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+                <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact') }}</h2>
                 <ul class="space-y-2 text-center md:text-left">
-                    <li>184 rue Agnan quartier djidjolé</li>
-                    <li>derrière EPP Aflao gakli</li>
+                    <li>{{ __('messages.address_line_1') }}</li>
+                    <li>{{ __('messages.behind_epp') }}</li>
                     <li>
                         <i class="fas fa-phone-alt text-[#437305]"></i>
                         <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -477,13 +477,13 @@
             </div>
             <!-- Horaires -->
             <div class="md:ml-8 flex flex-col items-center md:items-start">
-                <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_title') }}</h2>
                 <ul class="space-y-1 text-center md:text-left">
-                    <li>Lundi : 7h30 - 18h</li>
-                    <li>Mardi : 7h30 - 18h</li>
-                    <li>Mercredi : 7h30 - 18h</li>
-                    <li>Jeudi : 7h30 - 18h</li>
-                    <li>Vendredi : 7h30 - 18h</li>
+                    <li>{{ __('messages.monday_schedule') }}</li>
+                    <li>{{ __('messages.tuesday_schedule') }}</li>
+                    <li>{{ __('messages.wednesday_schedule') }}</li>
+                    <li>{{ __('messages.thursday_schedule') }}</li>
+                    <li>{{ __('messages.friday_schedule') }}</li>
                 </ul>
             </div>
         </div>
@@ -492,14 +492,14 @@
                 <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                     <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
                         <i class="fa-regular fa-copyright"></i>
-                        Copyright Pharmacol 2025. Tous droits réservés.
+                        {{ __('messages.copyright_text') }}
                     </span>
                 </div>
                 <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
                 <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                     <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
                         <i class="fas fa-code"></i>
-                        Développé par Neo Start Technology
+                        {{ __('messages.developed_by') }}
                     </a>
                     <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
                         <i class="fas fa-cog"></i>

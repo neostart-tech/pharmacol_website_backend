@@ -3,24 +3,24 @@
 
 @section('content')
 <div class="card bg-white p-6 mb-8 max-w-xl mx-auto">
-    <a href="{{ route('admin.dashboard') }}#recrutement" class="text-blue-600 hover:underline mb-4 inline-block"><i class="fas fa-arrow-left mr-1"></i> Retour au dashboard</a>
-    <h2 class="text-2xl font-semibold text-[#437305] mb-4">Modifier le poste</h2>
+    <a href="{{ route('admin.dashboard') }}#recrutement" class="text-blue-600 hover:underline mb-4 inline-block"><i class="fas fa-arrow-left mr-1"></i> {{ __('messages.back_to_dashboard') }}</a>
+    <h2 class="text-2xl font-semibold text-[#437305] mb-4">{{ __('messages.modify_position') }}</h2>
     <form method="POST" action="{{ route('admin.poste.update', $poste->id) }}" class="space-y-4">
         @csrf
         @method('PUT')
         <div>
-            <label class="block mb-1">Titre</label>
+            <label class="block mb-1">{{ __('messages.title') }}</label>
             <input type="text" name="titre" class="w-full border rounded p-2" value="{{ $poste->titre }}" required>
         </div>
         <div>
-            <label class="block mb-1">Descriptif</label>
+            <label class="block mb-1">{{ __('messages.description') }}</label>
             <textarea name="descriptif" rows="5" class="w-full border rounded p-2" required>{{ $poste->descriptif }}</textarea>
         </div>
         <div>
-            <label class="block mb-1">Localisation</label>
+            <label class="block mb-1">{{ __('messages.location') }}</label>
             <input type="text" name="localisation" class="w-full border rounded p-2" value="{{ $poste->localisation }}" required>
         </div>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Enregistrer</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">{{ __('messages.save') }}</button>
     </form>
 </div>
 @endsection

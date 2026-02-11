@@ -3,31 +3,31 @@
 
 @section('content')
 <div class="card bg-white p-6 mb-8 max-w-xl mx-auto">
-    <h2 class="text-2xl font-semibold text-[#437305] mb-4">Ajouter un article</h2>
+    <h2 class="text-2xl font-semibold text-[#437305] mb-4">{{ __('messages.add_article') }}</h2>
     <form method="POST" action="{{ route('admin.blog.store') }}" enctype="multipart/form-data" class="space-y-4">
         @csrf
         <div>
-            <label class="block mb-1">Titre</label>
+            <label class="block mb-1">{{ __('messages.title') }}</label>
             <input type="text" name="titre" class="w-full border rounded p-2" required>
         </div>
         <div>
-            <label class="block mb-1">Contenu</label>
+            <label class="block mb-1">{{ __('messages.content') }}</label>
             <textarea name="texte" rows="6" class="w-full border rounded p-2" required></textarea>
         </div>
         <div>
-            <label class="block mb-1">Image</label>
+            <label class="block mb-1">{{ __('messages.image') }}</label>
             <input type="file" name="image" class="w-full border rounded p-2">
         </div>
         <div>
-            <label class="block mb-1">État</label>
+            <label class="block mb-1">{{ __('messages.state') }}</label>
             <select name="etat" class="w-full border rounded p-2" required>
-                <option value="en ligne">En ligne</option>
-                <option value="brouillon">Brouillon</option>
-                <option value="newsletter">Newsletter</option>
-                <option value="les 2">Les 2</option>
+                <option value="en ligne">{{ __('messages.online') }}</option>
+                <option value="brouillon">{{ __('messages.draft') }}</option>
+                <option value="newsletter">{{ __('messages.newsletter') }}</option>
+                <option value="les 2">{{ __('messages.both') }}</option>
             </select>
         </div>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Ajouter</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">{{ __('messages.add') }}</button>
     </form>
 </div>
 @endsection
