@@ -480,6 +480,6 @@ chown -R www-data:www-data storage bootstrap/cache
 
 Pour toute question ou probleme, veuillez contacter l'equipe de developpement.
 
-## Licence
+## Licence NEO START TECHNOLOGIE
 
 Application proprietaire - Tous droits reserves.
