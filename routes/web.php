@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\AccueilPaysController;
 use App\Http\Controllers\PrestationController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\RecrutementController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AdminController;
@@ -101,3 +102,6 @@ Route::get('/api/partenaires', [PartenaireController::class, 'getActifs']);
 Route::get('/test-partenaires', function() {
     return view('test_partenaires');
 });
+
+// Route pour changer la langue
+Route::get('/lang/{locale}', [LocaleController::class, 'switch'])->name('lang.switch');

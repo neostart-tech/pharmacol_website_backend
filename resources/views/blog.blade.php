@@ -1,10 +1,10 @@
 {{-- filepath: backend/resources/views/blog.blade.php --}}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blog</title>
+        <title>{{ __('messages.blog') }}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -65,7 +65,7 @@
     </head>
     <body class="bg-[#f7fafc] text-gray-800">
         <button id="scrollToTopBtn" onclick="scrollToTop()" 
-            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="Remonter en haut">↑
+            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="{{ __('messages.scroll_to_top') }}">↑
         </button>
         
         <!-- HEADER -->
@@ -74,17 +74,17 @@
             <div id="Blog" class="bg-gray-100 text-sm border-b border-gray-300 py-2">
                 <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                        <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                        <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                         <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center">
                         <span>
                             <i class="fas fa-clock text-green-700"></i>
-                            Lun-Ven: 7h30-12h 14h30-18h
+                            {{ __('messages.working_hours') }}
                             <span class="hidden sm:inline"> / </span>
                         </span>
                         <span class="sm:ml-1">
-                            Fermé les weekends et jours fériés
+                            {{ __('messages.closed_weekends') }}
                         </span>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <i class="fas fa-phone text-[#3C74A8] text-lg font-bold"></i>
                         </div>
                         <div>
-                            <p class="text-xs">Appeler à tout moment</p>
+                            <p class="text-xs">{{ __('messages.call_anytime') }}</p>
                             <strong class="text-sm font-bold">(+228) 22 50 75 10</strong>
                         </div>
                         <div class="hidden md:block w-px h-6 bg-white"></div>
@@ -107,15 +107,16 @@
                             <button onclick="toggleSearch()" class="absolute left-3">
                                 <i class="fas fa-search text-[#3C74A8]"></i>
                             </button>
-                            <input id="searchInput" type="text" placeholder="Rechercher..." class="w-full pl-10 pr-4 py-2 rounded-full text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-500" oninput="updateSuggestions()" onkeydown="if(event.key === 'Enter') performSearch()">
+                            <input id="searchInput" type="text" placeholder="{{ __('messages.search_placeholder') }}" class="w-full pl-10 pr-4 py-2 rounded-full text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-500" oninput="updateSuggestions()" onkeydown="if(event.key === 'Enter') performSearch()">
                             <ul id="suggestions" class="absolute left-0 top-full w-full mt-1 bg-white text-black border border-gray-300 rounded shadow hidden z-50 text-sm max-h-60 overflow-y-auto"></ul>
                         </div>
                     </div>
-                    <div class="flex space-x-5 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
+                    <div class="flex items-center space-x-4 text-white w-full md:w-1/4 justify-center md:justify-end mt-4 md:mt-0">
                         <a href="{{ $general['facebook_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                        @include('partials.language-switcher')
                     </div>
                 </div>
             </div>
@@ -129,7 +130,7 @@
                             <!-- Logo -->
                             <a href="{{ route('accueil') }}" class="flex items-center space-x-2">
                                 <div class="qlogo">
-                                    <img src="images/Page prestations 2/logo-350100.png" alt="Logo Pharmacol" class="h-12 md:h-16">
+                                    <img src="images/Page prestations 2/logo-350100.png" alt="{{ __('messages.logo_pharmacol_alt') }}" class="h-12 md:h-16">
                                 </div>
                             </a>
                             <!-- Hamburger bouton mobile -->
@@ -139,38 +140,38 @@
                             <!-- Menu principal -->
                             <ul id="main-menu" class="hidden md:flex qnav-links md:items-center md:space-x-10 absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-40 transition-all duration-300 ease-in-out">
                                 <li class="qdropdown relative group">
-                                    <a href="#" class="text hover:text-gray-900 flex items-center space-x-2 px-4 py-3 md:p-0">
-                                        <span>Nos Implentations</span>
+                                        <a href="#" class="text hover:text-gray-900 flex items-center space-x-2 px-4 py-3 md:p-0">
+                                        <span>{{ __('messages.nos_implantations') }}</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </a>
                                     <ul class="qdropdown-menu absolute left-0 hidden bg-white border border-gray-300 rounded shadow-md w-48 group-hover:block md:mt-0 z-50">
                                         <li>
                                             <a href="{{ route('accueil.togo') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                                <img src="https://flagcdn.com/w40/tg.png" alt="Togo" class="w-5 h-auto"> Togo
+                                                <img src="https://flagcdn.com/w40/tg.png" alt="{{ __('messages.togo') }}" class="w-5 h-auto"> {{ __('messages.togo') }}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('accueil.benin') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                                <img src="https://flagcdn.com/w40/bj.png" alt="Benin" class="w-5 h-auto"> Benin
+                                                <img src="https://flagcdn.com/w40/bj.png" alt="{{ __('messages.benin') }}" class="w-5 h-auto"> {{ __('messages.benin') }}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('accueil.niger') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                                <img src="https://flagcdn.com/w40/ne.png" alt="Niger" class="w-5 h-auto"> Niger
+                                                <img src="https://flagcdn.com/w40/ne.png" alt="{{ __('messages.niger') }}" class="w-5 h-auto"> {{ __('messages.niger') }}
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('prestation') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">Prestations</a></li>
-                                <li><a href="{{ route('recrutement') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">Recrutement</a></li>
-                                <li><a href="{{ route('blog') }}" class="text-[#437305] hover:text-green-600 block px-4 py-3 md:p-0 font-bold">Blog</a></li>
-                                <li><a href="{{ route('contact') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">Contact</a></li>
+                                <li><a href="{{ route('prestation') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">{{ __('messages.prestations') }}</a></li>
+                                <li><a href="{{ route('recrutement') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">{{ __('messages.recrutement') }}</a></li>
+                                <li><a href="{{ route('blog') }}" class="text-[#437305] hover:text-green-600 block px-4 py-3 md:p-0 font-bold">{{ __('messages.blog') }}</a></li>
+                                <li><a href="{{ route('contact') }}" class="text-gray-900 hover:text-green-600 block px-4 py-3 md:p-0">{{ __('messages.contact') }}</a></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
                 <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 sm:justify-center sm:pb-0 text-white text-center">
-                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">Notre Blog</h1>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">{{ __('messages.blog') }}</h1>
                 </div>
             </div>
             <script>
@@ -316,8 +317,8 @@
 
         <!-- Contenu de la page -->
         <section class="max-w-6xl mx-auto px-4 py-10 space-y-16" id="Articles">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-[#3C74A8] mb-12 text-center tracking-tight drop-shadow-lg">Dernières nouvelles</h1>
-            
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#3C74A8] mb-12 text-center tracking-tight drop-shadow-lg">{{ __('messages.latest_news') }}</h1>
+
             @php
                 $dernier = $articles->first();
                 $autres = $articles->slice(1)->values();
@@ -387,12 +388,12 @@
 
     <!-- Titre -->
     <h3 class="text-xl font-semibold text-gray-700 mb-2">
-        Aucun article disponible
+        {{ __('messages.no_articles_available') }}
     </h3>
 
     <!-- Texte secondaire -->
     <p class="text-gray-500 max-w-md">
-        Il n'y a actuellement aucun article dans cette section. Revenez plus tard ou consultez une autre catégorie.
+        {{ __('messages.no_articles_description') }}
     </p>
 </div>
 
@@ -430,7 +431,7 @@
                 <div class="space-y-4 relative flex flex-col items-center md:items-start">
                     <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
                     <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                     <div class="flex w-full max-w-xs">
                         <input type="text" placeholder="Email"
                             class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
@@ -441,18 +442,18 @@
                 </div>
                 <!-- Liens rapides -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                        <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                        <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                        <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                        <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about') }}</a></li>
+                        <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services') }}</a></li>
+                        <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                        <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
                         <li>184 rue Agnan quartier djidjolé</li>
                         <li>derrière EPP Aflao gakli</li>
@@ -474,13 +475,13 @@
                 </div>
                 <!-- Horaires -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_title') }}</h2>
                     <ul class="space-y-1 text-center md:text-left">
-                        <li>Lundi : 7h30 - 18h</li>
-                        <li>Mardi : 7h30 - 18h</li>
-                        <li>Mercredi : 7h30 - 18h</li>
-                        <li>Jeudi : 7h30 - 18h</li>
-                        <li>Vendredi : 7h30 - 18h</li>
+                        <li>{{ __('messages.monday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.tuesday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.wednesday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.thursday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.friday') }} : {{ __('messages.hours_schedule') }}</li>
                     </ul>
                 </div>
             </div>
@@ -488,15 +489,15 @@
                 <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-y-2 px-4">
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                         <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
-                            <i class="fa-regular fa-copyright"></i>
-                            Copyright Pharmacol 2025. Tous droits réservés.
+                        <i class="fa-regular fa-copyright"></i>
+                            {{ __('messages.copyright_text') }}
                         </span>
                     </div>
                     <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
                     <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                         <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
-                            <i class="fas fa-code"></i>
-                            Développé par Neo Start Technology
+                        <i class="fas fa-code"></i>
+                            {{ __('messages.developed_by') }}
                         </a>
                         <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
                             <i class="fas fa-cog"></i>
