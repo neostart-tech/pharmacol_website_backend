@@ -1,6 +1,12 @@
 # 🏥 Pharmacol Website Backend
 
+![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat)
+![License](https://img.shields.io/badge/License-Proprietary-red?style=flat)
+
 > **Application web sécurisée et professionnelle pour la gestion pharmaceutique**
+>
+> **v1.0.0** - Production Ready
 
 ---
 

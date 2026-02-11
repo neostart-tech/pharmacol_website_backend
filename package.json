@@ -1,6 +1,9 @@
 {
+    "name": "pharmacol-website-backend",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
+    "description": "Application web sécurisée pour la gestion pharmaceutique",
     "scripts": {
         "dev": "vite",
         "build": "vite build"
