@@ -10,16 +10,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
-        La pérennité de Pharmacol {{ $general['annees_experience'] ?? '-' }} ans d'expertise et de présence terrain          body {
- font-family: 'Lexend',
-        sans-serif;
+        body {
+            font-family: 'Lexend', sans-serif;
         }
     </style>
 </head>
 
 <button id="scrollToTopBtn" onclick="scrollToTop()"
     class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50"
-    aria-label="Remonter en haut">↑
+    aria-label="{{ __('messages.scroll_to_top') }}">↑
 </button>
 
 <body class="bg-white text-gray-800">
@@ -30,18 +29,18 @@
             <div
                 class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                 <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                    <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                    <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                     <span><i class="fas fa-envelope text-green-700"></i>
                         {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                 </div>
                 <div class="flex flex-col sm:flex-row items-center justify-center">
                     <span>
                         <i class="fas fa-clock text-green-700"></i>
-                        Lun-Ven: 7h30-12h 14h30-18h
+                        {{ __('messages.working_hours') }}
                         <span class="hidden sm:inline"> / </span>
                     </span>
                     <span class="sm:ml-1">
-                        Fermé les weekends et jours fériés
+                        {{ __('messages.closed_weekends') }}
                     </span>
                 </div>
             </div>
@@ -81,8 +80,7 @@
                     <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
-                    <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
+                    @include('partials.language-switcher')
                 </div>
             </div>
         </div>
@@ -97,7 +95,7 @@
                         <!-- Logo -->
                         <a href="{{ route('accueil') }}" class="flex items-center space-x-2">
                             <div class="qlogo">
-                                <img src="{{ asset('images/Page prestations 2/logo-350100.png') }}" alt="Logo Pharmacol"
+                                <img src="{{ asset('images/Page prestations 2/logo-350100.png') }}" alt="{{ __('messages.logo_pharmacol_alt') }}"
                                     class="h-12 md:h-16">
                             </div>
                         </a>
@@ -119,22 +117,22 @@
                                     <li>
                                         <a href="{{ route('accueil.togo') }}"
                                             class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/tg.png" alt="Togo" class="w-5 h-auto">
-                                            Togo
+                                            <img src="https://flagcdn.com/w40/tg.png" alt="{{ __('messages.togo') }}" class="w-5 h-auto">
+                                            {{ __('messages.togo') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('accueil.benin') }}"
                                             class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/bj.png" alt="Benin" class="w-5 h-auto">
-                                            Benin
+                                            <img src="https://flagcdn.com/w40/bj.png" alt="{{ __('messages.benin') }}" class="w-5 h-auto">
+                                            {{ __('messages.benin') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('accueil.niger') }}"
                                             class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/ne.png" alt="Niger" class="w-5 h-auto">
-                                            Niger
+                                            <img src="https://flagcdn.com/w40/ne.png" alt="{{ __('messages.niger') }}" class="w-5 h-auto">
+                                            {{ __('messages.niger') }}
                                         </a>
                                     </li>
                                 </ul>
@@ -294,10 +292,9 @@
             </script>
 
             <div class="absolute inset-0 flex flex-col gap-20 items-center justify-center text-white">
-                <h1 class="text-4xl md:text-5xl font-bold text-center">PHARMACOL, un réseau <br> dymamique 
-                    sur le Togo, <br> le Bénin , le Niger</h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-center">{{ __('messages.hero_main_title') }}</h1>
                 <a href="mailto:{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}" target="_blank"
-                    rel="noopener noreferrer" class="bg-[#437305] p-4">Parlons de votre projet</a>
+                    rel="noopener noreferrer" class="bg-[#437305] p-4">{{ __('messages.talk_about_project') }}</a>
             </div>
         </div>
     </header>
@@ -312,8 +309,8 @@
                 class="w-full md:w-[400px] h-[200px] bg-white flex flex-row py-8 px-6 md:px-10 gap-5 border-solid border-[1px] border-gray-200 mx-auto">
                 <img src="{{ asset('images/Page index/chemistry1.png') }}" class="w-14 h-14" />
                 <div class="flex flex-col gap-5">
-                    <div class="font-bold text-base md:text-[20px]">Une SFE up to date</div>
-                    <div class="font-extralight text-base md:text-lg">Notre équipe commerciale, professionnelle et proactive, est composée d’experts certifiés.</div>
+                    <div class="font-bold text-base md:text-[20px]">{{ __('messages.up_to_date_sfe') }}</div>
+                    <div class="font-extralight text-base md:text-lg">{{ __('messages.up_to_date_desc') }}</div>
                 </div>
             </div>
 
@@ -321,9 +318,8 @@
                 class="w-full md:w-[400px] h-[200px] bg-[#437305] flex flex-row py-8 px-6 md:px-10 gap-5 text-white mx-auto">
                 <img src="images/Page index/research1.png" class="w-14 h-14" />
                 <div class="flex flex-col gap-5">
-                    <div class="font-bold text-base md:text-[20px]">Recrutement de la force de vente</div>
-                    <div class="font-extralight text-base md:text-lg">Le pilier de la stratégie d’implantation : une
-                        équipe professionnelle</div>
+                    <div class="font-bold text-base md:text-[20px]">{{ __('messages.sales_recruitment') }}</div>
+                    <div class="font-extralight text-base md:text-lg">{{ __('messages.sales_recruitment_desc') }}</div>
                 </div>
             </div>
 
@@ -331,9 +327,8 @@
                 class="w-full md:w-[400px] h-[200px] bg-white flex flex-row py-8 px-6 md:px-10 gap-5 border-solid border-[1px] border-gray-200 mx-auto">
                 <img src="images/Page index/safe.png" class="w-14 h-14" />
                 <div class="flex flex-col gap-5">
-                    <div class="font-bold text-base md:text-[20px]">Promotion Médicale</div>
-                    <div class="font-extralight text-base md:text-lg">Le merchandising et la formation des équipes
-                        officinales</div>
+                    <div class="font-bold text-base md:text-[20px]">{{ __('messages.medical_promotion') }}</div>
+                    <div class="font-extralight text-base md:text-lg">{{ __('messages.medical_promotion_desc') }}</div>
                 </div>
             </div>
         </div>
@@ -346,13 +341,13 @@
             <!-- En-tête centré -->
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-[#437305] font-semibold text-lg uppercase tracking-wider mb-3 block">
-                    À PROPOS DE NOUS
+                    {{ __('messages.about_us') }}
                 </span>
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    Promotion de vos produits pharmaceutiques en Afrique de l'Ouest
+                    {{ __('messages.about_title') }}
                 </h2>
                 <p class="text-lg text-gray-600">
-                    Notre expertise au service de votre succès au Togo, Bénin et Niger
+                    {{ __('messages.about_subtitle') }}
                 </p>
             </div>
 
@@ -363,16 +358,9 @@
                 <div
                     class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100 hover:shadow-2xl transition-all duration-300">
                     <div class="prose prose-lg text-gray-600 max-w-none">
-                        <p class="mb-6 leading-relaxed text-lg md:text-xl">Fondée en 1996 par Abel ACOLATSE, PHARMACOL
-                            est une agence spécialisée dans la représentation pharmaceutique et la promotion médicale.
-                            Présente au Togo, au Bénin et au Niger, notre siège est basé à Lomé, Togo.</p>
-                        <p class="mb-6 leading-relaxed text-lg md:text-xl">PHARMACOL, votre levier de croissance : nous
-                            vous accompagnons dans toutes les étapes de votre développement local, depuis l'obtention
-                            des autorisations de mise sur le marché, la mise en place et la commercialisation de vos
-                            produits, jusqu'au renforcement et à l'expansion de votre présence locale.</p>
-                        <p class="mb-8 leading-relaxed text-lg md:text-xl">Notre mission : Offrir un accompagnement
-                            stratégique, fiable et efficace pour favoriser le succès durable de nos partenaires dans la
-                            région.</p>
+                        <p class="mb-6 leading-relaxed text-lg md:text-xl">{{ __('messages.about_text_1') }}</p>
+                        <p class="mb-6 leading-relaxed text-lg md:text-xl">{{ __('messages.about_text_2') }}</p>
+                        <p class="mb-8 leading-relaxed text-lg md:text-xl">{{ __('messages.about_text_3') }}</p>
                     </div>
 
                     <!-- Séparateur -->
@@ -385,9 +373,8 @@
                                 alt="Satisfaction" />
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Satisfaction à 100 % </h3>
-                            <p class="text-gray-600">Nos équipes qualifiées assurent des services
-                                précis et fiables, pour votre entière satisfaction.</p>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">{{ __('messages.satisfaction_100') }}</h3>
+                            <p class="text-gray-600">{{ __('messages.satisfaction_desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -407,7 +394,7 @@
                                     alt="Contact" />
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600">Appel aux questions</p>
+                                <p class="text-sm text-gray-600">{{ __('messages.call_to_questions') }}</p>
                                 <p class="font-bold text-gray-800">+228 22 50 75 10</p>
                             </div>
                         </div>
@@ -421,7 +408,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
-                        <span>Télécharger notre plaquette</span>
+                        <span>{{ __('messages.download_brochure') }}</span>
                     </a>
 
                 </div>
@@ -437,12 +424,10 @@
             <div class="text-center mb-16">
                 <div class="flex items-center justify-center gap-3 mb-4">
                     <img src="{{ asset('images/Page prestations 1/adn.png') }}" alt="ADN" class="w-10 h-10">
-                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Nos services</span>
+                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">{{ __('messages.our_services') }}</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Notre expertise et savoir-faire à votre
-                    disposition</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Découvrez l'ensemble de nos services conçus pour répondre à
-                    tous vos besoins pharmaceutiques en Afrique de l'Ouest</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">{{ __('messages.services_title') }}</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">{{ __('messages.services_subtitle') }}</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -454,10 +439,9 @@
                         <img src="{{ asset('images/Page index/1v.png') }}" alt="Promotion médicale"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Promotion médicale Parapharmaceutique
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_medical_promo') }}
                     </h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Sensibilisation et information des
-                        professionnels de la santé.</p>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_medical_promo_desc') }}</p>
                 </div>
 
                 <!-- Service 2 -->
@@ -468,10 +452,8 @@
                         <img src="{{ asset('images/Page index/2b.png') }}" alt="Recrutement"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Recrutement et Encadrement de la force de
-                        vente</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Talents commerciaux recrutés et encadrés
-                        efficacement.</p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_recruitment') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_recruitment_desc') }}</p>
                 </div>
 
                 <!-- Service 3 -->
@@ -482,9 +464,8 @@
                         <img src="{{ asset('images/Page index/3v.png') }}" alt="Représentation"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Représentation pharmaceutique</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Valorisation et suivi des produits
-                        pharmaceutiques.</p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_representation') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_representation_desc') }}</p>
                 </div>
 
                 <!-- Service 4 -->
@@ -495,10 +476,8 @@
                         <img src="{{ asset('images/Page index/4v.png') }}" alt="Règlementation"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Règlementation, autorisation de mise sur
-                        le marché</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Respect des normes pour mise sur marché
-                        efficace.</p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_regulation') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_regulation_desc') }}</p>
                 </div>
 
                 <!-- Services supplémentaires (grille 2ème ligne) -->
@@ -510,9 +489,8 @@
                         <img src="{{ asset('images/Page index/5v.png') }}" alt="Marketing"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Marketing et Communication</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Promotion stratégique et visibilité
-                        optimale des produits.</p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_marketing') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_marketing_desc') }}</p>
                 </div>
 
                 <!-- Service 6 -->
@@ -523,9 +501,8 @@
                         <img src="{{ asset('images/Page index/6v.png') }}" alt="Étude"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Étude de faisabilité Consulting</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Analyses stratégiques et conseils
-                        personnalisés performants.</p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_feasibility') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_feasibility_desc') }}</p>
                 </div>
 
                 <!-- Service 7 -->
@@ -536,9 +513,8 @@
                         <img src="{{ asset('images/Page index/7v.png') }}" alt="Reporting"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Pharmacovigilance</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Analyse des événements
-                        indésirables médicaux.</p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_pharmacovigilance') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_pharmacovigilance_desc') }}</p>
                 </div>
 
                 <!-- Service 8 -->
@@ -549,9 +525,8 @@
                         <img src="{{ asset('images/Page index/8v.png') }}" alt="Veille"
                             class="w-10 h-10 group-hover:invert" />
                     </div>
-                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">Veille concurentielle</h3>
-                    <p class="text-gray-600 text-sm group-hover:text-white">Analyse régulière du marché et concurrents.
-                    </p>
+                    <h3 class="font-bold text-lg mb-3 group-hover:text-white">{{ __('messages.service_competitive_watch') }}</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-white">{{ __('messages.service_competitive_watch_desc') }}</p>
                 </div>
             </div>
         </div>
@@ -565,10 +540,10 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <div class="flex items-center justify-center gap-3 mb-4">
                     <img src="images/Page prestations 1/adn.png" alt="ADN" class="w-10 h-10">
-                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">Notre processus de travail</span>
+                    <span class="text-[#437305] uppercase tracking-widest font-medium text-2xl">{{ __('messages.work_process') }}</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">Une approche structurée pour des résultats optimaux</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Notre méthodologie éprouvée garantit l'efficacité et la qualité de nos services</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3C74A8] mb-4">{{ __('messages.work_process_title') }}</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">{{ __('messages.work_process_subtitle') }}</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
@@ -580,8 +555,8 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">01</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Analyse du projet </h3>
-                    <p class="text-gray-600 text-sm">Analyse approfondie des besoins pour une stratégie personnalisée</p>
+                    <h3 class="font-bold text-lg mb-3">{{ __('messages.process_step_1') }}</h3>
+                    <p class="text-gray-600 text-sm">{{ __('messages.process_step_1_desc') }}</p>
                 </div>
                 
                 <!-- Étape 2 -->
@@ -589,8 +564,8 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">02</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Elaboration d'une proposition</h3>
-                    <p class="text-gray-600 text-sm">Conception de solutions innovantes adaptées à vos objectifs spécifiques</p>
+                    <h3 class="font-bold text-lg mb-3">{{ __('messages.process_step_2') }}</h3>
+                    <p class="text-gray-600 text-sm">{{ __('messages.process_step_2_desc') }}</p>
                 </div>
                 
                 <!-- Étape 3 -->
@@ -598,8 +573,8 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">03</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Lancement test</h3>
-                    <p class="text-gray-600 text-sm">Lancement et évaluation pour garantir la performance optimale</p>
+                    <h3 class="font-bold text-lg mb-3">{{ __('messages.process_step_3') }}</h3>
+                    <p class="text-gray-600 text-sm">{{ __('messages.process_step_3_desc') }}</p>
                 </div>
                 
                 <!-- Étape 4 -->
@@ -607,8 +582,8 @@
                     <div class="bg-[#437305] text-white hexagon w-20 h-20 flex items-center justify-center mb-6">
                         <span class="text-xl font-bold">04</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">Rapports livrés</h3>
-                    <p class="text-gray-600 text-sm">Présentation de résultats détaillés pour une prise de décision éclairée</p>
+                    <h3 class="font-bold text-lg mb-3">{{ __('messages.process_step_4') }}</h3>
+                    <p class="text-gray-600 text-sm">{{ __('messages.process_step_4_desc') }}</p>
                 </div>
             </div>
         </div>
@@ -622,9 +597,8 @@
 
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pharmacol en chiffres</h2>
-                <p class="text-white text-opacity-80 max-w-3xl mx-auto">Notre présence et notre impact à travers
-                    l'Afrique de l'Ouest</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ __('messages.pharmacol_in_numbers') }}</h2>
+                <p class="text-white text-opacity-80 max-w-3xl mx-auto">{{ __('messages.stats_subtitle') }}</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -639,7 +613,7 @@
 
                     {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $general['pays_couverts'] ?? 3 }}">0 --}}
                     </div>
-                    <div class="text-sm font-medium">Pays couverts</div>
+                    <div class="text-sm font-medium">{{ __('messages.countries_covered') }}</div>
                 </div>
 
                 <!-- Stat 2 -->
@@ -652,7 +626,7 @@
                     <div class="text-4xl font-bold mb-2 count-up" data-count="103">103</div>
 
                     {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $collaborateurs }}">0</div> --}}
-                    <div class="text-sm font-medium">Collaborateurs terrain mobilisés</div>
+                    <div class="text-sm font-medium">{{ __('messages.field_collaborators') }}</div>
                 </div>
 
                 <!-- Stat 3 -->
@@ -665,7 +639,7 @@
                 <div class="text-4xl font-bold mb-2 count-up" data-count="{{7}}">7</div>
 
                     {{-- <div class="text-4xl font-bold mb-2 count-up" data-count="{{ $laboratoires }}">0</div> --}}
-                    <div class="text-sm font-medium">Entreprises pharmaceutiques partenaires</div>
+                    <div class="text-sm font-medium">{{ __('messages.partner_companies') }}</div>
                 </div>
 
                 <!-- Stat 4 -->
@@ -679,14 +653,14 @@
                             data-count="{{ $general['annees_experience'] ?? 29 }}">29</span></div>
                     {{-- <div class="text-4xl font-bold mb-2">+<span class="count-up"
                             data-count="{{ $general['annees_experience'] ?? 28 }}">0</span></div> --}}
-                    <div class="text-sm font-medium">Années d'expérience</div>
+                    <div class="text-sm font-medium">{{ __('messages.years_experience') }}</div>
                 </div>
             </div>
 
             <div class="text-center mt-16">
                 <a href="{{ route('contact') }}"
                     class="inline-flex items-center bg-white text-[#3C74A8] hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    <span>Découvrir notre expertise</span>
+                    <span>{{ __('messages.discover_expertise') }}</span>
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -742,13 +716,13 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                 <span class="inline-block text-[#437305] font-semibold uppercase tracking-wider text-gray-800 mb-4  ">
-                    Pourquoi nous choisir
+                    {{ __('messages.why_choose_us') }}
                 </span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Une maîtrise parfaite de l'écosystème sanitaire
+                    {{ __('messages.perfect_mastery') }}
                 </h2>
                 <p class="text-gray-600 text-lg">
-                    Expertise en réglementation pharmaceutique au Togo, Bénin et Niger
+                    {{ __('messages.pharma_regulation_expertise') }}
                 </p>
             </div>
 
@@ -772,11 +746,8 @@
                                     class="w-12 h-12 md:w-16 md:h-16">
                             </div>
                             <div class="text-center md:text-left">
-                                <h3 class="text-xl md:text-2xl font-bold mb-2">Nos valeurs</h3>
-                                <p>
-                                    Réactivité, adaptabilité, rigueur et transparence font partie intégrante de notre
-                                    motivation.
-                                </p>
+                                <h3 class="text-xl md:text-2xl font-bold mb-2">{{ __('messages.our_values') }}</h3>
+                                <p>{{ __('messages.values_description') }}</p>
                             </div>
                         </div>
                     </div>
@@ -789,10 +760,8 @@
                                 <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Expertise confirmée</h4>
-                                <p class="text-gray-600 text-sm">
-                                    La pérennité de Pharmacol: 28 ans d'expertise et de présence terrain
-                                </p>
+                                <h4 class="font-semibold text-gray-800 mb-1">{{ __('messages.confirmed_expertise') }}</h4>
+                                <p class="text-gray-600 text-sm">{{ __('messages.pharmacol_longevity') }}</p>
                             </div>
                         </div>
 
@@ -802,12 +771,8 @@
                                 <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Équipe qualifiée</h4>
-                                <p class="text-gray-600 text-sm">
-                                    {{-- Une force de vente composée de 50 délégués médicaux compétents et expérimentés --}}
-                                     Une force de vente composée de 97 délégués médicaux compétents et expérimentés
-
-                                </p>
+                                <h4 class="font-semibold text-gray-800 mb-1">{{ __('messages.qualified_team') }}</h4>
+                                <p class="text-gray-600 text-sm">{{ __('messages.qualified_team_desc') }}</p>
                             </div>
                         </div>
 
@@ -817,10 +782,8 @@
                                 <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Outils modernes</h4>
-                                <p class="text-gray-600 text-sm">
-                                    Des moyens et outils d'aide à la vente de dernière génération
-                                </p>
+                                <h4 class="font-semibold text-gray-800 mb-1">{{ __('messages.modern_tools') }}</h4>
+                                <p class="text-gray-600 text-sm">{{ __('messages.modern_tools_desc') }}</p>
                             </div>
                         </div>
 
@@ -830,33 +793,30 @@
                                 <img src="images/Page index/tick.png" alt="Check" class="w-5 h-5">
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Réseau étendu</h4>
-                                <p class="text-gray-600 text-sm">
-                                    Une maîtrise parfaite du réseau des structures sanitaires et pharmaceutiques
-                                </p>
+                                <h4 class="font-semibold text-gray-800 mb-1">{{ __('messages.extended_network') }}</h4>
+                                <p class="text-gray-600 text-sm">{{ __('messages.extended_network_desc') }}</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Country Buttons -->
                     <div class="mt-auto">
-                        <p class="text-gray-600 text-sm mb-4 text-center md:text-left">Découvrez notre présence dans
-                            chaque pays :</p>
+                        <p class="text-gray-600 text-sm mb-4 text-center md:text-left">{{ __('messages.discover_presence') }}</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <a href="/togo"
                                 class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-                                <img src="https://flagcdn.com/w20/tg.png" alt="Togo" class="w-5 h-5 rounded-sm">
-                                <span>Togo</span>
+                                <img src="https://flagcdn.com/w20/tg.png" alt="{{ __('messages.togo') }}" class="w-5 h-5 rounded-sm">
+                                <span>{{ __('messages.togo') }}</span>
                             </a>
                             <a href="/benin"
                                 class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-                                <img src="https://flagcdn.com/w20/bj.png" alt="Bénin" class="w-5 h-5 rounded-sm">
-                                <span>Bénin</span>
+                                <img src="https://flagcdn.com/w20/bj.png" alt="{{ __('messages.benin') }}" class="w-5 h-5 rounded-sm">
+                                <span>{{ __('messages.benin') }}</span>
                             </a>
                             <a href="/niger"
                                 class="flex items-center justify-center gap-2 bg-[#437305] hover:bg-[#365c04] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-                                <img src="https://flagcdn.com/w20/ne.png" alt="Niger" class="w-5 h-5 rounded-sm">
-                                <span>Niger</span>
+                                <img src="https://flagcdn.com/w20/ne.png" alt="{{ __('messages.niger') }}" class="w-5 h-5 rounded-sm">
+                                <span>{{ __('messages.niger') }}</span>
                             </a>
                         </div>
                     </div>
@@ -876,11 +836,9 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
             <!-- Texte principal -->
             <div class="max-w-3xl text-center md:text-left w-full md:w-auto">
-                <div class="text-xs md:text-sm tracking-widest uppercase mb-3 opacity-80 font-semibold">Intégrer
-                    Pharmacol</div>
+                <div class="text-xs md:text-sm tracking-widest uppercase mb-3 opacity-80 font-semibold">{{ __('messages.join_pharmacol') }}</div>
                 <h2 class="text-xl md:text-3xl lg:text-4xl font-bold leading-snug mb-2">
-                    Vous souhaitez assurer l'information médicale et promouvoir les produits pharmaceutiques et leur bon
-                    usage dans le respect de l'éthique auprès des professionnels de santé de votre zone géographique
+                    {{ __('messages.medical_info_mission') }}
                 </h2>
                 <div class="h-1 w-16 bg-white/30 rounded-full mt-5 mx-auto md:mx-0"></div>
             </div>
@@ -889,7 +847,7 @@
             <div class="flex w-full md:w-auto justify-center md:justify-end items-center">
                 <a href="{{ route('recrutement') }}"
                     class="bg-white text-[#31689B] px-8 py-3 md:px-10 md:py-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg text-lg md:text-xl text-center w-full md:w-auto hover:-translate-y-1 transform">
-                    Nous rejoindre
+                    {{ __('messages.join_us') }}
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-2" viewBox="0 0 20 20"
                         fill="currentColor">
                         <path fill-rule="evenodd"
@@ -918,14 +876,12 @@
                 <!-- Titre -->
                 <h3
                     class="text-lg md:text-xl font-semibold mb-3 text-[#31689B] pt-10 md:pt-12 group-hover:text-blue-700 transition-colors duration-300">
-                    Des délégués de terrains
+                    {{ __('messages.field_delegates') }}
                 </h3>
 
                 <!-- Texte -->
                 <p class="text-gray-600 text-xs md:text-sm leading-relaxed">
-                    Chargé de représenter l’entreprise directement auprès des partenaires, clients ou structures
-                    locales, le délégué sur le terrain assure la coordination, le suivi et la mise en œuvre des actions
-                    sur le terrain. Il est le lien essentiel entre le siège et les réalités locales.
+                    {{ __('messages.field_delegates_desc') }}
                 </p>
             </a>
 
@@ -942,14 +898,12 @@
                 <!-- Titre -->
                 <h3
                     class="text-lg md:text-xl font-semibold mb-3 text-[#31689B] pt-10 md:pt-12 group-hover:text-blue-700 transition-colors duration-300">
-                    Des assistants médicaux
+                    {{ __('messages.medical_assistants') }}
                 </h3>
 
                 <!-- Texte -->
                 <p class="text-gray-600 text-xs md:text-sm leading-relaxed">
-                    L’assistant médical accompagne les professionnels de santé dans la gestion administrative et la
-                    préparation des consultations. Il facilite le parcours du patient en assurant l’accueil, la prise de
-                    rendez-vous et la saisie des dossiers médicaux.
+                    {{ __('messages.medical_assistants_desc') }}
                 </p>
             </a>
 
@@ -971,9 +925,9 @@
     <!-- Section blog -->
     <section class="py-16 bg-[#f7fafc] flex flex-col items-center" id="blog-home">
         <div class="w-full max-w-3xl px-2">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#31689B] mb-2">Dernier article du blog</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#31689B] mb-2">{{ __('messages.latest_blog_article') }}</h2>
             <div class="text-center text-gray-500 mb-6 text-sm md:text-base">
-                Découvrez nos actualités, conseils et analyses sur la promotion pharmaceutique en Afrique de l’Ouest.
+                {{ __('messages.blog_subtitle') }}
             </div>
             @php
                 $dernierArticle = \App\Models\Blog::whereIn('etat', ['en ligne', 'les 2'])
@@ -989,7 +943,7 @@
                             <img src="{{ asset($dernierArticle->image) }}" alt="{{ $dernierArticle->titre }}"
                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                             <span
-                                class="absolute top-2 left-2 bg-[#437305] text-white text-[10px] px-2 py-0.5 rounded-full shadow">Nouveau</span>
+                                class="absolute top-2 left-2 bg-[#437305] text-white text-[10px] px-2 py-0.5 rounded-full shadow">{{ __('messages.new_label') }}</span>
                         </div>
                     @endif
                     <div class="p-4 flex flex-col gap-3">
@@ -1006,12 +960,12 @@
                         </p>
                         <div
                             class="mt-1 text-[#437305] font-semibold group-hover:underline flex items-center gap-2 text-xs md:text-sm">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            {{ __('messages.read_more_arrow') }} <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
                 </a>
             @else
-                <div class="text-gray-400 text-center text-base">Aucun article disponible pour le moment.</div>
+                <div class="text-gray-400 text-center text-base">{{ __('messages.no_articles_moment') }}</div>
             @endif
         </div>
     </section>
@@ -1019,7 +973,7 @@
     <!-- partenaire -->
     <section class="bg-white py-10 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-400 mb-8 md:mb-12">Nos partenaires</h2>
+            <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-400 mb-8 md:mb-12">{{ __('messages.our_partners') }}</h2>
             @if ($partenaires->count() > 0)
                 <div class="relative">
                     <div class="overflow-hidden">
@@ -1060,7 +1014,7 @@
                 </div>
             @else
                 <div class="text-center text-gray-500 py-8">
-                    <p>Aucun partenaire à afficher pour le moment.</p>
+                    <p>{{ __('messages.no_partners_moment') }}</p>
                 </div>
             @endif
         </div>
@@ -1132,12 +1086,12 @@
                 <div
                     class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0">
                 </div>
-                <img src="./images/Page contact/logo-350100.png"
+                    <img src="{{ asset('images/Page contact/logo-350100.png') }}"
+                    alt="{{ __('messages.logo_pharmacol_alt') }}"
                     class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de
-                    délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                 <div class="flex w-full max-w-xs">
-                    <input type="text" placeholder="Email"
+                    <input type="text" placeholder="{{ __('messages.newsletter_email_placeholder') }}"
                         class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
                     <button class="bg-[#437305] px-4 py-2 border border-[#437305] rounded-r-md">
                         <i class="fas fa-arrow-up transform rotate-45 text-white"></i>
@@ -1146,21 +1100,21 @@
             </div>
             <!-- Liens rapides -->
             <div class="md:ml-8 flex flex-col items-center md:items-start">
-                <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links') }}</h2>
                 <ul class="space-y-2 text-center md:text-left">
-                    <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                    <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                    <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                    <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                    <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about') }}</a></li>
+                    <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services') }}</a></li>
+                    <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                    <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                    <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                 </ul>
             </div>
             <!-- Contact -->
             <div class="flex flex-col items-center md:items-start">
-                <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+            <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact') }}</h2>
                 <ul class="space-y-2 text-center md:text-left">
-                    <li>184 rue Agnan quartier djidjolé</li>
-                    <li>derrière EPP Aflao gakli</li>
+                    <li>{{ __('messages.address') }}</li>
+                    <li>{{ __('messages.address_line_2') }}</li>
                     <li>
                         <i class="fas fa-phone-alt text-[#437305]"></i>
                         <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -1185,13 +1139,13 @@
             </div>
             <!-- Horaires -->
             <div class="md:ml-8 flex flex-col items-center md:items-start">
-                <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_title') }}</h2>
                 <ul class="space-y-1 text-center md:text-left">
-                    <li>Lundi : 7h30 - 18h</li>
-                    <li>Mardi : 7h30 - 18h</li>
-                    <li>Mercredi : 7h30 - 18h</li>
-                    <li>Jeudi : 7h30 - 18h</li>
-                    <li>Vendredi : 7h30 - 18h</li>
+                    <li>{{ __('messages.monday') }} : {{ __('messages.hours_schedule') }}</li>
+                    <li>{{ __('messages.tuesday') }} : {{ __('messages.hours_schedule') }}</li>
+                    <li>{{ __('messages.wednesday') }} : {{ __('messages.hours_schedule') }}</li>
+                    <li>{{ __('messages.thursday') }} : {{ __('messages.hours_schedule') }}</li>
+                    <li>{{ __('messages.friday') }} : {{ __('messages.hours_schedule') }}</li>
                 </ul>
             </div>
         </div>
@@ -1200,7 +1154,7 @@
                 <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                     <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
                         <i class="fa-regular fa-copyright"></i>
-                        Copyright Pharmacol 2025. Tous droits réservés.
+                        {{ __('messages.copyright_text') }}
                     </span>
                 </div>
                 <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
@@ -1208,11 +1162,11 @@
                     <a href="https://www.neostart.tech/" target="_blank"
                         class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
                         <i class="fas fa-code"></i>
-                        Développé par Neo Start Technology
+                        {{ __('messages.developed_by') }}
                     </a>
                     <a href="{{ route('admin.login') }}"
                         class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs"
-                        title="Administration">
+                        title="{{ __('messages.administration') }}">
                         <i class="fas fa-cog"></i>
                     </a>
                 </div>

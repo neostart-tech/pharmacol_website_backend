@@ -20,8 +20,8 @@
             <p class="text-gray-700 mb-6 break-words">{!! nl2br(e($poste->descriptif)) !!}</p>
 
             <form action="https://formspree.io/f/xzzrwanv" method="POST" enctype="multipart/form-data" class="space-y-4">
-                <input type="hidden" name="_subject" value="Nouvelle candidature reçue via le site Pharmacol">
-                <input type="hidden" name="Poste" value="{{ $poste->titre }}">
+                <input type="hidden" name="_subject" value="{{ __('messages.new_application_subject') }}">
+                <input type="hidden" name="{{ __('messages.position') }}" value="{{ $poste->titre }}">
 
                 <div>
                     <label class="block mb-1">{{ __('messages.name') }} :</label>
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <label class="block mb-1">{{ __('messages.cv_link') }} :</label>
-                    <input type="url" name="cv_link" class="w-full border border-gray-300 p-2 rounded" placeholder="https://..." required>
+                    <input type="url" name="cv_link" class="w-full border border-gray-300 p-2 rounded" placeholder="{{ __('messages.placeholder_url') }}" required>
                 </div>
 
                 <button type="submit" class="bg-green-700 text-white px-6 py-2 rounded hover:bg-[#2b5e8c] w-full sm:w-auto font-semibold shadow">{{ __('messages.send') }}</button>

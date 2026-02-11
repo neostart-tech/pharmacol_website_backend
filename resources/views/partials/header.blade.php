@@ -3,17 +3,17 @@
     <div class="bg-gray-100 text-sm border-b border-gray-300 py-2">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                 <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center">
                 <span>
                     <i class="fas fa-clock text-green-700"></i>
-                    Lun-Ven: 7h30-12h 14h30-18h
+                    {{ __('messages.working_hours') }}
                     <span class="hidden sm:inline"> / </span>
                 </span>
                 <span class="sm:ml-1">
-                    Fermé les weekends et jours fériés
+                    {{ __('messages.closed_weekends') }}
                 </span>
             </div>
         </div>
@@ -45,8 +45,7 @@
                 <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                 <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                 <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
-                <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
+                @include('partials.language-switcher')
             </div>
         </div>
     </div>

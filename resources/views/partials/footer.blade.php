@@ -3,10 +3,10 @@
         <!-- Bloc logo et newsletter -->
         <div class="space-y-4 relative flex flex-col items-center md:items-start">
             <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
-            <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-            <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+            <img src="{{ asset('images/Page contact/logo-350100.png') }}" alt="{{ __('messages.logo_pharmacol_alt') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
+            <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
             <div class="flex w-full max-w-xs">
-                <input type="text" placeholder="Email"
+                <input type="text" placeholder="{{ __('messages.newsletter_email_placeholder') }}"
                     class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
                 <button class="bg-[#437305] px-4 py-2 border border-[#437305] rounded-r-md">
                     <i class="fas fa-arrow-up transform rotate-45 text-white"></i>
@@ -15,21 +15,21 @@
         </div>
         <!-- Liens rapides -->
         <div class="md:ml-8 flex flex-col items-center md:items-start">
-            <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+            <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links') }}</h2>
             <ul class="space-y-2 text-center md:text-left">
-                <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about') }}</a></li>
+                <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services') }}</a></li>
+                <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
             </ul>
         </div>
         <!-- Contact -->
         <div class="flex flex-col items-center md:items-start">
-            <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+            <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact') }}</h2>
             <ul class="space-y-2 text-center md:text-left">
-                <li>184 rue Agnan quartier djidjolé</li>
-                <li>derrière EPP Aflao gakli</li>
+                <li>{{ __('messages.address') }}</li>
+                <li>{{ __('messages.address_line_2') }}</li>
                 <li>
                     <i class="fas fa-phone-alt text-[#437305]"></i>
                     <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -48,13 +48,13 @@
         </div>
         <!-- Horaires -->
         <div class="md:ml-8 flex flex-col items-center md:items-start">
-            <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+            <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_title') }}</h2>
             <ul class="space-y-1 text-center md:text-left">
-                <li>Lundi : 7h30 - 18h</li>
-                <li>Mardi : 7h30 - 18h</li>
-                <li>Mercredi : 7h30 - 18h</li>
-                <li>Jeudi : 7h30 - 18h</li>
-                <li>Vendredi : 7h30 - 18h</li>
+                <li>{{ __('messages.monday') }} : {{ __('messages.hours_schedule') }}</li>
+                <li>{{ __('messages.tuesday') }} : {{ __('messages.hours_schedule') }}</li>
+                <li>{{ __('messages.wednesday') }} : {{ __('messages.hours_schedule') }}</li>
+                <li>{{ __('messages.thursday') }} : {{ __('messages.hours_schedule') }}</li>
+                <li>{{ __('messages.friday') }} : {{ __('messages.hours_schedule') }}</li>
             </ul>
         </div>
     </div>
@@ -63,16 +63,16 @@
             <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                 <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
                     <i class="fa-regular fa-copyright"></i>
-                    Copyright Pharmacol 2025. Tous droits réservés.
+                    {{ __('messages.copyright_text') }}
                 </span>
             </div>
             <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
             <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                 <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
                     <i class="fas fa-code"></i>
-                    Développé par Neo Start Technology
+                    {{ __('messages.developed_by') }}
                 </a>
-                <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
+                <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="{{ __('messages.administration') }}">
                     <i class="fas fa-cog"></i>
                 </a>
             </div>

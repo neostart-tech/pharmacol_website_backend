@@ -32,7 +32,7 @@ u <!DOCTYPE html>
     </head>
     <body class="bg-white text-gray-800" id="Togo">
         <button id="scrollToTopBtn" onclick="scrollToTop()" 
-            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="Remonter en haut">↑
+            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="{{ __('messages.scroll_to_top') }}">↑
         </button>
 
         <header>
@@ -40,17 +40,17 @@ u <!DOCTYPE html>
             <div class="bg-gray-100 text-sm border-b border-gray-300 py-2">
                 <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                        <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                        <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                         <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center">
                         <span>
                             <i class="fas fa-clock text-green-700"></i>
-                            Lun-Ven: 7h30-12h 14h30-18h
+                            {{ __('messages.working_hours') }}
                             <span class="hidden sm:inline"> / </span>
                         </span>
                         <span class="sm:ml-1">
-                            Fermé les weekends et jours fériés
+                            {{ __('messages.closed_weekends') }}
                         </span>
                     </div>
                 </div>
@@ -82,8 +82,7 @@ u <!DOCTYPE html>
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                        <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
-                        <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
+                        @include('partials.language-switcher')
                     </div>
                 </div>
             </div>
@@ -96,7 +95,7 @@ u <!DOCTYPE html>
                         <!-- Logo -->
                         <a href="{{ route('accueil') }}" class="flex items-center space-x-2">
                             <div class="qlogo">
-                                <img src="images/Page prestations 2/logo-350100.png" alt="Logo Pharmacol" class="h-12 md:h-16">
+                                <img src="images/Page prestations 2/logo-350100.png" alt="{{ __('messages.logo_pharmacol_alt') }}" class="h-12 md:h-16">
                             </div>
                         </a>
                         <!-- Hamburger bouton mobile -->
@@ -113,17 +112,17 @@ u <!DOCTYPE html>
                                 <ul class="qdropdown-menu absolute left-0 hidden bg-white border border-gray-300 rounded shadow-md w-48 group-hover:block md:mt-0 z-50">
                                     <li>
                                         <a href="{{ route('accueil.togo') }}" class="flex items-center gap-2 px-4 py-2 text-[#437305] hover:text-green-600 font-bold">
-                                            <img src="https://flagcdn.com/w40/tg.png" alt="Togo" class="w-5 h-auto"> Togo
+                                            <img src="https://flagcdn.com/w40/tg.png" alt="{{ __('messages.togo') }}" class="w-5 h-auto"> {{ __('messages.togo') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('accueil.benin') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/bj.png" alt="Benin" class="w-5 h-auto"> Benin
+                                            <img src="https://flagcdn.com/w40/bj.png" alt="{{ __('messages.benin') }}" class="w-5 h-auto"> {{ __('messages.benin') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('accueil.niger') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                            <img src="https://flagcdn.com/w40/ne.png" alt="Niger" class="w-5 h-auto"> Niger
+                                            <img src="https://flagcdn.com/w40/ne.png" alt="{{ __('messages.niger') }}" class="w-5 h-auto"> {{ __('messages.niger') }}
                                         </a>
                                     </li>
                                 </ul>
@@ -139,9 +138,9 @@ u <!DOCTYPE html>
 
                 <div class="absolute inset-0 flex items-center justify-start text-white px-6">
                     <div class="w-1/2 max-w-xl text-center ml-12">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-4">PHARMACOL TOGO</h1>
-                        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Vous accompagne</h2><br>
-                        <a href="#contact" class="inline-block bg-[#437305] hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow">Évaluer la faisabilité de votre projet</a>
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ __('messages.pharmacol_togo') }}</h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-4">{{ __('messages.togo_accompanies_you_title') }}</h2><br>
+                        <a href="#contact" class="inline-block bg-[#437305] hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow">{{ __('messages.evaluate_project_feasibility_button') }}</a>
                     </div>
                 </div>
             </div>
@@ -290,14 +289,12 @@ u <!DOCTYPE html>
         <section class="bg-gradient-to-r from-[#3C74A8] to-[#14b8a6] text-white pt-20 pb-12 px-6 relative overflow-hidden">
             <div class="absolute inset-0 bg-opacity-10 bg-white rounded-full blur-3xl w-[400px] h-[400px] top-[-100px] left-[-100px]"></div>
             <div class="max-w-4xl mx-auto text-center relative z-10">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-3">Qui sommes nous ?</h2>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-3">{{ __('messages.who_are_we_togo') }}</h2>
                 <p class="text-lg md:text-xl mb-6">
-                    Nous sommes une agence de représentation pharmaceutique ancrée en Afrique de l’Ouest, forte de 
-                    {{ $general['experience'] ?? '-' }} ans d'expertise terrain
-                    et de partenariats solides avec des laboratoires de renom.
+                    {{ __('messages.togo_agency_description', ['years' => $general['experience'] ?? '-']) }}
                 </p>
                 <a href="#À propos de Pharmacol Togo" class="inline-block bg-white text-[#06788f] font-semibold px-8 py-3 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
-                    Apprenez-en plus sur nous
+                    {{ __('messages.learn_more_about_us') }}
                 </a>
             </div>
         </section>
@@ -307,15 +304,15 @@ u <!DOCTYPE html>
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 <div class="transform hover:scale-105 transition">
                     <p class="text-6xl font-extrabold text-[#14b8a6]">{{ $togo['bureaux'] ?? '-' }}</p>
-                    <p class="mt-3 text-gray-700">Bureaux au Togo</p>
+                    <p class="mt-3 text-gray-700">{{ __('messages.offices_in_togo') }}</p>
                 </div>
                 <div class="transform hover:scale-105 transition">
                     <p class="text-6xl font-extrabold text-[#14b8a6]">{{ $togo['laboratoires'] ?? '-' }}</p>
-                    <p class="mt-3 text-gray-700">Entreprises pharmaceutiques partenaires</p>
+                    <p class="mt-3 text-gray-700">{{ __('messages.partner_companies') }}</p>
                 </div>
                 <div class="transform hover:scale-105 transition">
                     <p class="text-6xl font-extrabold text-[#14b8a6]">{{ $togo['collaborateurs'] ?? '-' }}</p>
-                    <p class="mt-3 text-gray-700">Collaborateurs terrain mobilisés</p>
+                    <p class="mt-3 text-gray-700">{{ __('messages.field_collaborators') }}</p>
                 </div>
             </div>
         </section>
@@ -331,24 +328,24 @@ u <!DOCTYPE html>
                     @endif
                 </div>
                 <div class="w-full md:w-2/3">
-                    <h2 class="text-2xl font-bold text-[#06788f] mb-6 text-center md:text-left">À propos de Pharmacol Togo</h2>
-                    <p class="text-base mb-4 leading-relaxed text-justify">Fondée en 1996 à Lomé par Abel ACOLATSE, Pharmacol est une référence en représentation pharmaceutique en Afrique de l’Ouest. Présente au Togo, au Bénin et au Niger, elle accompagne les laboratoires dans leur développement régional en s'appuyant sur des équipes locales passionnées et une expertise reconnue.</p>
-                    <p class="text-base mb-6 leading-relaxed text-justify">Notre mission est de soutenir les entreprises pharmaceutiques dans l'amélioration de l'accès aux soins de qualité à travers des services sur mesure : veille réglementaire, stratégie commerciale, recrutement spécialisé, et promotion médicale terrain. Nous mettons un point d'honneur à garantir des solutions adaptées aux enjeux spécifiques de chaque marché.</p>
-                    <p class="text-base leading-relaxed text-justify">Avec plus de 25 ans d'expérience, Pharmacol Togo est votre partenaire de confiance pour naviguer dans l'écosystème pharmaceutique complexe de la région, tout en assurant une présence stratégique dans les pays clés de l'Afrique de l'Ouest.</p>
+                    <h2 class="text-2xl font-bold text-[#06788f] mb-6 text-center md:text-left">{{ __('messages.about_pharmacol_togo') }}</h2>
+                    <p class="text-base mb-4 leading-relaxed text-justify">{{ __('messages.togo_about_intro') }}</p>
+                    <p class="text-base mb-6 leading-relaxed text-justify">{{ __('messages.togo_about_mission') }}</p>
+                    <p class="text-base leading-relaxed text-justify">{{ __('messages.togo_about_experience') }}</p>
                     
                     <!-- Statistiques détaillées -->
                     <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg border">
                         <div class="text-center">
                             <p class="text-2xl font-bold text-[#06788f]">{{ $togo['pharmacies'] ?? '-' }}</p>
-                            <p class="text-sm text-gray-600">Pharmacies couvertes</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.covered_pharmacies') }}</p>
                         </div>
                         <div class="text-center">
                             <p class="text-2xl font-bold text-[#06788f]">{{ $togo['delegues'] ?? '-' }}</p>
-                            <p class="text-sm text-gray-600">Délégués médicaux</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.medical_delegates') }}</p>
                         </div>
                         <div class="text-center col-span-2 md:col-span-1">
                             <p class="text-2xl font-bold text-[#06788f]">{{ $togo['ville_principale'] ?? '-' }}</p>
-                            <p class="text-sm text-gray-600">Siège principal</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.main_headquarters') }}</p>
                         </div>
                     </div>
                 </div>
@@ -361,21 +358,21 @@ u <!DOCTYPE html>
                 <!-- Texte -->
                 <div class="md:col-span-2 w-full">
                     <div class="flex items-center mb-6">
-                        <h2 class="text-2xl font-bold text-[#06788f]">À propos de Pharmacol Togo</h2><br>
+                        <h2 class="text-2xl font-bold text-[#06788f]">{{ __('messages.about_togo_context_title') }}</h2><br>
                     </div>
-                    <p class="text-base text-gray-800 mb-6 justify text-justify">Le Togo, situé en Afrique de l’Ouest, est un pays clé pour le développement pharmaceutique en raison de sa situation géographique stratégique, sa population dynamique et ses infrastructures de santé en croissance. Sa superficie est de 56 600 km², avec une population de plus de 8,6 millions d'habitants. Ce pays offre un climat favorable au secteur pharmaceutique, avec des opportunités de développement dans plusieurs domaines, allant de la distribution de médicaments à la promotion de la santé.</p>
-                    <p class="text-base text-gray-800 mb-6 justify text-justify">Le Togo est bordé par le Bénin à l'Est, le Ghana à l'Ouest, et le Burkina Faso au Nord, avec une ouverture directe sur l’Océan Atlantique au Sud. Il possède cinq régions économiques : Savanes, Kara, Centrale, Plateaux, et Maritime. La capitale Lomé est un hub commercial et sanitaire majeur, subdivisé en cinq arrondissements, facilitant la distribution des produits pharmaceutiques à travers le pays.</p>
+                    <p class="text-base text-gray-800 mb-6 justify text-justify">{{ __('messages.togo_context_intro') }}</p>
+                    <p class="text-base text-gray-800 mb-6 justify text-justify">{{ __('messages.togo_context_location') }}</p>
                     <ul class="list-disc list-inside text-base text-gray-700 space-y-2">
-                        <li>56 600 km² répartis en 5 régions économiques</li>
-                        <li>1274 infrastructures de santé, dont des hôpitaux, cliniques et centres de santé</li>
-                        <li>Environ 200 officines et 72 dépôts pharmaceutiques</li>
+                        <li>{{ __('messages.togo_stat_1') }}</li>
+                        <li>{{ __('messages.togo_stat_2') }}</li>
+                        <li>{{ __('messages.togo_stat_3') }}</li>
                     </ul>
                 </div>
 
                 <!-- Carte du Togo -->
                 <div class="w-full bg-white border rounded-xl shadow-lg p-4" id="Carte Togo">
                     <div id="map-togo" class="rounded w-full h-96"></div>
-                    <p class="mt-2 text-center text-sm text-gray-500 italic">Carte interactive du Togo</p>
+                    <p class="mt-2 text-center text-sm text-gray-500 italic">{{ __('messages.interactive_map_togo') }}</p>
                 </div>
 
                 <script>
@@ -425,33 +422,33 @@ u <!DOCTYPE html>
         <!-- MODE OPÉRATOIRE -->
         <section class="py-20 px-6 bg-white">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-2xl font-bold text-[#06788f] mb-12">Notre mode opératoire</h2>
+                <h2 class="text-2xl font-bold text-[#06788f] mb-12">{{ __('messages.operating_mode') }}</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-[#14b8a6]/10 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">Étude de faisabilité</h3>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">{{ __('messages.feasibility_study') }}</h3>
                         <ul class="text-left list-disc list-inside text-gray-700">
-                            <li>Analyse de marché</li>
-                            <li>Réglementation locale</li>
-                            <li>Autorisation de mise sur le marché</li>
-                            <li>Analyse SWOT</li>
+                            <li>{{ __('messages.market_analysis') }}</li>
+                            <li>{{ __('messages.local_regulation') }}</li>
+                            <li>{{ __('messages.market_authorization') }}</li>
+                            <li>{{ __('messages.swot_analysis') }}</li>
                         </ul>
                     </div>
                     <div class="bg-[#14b8a6]/10 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">Stratégie</h3>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">{{ __('messages.strategy') }}</h3>
                         <ul class="text-left list-disc list-inside text-gray-700">
-                            <li>Représentation pharmaceutique</li>
-                            <li>Promotion médicale</li>
-                            <li>Force de vente & recrutement</li>
-                            <li>Marketing et communication</li>
+                            <li>{{ __('messages.pharmaceutical_representation') }}</li>
+                            <li>{{ __('messages.medical_promotion') }}</li>
+                            <li>{{ __('messages.sales_force_recruitment') }}</li>
+                            <li>{{ __('messages.marketing_communication') }}</li>
                         </ul>
                     </div>
                     <div class="bg-[#14b8a6]/10 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">Suivi & Reporting</h3>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">{{ __('messages.monitoring_reporting') }}</h3>
                         <ul class="text-left list-disc list-inside text-gray-700">
-                            <li>Distribution & logistique</li>
-                            <li>Pharmacovigilance</li>
-                            <li>Veille concurrentielle</li>
-                            <li>Analyse des résultats</li>
+                            <li>{{ __('messages.distribution_logistics') }}</li>
+                            <li>{{ __('messages.service_pharmacovigilance') }}</li>
+                            <li>{{ __('messages.service_competitive_watch') }}</li>
+                            <li>{{ __('messages.results_analysis') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -461,33 +458,33 @@ u <!DOCTYPE html>
         <!-- POURQUOI CHOISIR -->
         <section class="py-20 px-6 bg-[#3C74A8] text-white text-center">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-2xl font-bold mb-4">Pourquoi choisir Pharmacol Togo ?</h2>
-                <p class="text-base mb-6 leading-relaxed">Une expertise locale, des équipes de terrain aguerries, un accompagnement complet de la mise en marché à la veille stratégique. Nous sommes votre partenaire de croissance au Togo.</p>
-                <a href="#contact" class="inline-block mt-4 bg-white text-[#3C74A8] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition">Discutons de votre projet</a>
+                <h2 class="text-2xl font-bold mb-4">{{ __('messages.why_choose_togo') }}</h2>
+                <p class="text-base mb-6 leading-relaxed">{{ __('messages.why_choose_togo_desc') }}</p>
+                <a href="#contact" class="inline-block mt-4 bg-white text-[#3C74A8] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition">{{ __('messages.discuss_your_project') }}</a>
             </div>
         </section>
 
         <!-- OFFRES D’EMPLOI -->
         <section class="py-20 px-6 bg-white" id="recrutement">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-bold text-[#06788f] mb-6 text-center">Rejoignez l’équipe Pharmacol Togo</h2>
-                <p class="text-center text-lg mb-10 text-gray-700">Si vous partagez nos valeurs — Passion, Intégrité, Ténacité — et souhaitez agir pour la santé publique, rejoignez-nous.</p>
+                <h2 class="text-3xl font-bold text-[#06788f] mb-6 text-center">{{ __('messages.join_team_togo') }}</h2>
+                <p class="text-center text-lg mb-10 text-gray-700">{{ __('messages.join_team_values') }}</p>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="border rounded-xl p-6 shadow text-center hover:shadow-md transition">
-                        <h3 class="text-xl font-bold text-[#14b8a6]">Délégué Médical</h3>
-                        <p class="mt-2 text-gray-600">Promotion des produits auprès des professionnels de santé.</p>
+                        <h3 class="text-xl font-bold text-[#14b8a6]">{{ __('messages.medical_delegate') }}</h3>
+                        <p class="mt-2 text-gray-600">{{ __('messages.medical_delegate_desc') }}</p>
                     </div>
                     <div class="border rounded-xl p-6 shadow text-center hover:shadow-md transition">
-                        <h3 class="text-xl font-bold text-[#14b8a6]">Superviseur Terrain</h3>
-                        <p class="mt-2 text-gray-600">Management des équipes et suivi opérationnel.</p>
+                        <h3 class="text-xl font-bold text-[#14b8a6]">{{ __('messages.field_supervisor') }}</h3>
+                        <p class="mt-2 text-gray-600">{{ __('messages.field_supervisor_desc') }}</p>
                     </div>
                     <div class="border rounded-xl p-6 shadow text-center hover:shadow-md transition">
-                        <h3 class="text-xl font-bold text-[#14b8a6]">Directeur des Ventes</h3>
-                        <p class="mt-2 text-gray-600">Stratégie commerciale et pilotage national.</p>
+                        <h3 class="text-xl font-bold text-[#14b8a6]">{{ __('messages.sales_director') }}</h3>
+                        <p class="mt-2 text-gray-600">{{ __('messages.sales_director_desc') }}</p>
                     </div>
                 </div>
                 <div class="text-center mt-10">
-                    <a href="{{ route('recrutement') }}" class="inline-block bg-[#437305] text-white px-8 py-3 rounded-full hover:bg-[#365a04] transition">Postulez maintenant</a>
+                    <a href="{{ route('recrutement') }}" class="inline-block bg-[#437305] text-white px-8 py-3 rounded-full hover:bg-[#365a04] transition">{{ __('messages.postulate_now') }}</a>
                 </div>
             </div>
         </section>
@@ -495,8 +492,8 @@ u <!DOCTYPE html>
         <!-- CONTACT -->
         <section class="py-20 px-6 bg-gray-100" id="contact">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-[#06788f] mb-4">Contactez-nous</h2>
-                <p class="text-lg mb-6">Intéressé par notre accompagnement ? Échangeons sur la faisabilité de votre projet au Togo.</p>
+                <h2 class="text-3xl font-bold text-[#06788f] mb-4">{{ __('messages.contact_us') }}</h2>
+                <p class="text-lg mb-6">{{ __('messages.interested_in_support') }}</p>
                 <a href="mailto:{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#14b8a6] text-white px-10 py-4 rounded-full hover:bg-[#0f827d] transition">{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</a>
             </div>
         </section>
@@ -509,7 +506,7 @@ u <!DOCTYPE html>
                 <div class="space-y-4 relative flex flex-col items-center md:items-start">
                     <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
                     <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                     <div class="flex w-full max-w-xs">
                         <input type="text" placeholder="Email"
                             class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
@@ -520,21 +517,21 @@ u <!DOCTYPE html>
                 </div>
                 <!-- Liens rapides -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links_footer') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                        <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                        <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                        <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                        <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about_link') }}</a></li>
+                        <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services_link') }}</a></li>
+                        <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                        <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact_footer') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li>184 rue Agnan quartier djidjolé</li>
-                        <li>derrière EPP Aflao gakli</li>
+                        <li>{{ __('messages.address_line_1') }}</li>
+                        <li>{{ __('messages.behind_epp') }}</li>
                         <li>
                             <i class="fas fa-phone-alt text-[#437305]"></i>
                             <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -553,13 +550,13 @@ u <!DOCTYPE html>
                 </div>
                 <!-- Horaires -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_footer') }}</h2>
                     <ul class="space-y-1 text-center md:text-left">
-                        <li>Lundi : 7h30 - 18h</li>
-                        <li>Mardi : 7h30 - 18h</li>
-                        <li>Mercredi : 7h30 - 18h</li>
-                        <li>Jeudi : 7h30 - 18h</li>
-                        <li>Vendredi : 7h30 - 18h</li>
+                        <li>{{ __('messages.monday_schedule') }}</li>
+                        <li>{{ __('messages.tuesday_schedule') }}</li>
+                        <li>{{ __('messages.wednesday_schedule') }}</li>
+                        <li>{{ __('messages.thursday_schedule') }}</li>
+                        <li>{{ __('messages.friday_schedule') }}</li>
                     </ul>
                 </div>
             </div>
@@ -568,14 +565,14 @@ u <!DOCTYPE html>
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                         <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
                             <i class="fa-regular fa-copyright"></i>
-                            Copyright Pharmacol 2025. Tous droits réservés.
+                            {{ __('messages.copyright_text') }}
                         </span>
                     </div>
                     <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
                     <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                         <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
                             <i class="fas fa-code"></i>
-                            Développé par Neo Start Technology
+                            {{ __('messages.developed_by') }}
                         </a>
                         <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
                             <i class="fas fa-cog"></i>

@@ -18,7 +18,7 @@
     </head>
     <body class="bg-white text-gray-800">
         <button id="scrollToTopBtn" onclick="scrollToTop()" 
-            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="Remonter en haut">↑
+            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="{{ __('messages.scroll_to_top') }}">↑
         </button>
 
         <!-- HEADER -->
@@ -27,17 +27,17 @@
             <div id="Recrutement" class="bg-gray-100 text-sm border-b border-gray-300 py-2">
                 <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                        <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                        <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                         <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center">
                         <span>
                             <i class="fas fa-clock text-green-700"></i>
-                            Lun-Ven: 7h30-12h 14h30-18h
+                            {{ __('messages.working_hours') }}
                             <span class="hidden sm:inline"> / </span>
                         </span>
                         <span class="sm:ml-1">
-                            Fermé les weekends et jours fériés
+                            {{ __('messages.closed_weekends') }}
                         </span>
                     </div>
                 </div>
@@ -69,9 +69,7 @@
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                        <!-- Language switcher -->
-                        <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
-                        <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
+                        @include('partials.language-switcher')
                     </div>
                 </div>
             </div>
@@ -126,7 +124,7 @@
                     </nav>
                 </div>
                 <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 sm:justify-center sm:pb-0 text-white text-center">
-                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">Recrutement</h1>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold w-full">{{ __('messages.recrutement') }}</h1>
                 </div>
             </div>
             <script>
@@ -290,9 +288,9 @@
   </svg>
 
   <!-- Texte -->
-  <h3 class="text-xl font-semibold mb-2 text-gray-700">Aucune offre d'emploi</h3>
+  <h3 class="text-xl font-semibold mb-2 text-gray-700">{{ __('messages.no_job_offers') }}</h3>
   <p class="text-center max-w-md">
-    Il n'y a actuellement aucune offre d'emploi disponible. Revenez plus tard ou activez les notifications pour être informé(e) des nouvelles offres.
+    {{ __('messages.no_job_offers_description') }}
   </p>
 </div>
 
@@ -307,9 +305,9 @@
                 <div class="space-y-4 relative flex flex-col items-center md:items-start">
                     <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
                     <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                     <div class="flex w-full max-w-xs">
-                        <input type="text" placeholder="Email"
+                        <input type="text" placeholder="{{ __('messages.email_placeholder') }}"
                             class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
                         <button class="bg-[#437305] px-4 py-2 border border-[#437305] rounded-r-md">
                             <i class="fas fa-arrow-up transform rotate-45 text-white"></i>
@@ -318,21 +316,21 @@
                 </div>
                 <!-- Liens rapides -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                        <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                        <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                        <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                        <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about') }}</a></li>
+                        <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services') }}</a></li>
+                        <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                        <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li>184 rue Agnan quartier djidjolé</li>
-                        <li>derrière EPP Aflao gakli</li>
+                        <li>{{ __('messages.address') }}</li>
+                        <li>{{ __('messages.behind_epp') }}</li>
                         <li>
                             <i class="fas fa-phone-alt text-[#437305]"></i>
                             <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -351,13 +349,13 @@
                 </div>
                 <!-- Horaires -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_title') }}</h2>
                     <ul class="space-y-1 text-center md:text-left">
-                        <li>Lundi : 7h30 - 18h</li>
-                        <li>Mardi : 7h30 - 18h</li>
-                        <li>Mercredi : 7h30 - 18h</li>
-                        <li>Jeudi : 7h30 - 18h</li>
-                        <li>Vendredi : 7h30 - 18h</li>
+                        <li>{{ __('messages.monday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.tuesday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.wednesday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.thursday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.friday') }} : {{ __('messages.hours_schedule') }}</li>
                     </ul>
                 </div>
             </div>
@@ -366,14 +364,14 @@
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                         <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
                             <i class="fa-regular fa-copyright"></i>
-                            Copyright Pharmacol 2025. Tous droits réservés.
+                            {{ __('messages.copyright_text') }}
                         </span>
                     </div>
                     <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
                     <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                         <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
                             <i class="fas fa-code"></i>
-                            Développé par Neo Start Technology
+                            {{ __('messages.developed_by') }}
                         </a>
                         <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
                             <i class="fas fa-cog"></i>

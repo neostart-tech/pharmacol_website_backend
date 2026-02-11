@@ -33,7 +33,7 @@
     </head>
     <body class="bg-white text-gray-800" id="Niger">
         <button id="scrollToTopBtn" onclick="scrollToTop()" 
-            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="Remonter en haut">↑
+            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl hidden items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50 " aria-label="{{ __('messages.scroll_to_top') }}">↑
         </button>
 
         <header>
@@ -41,17 +41,17 @@
             <div class="bg-gray-100 text-sm border-b border-gray-300 py-2">
                 <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                        <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                        <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                         <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center">
                         <span>
                             <i class="fas fa-clock text-green-700"></i>
-                            Lun-Ven: 7h30-12h 14h30-18h
+                            {{ __('messages.working_hours') }}
                             <span class="hidden sm:inline"> / </span>
                         </span>
                         <span class="sm:ml-1">
-                            Fermé les weekends et jours fériés
+                            {{ __('messages.closed_weekends') }}
                         </span>
                     </div>
                 </div>
@@ -83,8 +83,7 @@
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                        <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
-                        <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
+                        @include('partials.language-switcher')
                     </div>
                 </div>
             </div>
@@ -97,7 +96,7 @@
                             <!-- Logo -->
                             <a href="{{ route('accueil') }}" class="flex items-center space-x-2">
                                 <div class="qlogo">
-                                    <img src="images/Page prestations 2/logo-350100.png" alt="Logo Pharmacol" class="h-12 md:h-16">
+                                    <img src="images/Page prestations 2/logo-350100.png" alt="{{ __('messages.logo_pharmacol_alt') }}" class="h-12 md:h-16">
                                 </div>
                             </a>
                             <!-- Hamburger bouton mobile -->
@@ -114,17 +113,17 @@
                                     <ul class="qdropdown-menu absolute left-0 hidden bg-white border border-gray-300 rounded shadow-md w-48 group-hover:block md:mt-0 z-50">
                                         <li>
                                             <a href="{{ route('accueil.togo') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                                <img src="https://flagcdn.com/w40/tg.png" alt="Togo" class="w-5 h-auto"> Togo
+                                                <img src="https://flagcdn.com/w40/tg.png" alt="{{ __('messages.togo') }}" class="w-5 h-auto"> {{ __('messages.togo') }}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('accueil.benin') }}" class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-green-600">
-                                                <img src="https://flagcdn.com/w40/bj.png" alt="Benin" class="w-5 h-auto"> Benin
+                                                <img src="https://flagcdn.com/w40/bj.png" alt="{{ __('messages.benin') }}" class="w-5 h-auto"> {{ __('messages.benin') }}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('accueil.niger') }}" class="flex items-center gap-2 px-4 py-2 text-[#437305] hover:text-green-600 font-bold">
-                                                <img src="https://flagcdn.com/w40/ne.png" alt="Niger" class="w-5 h-auto"> Niger
+                                                <img src="https://flagcdn.com/w40/ne.png" alt="{{ __('messages.niger') }}" class="w-5 h-auto"> {{ __('messages.niger') }}
                                             </a>
                                         </li>
                                     </ul>
@@ -140,9 +139,9 @@
 
                     <div class="absolute inset-0 flex items-center justify-start text-white px-6">
                         <div class="w-1/2 max-w-xl text-center ml-12">
-                            <h1 class="text-4xl md:text-5xl font-bold mb-4">PHARMACOL NIGER</h1>
-                            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Vous accompagne</h2><br>
-                            <a href="#contact" class="inline-block bg-[#437305] hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow">Évaluer la faisabilité de votre projet</a>
+                            <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ __('messages.pharmacol_niger') }}</h1>
+                            <h2 class="text-2xl md:text-3xl font-semibold mb-4">{{ __('messages.niger_accompanies_you_title') }}</h2><br>
+                            <a href="#contact" class="inline-block bg-[#437305] hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow">{{ __('messages.evaluate_project_feasibility_button') }}</a>
                         </div>
                     </div>
                 </div>
@@ -291,15 +290,15 @@
         <section class="bg-gradient-to-r from-[#3C74A8] to-[#14b8a6] text-white pt-20 pb-12 px-4 sm:px-6 relative overflow-hidden">
             <div class="absolute inset-0 bg-opacity-10 bg-white rounded-full blur-3xl w-[400px] h-[400px] top-[-100px] left-[-100px]"></div>
             <div class="max-w-4xl mx-auto text-center relative z-10">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-3">Bienvenue chez Pharmacol Niger</h2>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-3">{{ __('messages.welcome_pharmacol_niger') }}</h2>
                 <p class="text-lg md:text-xl mb-6">
-                    Ancrée au cœur du Sahel, notre agence soutient les laboratoires pharmaceutiques dans leur croissance en Afrique de l’Ouest, avec une approche résolument humaine et adaptée aux réalités locales.<br>
+                    {{ __('messages.niger_context') }}<br>
                     <span class="font-semibold text-[#14b8a6]">
-                        {{ $general['experience'] ?? '-' }} ans d'expérience terrain
+                        {{ $general['experience'] ?? '-' }} {{ __('messages.years_field_experience') }}
                     </span>
                 </p>
                 <a href="#À propos de Pharmacol Niger" class="inline-block bg-white text-[#06788f] font-semibold px-8 py-3 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
-                    Découvrez notre action
+                    {{ __('messages.discover_our_action') }}
                 </a>
             </div>
         </section>
@@ -309,15 +308,15 @@
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
                 <div class="transform hover:scale-105 transition">
                     <p class="text-6xl font-extrabold text-[#14b8a6]">{{ $niger['bureaux'] ?? '-' }}</p>
-                    <p class="mt-3 text-gray-700">Bureaux au Niger</p>
+                    <p class="mt-3 text-gray-700">{{ __('messages.offices_in_niger') }}</p>
                 </div>
                 <div class="transform hover:scale-105 transition">
                     <p class="text-6xl font-extrabold text-[#14b8a6]">{{ $niger['laboratoires'] ?? '-' }}</p>
-                    <p class="mt-3 text-gray-700">Entreprises pharmaceutiques partenaires</p>
+                    <p class="mt-3 text-gray-700">{{ __('messages.partner_companies') }}</p>
                 </div>
                 <div class="transform hover:scale-105 transition">
                     <p class="text-6xl font-extrabold text-[#14b8a6]">{{ $niger['collaborateurs'] ?? '-' }}</p>
-                    <p class="mt-3 text-gray-700">Collaborateurs terrain mobilisés</p>
+                    <p class="mt-3 text-gray-700">{{ __('messages.field_collaborators') }}</p>
                 </div>
             </div>
         </section>
@@ -333,30 +332,24 @@
                     @endif
                 </div>
                 <div class="w-full md:w-2/3">
-                    <h2 class="text-2xl font-bold text-[#06788f] mb-6">Pharmacol Niger, une implantation stratégique</h2>
-                    <p class="text-base mb-4 text-justify leading-relaxed">
-                        Présente à Niamey depuis 2010, Pharmacol Niger développe une approche terrain solide au service des laboratoires. Notre engagement repose sur une parfaite connaissance du tissu sanitaire nigérien, des circuits logistiques et des exigences réglementaires.
-                    </p>
-                    <p class="text-base mb-4 text-justify leading-relaxed">
-                        Grâce à une équipe pluridisciplinaire, nous accompagnons la mise en marché de vos produits dans un environnement en mutation, avec une attention particulière portée à l’éthique, à la qualité de service, et au respect des spécificités locales.
-                    </p>
-                    <p class="text-base text-justify leading-relaxed">
-                        Pharmacol Niger se positionne comme votre passerelle de confiance vers un marché à fort potentiel, dans une dynamique de santé publique durable.
-                    </p>
+                    <h2 class="text-2xl font-bold text-[#06788f] mb-6">{{ __('messages.niger_strategic_location') }}</h2>
+                    <p class="text-base mb-4 text-justify leading-relaxed">{{ __('messages.niger_about_intro') }}</p>
+                    <p class="text-base mb-4 text-justify leading-relaxed">{{ __('messages.niger_mission') }}</p>
+                    <p class="text-base text-justify leading-relaxed">{{ __('messages.niger_about_conclusion') }}</p>
                     
                     <!-- Statistiques détaillées -->
                     <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg border">
                         <div class="text-center">
                             <p class="text-2xl font-bold text-[#06788f]">{{ $niger['pharmacies'] ?? '-' }}</p>
-                            <p class="text-sm text-gray-600">Pharmacies couvertes</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.covered_pharmacies') }}</p>
                         </div>
                         <div class="text-center">
                             <p class="text-2xl font-bold text-[#06788f]">{{ $niger['delegues'] ?? '-' }}</p>
-                            <p class="text-sm text-gray-600">Délégués médicaux</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.medical_delegates') }}</p>
                         </div>
                         <div class="text-center col-span-2 md:col-span-1">
                             <p class="text-2xl font-bold text-[#06788f]">{{ $niger['ville_principale'] ?? '-' }}</p>
-                            <p class="text-sm text-gray-600">Siège principal</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.main_headquarters') }}</p>
                         </div>
                     </div>
                 </div>
@@ -367,23 +360,23 @@
         <section class="py-20 px-4 sm:px-6 bg-gray-100">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 items-start">
                 <div class="md:col-span-3 w-full mb-8 md:mb-0">
-                    <h2 class="text-2xl font-bold text-[#06788f] mb-6">Le contexte sanitaire au Niger</h2>
+                    <h2 class="text-2xl font-bold text-[#06788f] mb-6">{{ __('messages.niger_health_context_title') }}</h2>
                     <p class="text-base text-gray-800 mb-6 text-justify">
-                        Le Niger, vaste pays sahélien de 1,27 million de km², est un territoire en pleine transformation sanitaire. Avec une population jeune et croissante de plus de 25 millions d’habitants, les besoins en santé sont immenses et les opportunités de collaboration pharmaceutique y sont réelles.
+                        {{ __('messages.niger_health_desc_1') }}
                     </p>
                     <p class="text-base text-gray-800 mb-6 text-justify">
-                        Le système de santé nigérien s’appuie sur plusieurs niveaux de soins répartis entre zones rurales et urbaines. Malgré les défis logistiques, l’État nigérien et les partenaires privés multiplient les efforts pour améliorer la couverture médicale sur l’ensemble du territoire.
+                        {{ __('messages.niger_health_desc_2') }}
                     </p>
                     <ul class="list-disc list-inside text-base text-gray-700 space-y-2">
-                        <li>1 267 000 km² pour 8 régions sanitaires</li>
-                        <li>Plus de 1800 structures de santé recensées</li>
-                        <li>Environ 150 pharmacies et points de distribution actifs</li>
+                        <li>{{ __('messages.niger_stat_1') }}</li>
+                        <li>{{ __('messages.niger_stat_2') }}</li>
+                        <li>{{ __('messages.niger_stat_3') }}</li>
                     </ul>
                 </div>
                 <div class="md:col-span-2 w-full" id="Carte Niger">
                     <div class="bg-white border rounded-xl shadow-lg p-4 h-96 flex flex-col">
                         <div id="map-niger" class="rounded w-full h-64 sm:h-80 md:h-96"></div>
-                        <p class="mt-2 text-center text-sm text-gray-500 italic">Carte interactive du Niger</p>
+                        <p class="mt-2 text-center text-sm text-gray-500 italic">{{ __('messages.interactive_map_niger') }}</p>
                     </div>
                 </div>
             </div>
@@ -433,30 +426,30 @@
         <!-- MODE OPÉRATOIRE -->
         <section class="py-20 px-4 sm:px-6 bg-white">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-[#06788f] mb-12">Notre méthode au Niger</h2>
+                <h2 class="text-3xl font-bold text-[#06788f] mb-12">{{ __('messages.niger_method') }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-[#14b8a6]/10 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">Implémentation ciblée</h3>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">{{ __('messages.targeted_implementation_title') }}</h3>
                         <ul class="text-left list-disc list-inside text-gray-700">
-                            <li>Cartographie sanitaire</li>
-                            <li>Accords avec les autorités locales</li>
-                            <li>Formation des relais terrain</li>
+                            <li>{{ __('messages.health_mapping') }}</li>
+                            <li>{{ __('messages.agreements_local_authorities') }}</li>
+                            <li>{{ __('messages.field_relay_training') }}</li>
                         </ul>
                     </div>
                     <div class="bg-[#14b8a6]/10 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">Croissance accompagnée</h3>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">{{ __('messages.supported_growth_title') }}</h3>
                         <ul class="text-left list-disc list-inside text-gray-700">
-                            <li>Promotion médicale proactive</li>
-                            <li>Visibilité institutionnelle</li>
-                            <li>Campagnes santé publique</li>
+                            <li>{{ __('messages.proactive_medical_promotion') }}</li>
+                            <li>{{ __('messages.institutional_visibility') }}</li>
+                            <li>{{ __('messages.public_health_campaigns') }}</li>
                         </ul>
                     </div>
                     <div class="bg-[#14b8a6]/10 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">Suivi transparent</h3>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-4">{{ __('messages.transparent_monitoring_title') }}</h3>
                         <ul class="text-left list-disc list-inside text-gray-700">
-                            <li>Reporting mensuel</li>
-                            <li>Audits qualité réguliers</li>
-                            <li>Tableaux de bord partagés</li>
+                            <li>{{ __('messages.monthly_reporting') }}</li>
+                            <li>{{ __('messages.regular_quality_audits') }}</li>
+                            <li>{{ __('messages.shared_dashboards') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -466,12 +459,12 @@
         <!-- POURQUOI CHOISIR PHARMACOL NIGER -->
         <section class="py-20 px-4 sm:px-6 bg-[#3C74A8] text-white text-center">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold mb-4">Pourquoi choisir Pharmacol Niger ?</h2>
+                <h2 class="text-2xl font-bold mb-4">{{ __('messages.why_choose_niger') }}</h2>
                 <p class="text-base mb-6 leading-relaxed">
-                    Une implantation stratégique à Niamey, une équipe expérimentée sur le terrain, et une vision durable de la représentation pharmaceutique dans un pays en forte croissance sanitaire.
+                    {{ __('messages.why_choose_niger_desc') }}
                 </p>
                 <a href="#contact" class="inline-block mt-4 bg-white text-[#3C74A8] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition">
-                    Démarrons un partenariat
+                    {{ __('messages.start_partnership_btn') }}
                 </a>
             </div>
         </section>
@@ -479,38 +472,38 @@
         <!-- RECRUTEMENT -->
         <section class="py-20 px-4 sm:px-6 bg-white" id="recrutement">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-3xl font-extrabold text-[#06788f] mb-4">Rejoignez l’équipe Pharmacol Niger</h2>
+                <h2 class="text-3xl font-extrabold text-[#06788f] mb-4">{{ __('messages.join_team_benin') }}</h2>
                 <p class="text-lg text-gray-700 mb-12">
-                    Passion, Excellence, Impact.<br class="hidden md:inline" />
-                    Si ces mots vous parlent, nous serions ravis de vous rencontrer.
+                    {{ __('messages.join_team_values_benin') }}<br class="hidden md:inline" />
+                    {{ __('messages.join_team_values_benin_desc') }}
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-left">
                     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-2">Délégué médical – Zone Nord</h3>
-                        <p class="text-gray-700 mb-4 text-sm">Poste basé à Agadez – Candidatures ouvertes</p>
-                        <a href="#contact" class="text-[#3C74A8E8] font-medium hover:underline">Postuler maintenant</a>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-2">{{ __('messages.medical_delegate_north_zone') }}</h3>
+                        <p class="text-gray-700 mb-4 text-sm">{{ __('messages.based_in_agadez') }}</p>
+                        <a href="#contact" class="text-[#3C74A8E8] font-medium hover:underline">{{ __('messages.postulate_now') }}</a>
                     </div>
                     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-2">Responsable Réglementaire</h3>
-                        <p class="text-gray-700 mb-4 text-sm">Niamey – Expérience requise</p>
-                        <a href="#contact" class="text-[#3C74A8E8] font-medium hover:underline">Voir les missions</a>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-2">{{ __('messages.regulatory_manager') }}</h3>
+                        <p class="text-gray-700 mb-4 text-sm">{{ __('messages.based_in_niamey') }}</p>
+                        <a href="#contact" class="text-[#3C74A8E8] font-medium hover:underline">{{ __('messages.see_missions') }}</a>
                     </div>
                     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-2">Assistant(e) administratif(ve)</h3>
-                        <p class="text-gray-700 mb-4 text-sm">Stage de 6 mois – Niamey</p>
-                        <a href="#contact" class="text-[#3C74A8E8] font-medium hover:underline">Envoyer une candidature</a>
+                        <h3 class="text-xl font-semibold text-[#14b8a6] mb-2">{{ __('messages.administrative_assistant') }}</h3>
+                        <p class="text-gray-700 mb-4 text-sm">{{ __('messages.internship_niamey') }}</p>
+                        <a href="#contact" class="text-[#3C74A8E8] font-medium hover:underline">{{ __('messages.send_application') }}</a>
                     </div>
                 </div>
-                <a href="{{ route('recrutement') }}" class="inline-block px-6 py-3 bg-[#3C74A8E8] text-white font-semibold rounded-full shadow-md hover:bg-[#3C74A8] transition">Voir toutes nos offres</a>
+                <a href="{{ route('recrutement') }}" class="inline-block px-6 py-3 bg-[#3C74A8E8] text-white font-semibold rounded-full shadow-md hover:bg-[#3C74A8] transition">{{ __('messages.see_all_offers') }}</a>
             </div>
         </section>
 
         <!-- CONTACT -->
         <section class="py-20 px-4 sm:px-6 bg-gray-100" id="contact">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-[#3C74A8] mb-4">Contactez-nous</h2>
-                <p class="text-lg mb-6">Intéressé par notre accompagnement ? Échangeons sur la faisabilité de votre projet au Niger.</p>
+                <h2 class="text-3xl font-bold text-[#3C74A8] mb-4">{{ __('messages.contact_us') }}</h2>
+                <p class="text-lg mb-6">{{ __('messages.discuss_project_niger') }}</p>
                 <a href="mailto:{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#14b8a6] text-white px-10 py-4 rounded-full hover:bg-[#0f827d] transition">{{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</a>
             </div>
         </section>
@@ -522,7 +515,7 @@
                 <div class="space-y-4 relative flex flex-col items-center md:items-start">
                     <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
                     <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                     <div class="flex w-full max-w-xs">
                         <input type="text" placeholder="Email"
                             class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
@@ -533,21 +526,21 @@
                 </div>
                 <!-- Liens rapides -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links_footer') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                        <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                        <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                        <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                        <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about_link') }}</a></li>
+                        <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services_link') }}</a></li>
+                        <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                        <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact_footer') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li>184 rue Agnan quartier djidjolé</li>
-                        <li>derrière EPP Aflao gakli</li>
+                        <li>{{ __('messages.address_line_1') }}</li>
+                        <li>{{ __('messages.behind_epp') }}</li>
                         <li>
                             <i class="fas fa-phone-alt text-[#437305]"></i>
                             <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -566,13 +559,13 @@
                 </div>
                 <!-- Horaires -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_footer') }}</h2>
                     <ul class="space-y-1 text-center md:text-left">
-                        <li>Lundi : 7h30 - 18h</li>
-                        <li>Mardi : 7h30 - 18h</li>
-                        <li>Mercredi : 7h30 - 18h</li>
-                        <li>Jeudi : 7h30 - 18h</li>
-                        <li>Vendredi : 7h30 - 18h</li>
+                        <li>{{ __('messages.monday_schedule') }}</li>
+                        <li>{{ __('messages.tuesday_schedule') }}</li>
+                        <li>{{ __('messages.wednesday_schedule') }}</li>
+                        <li>{{ __('messages.thursday_schedule') }}</li>
+                        <li>{{ __('messages.friday_schedule') }}</li>
                     </ul>
                 </div>
             </div>
@@ -581,14 +574,14 @@
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                         <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
                             <i class="fa-regular fa-copyright"></i>
-                            Copyright Pharmacol 2025. Tous droits réservés.
+                            {{ __('messages.copyright_text') }}
                         </span>
                     </div>
                     <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
                     <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                         <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
                             <i class="fas fa-code"></i>
-                            Développé par Neo Start Technology
+                            {{ __('messages.developed_by') }}
                         </a>
                         <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
                             <i class="fas fa-cog"></i>

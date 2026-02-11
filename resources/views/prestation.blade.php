@@ -25,7 +25,7 @@
 
     <body class="bg-white text-gray-800">
         <button onclick="scrollToTop()" 
-            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl flex items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50" aria-label="Remonter en haut">↑
+            class="fixed bottom-6 right-6 w-12 h-12 bg-[#06788f] text-white text-xl flex items-center justify-center rounded-full shadow-lg hover:bg-[#055c6e] transition z-50" aria-label="{{ __('messages.scroll_to_top') }}">↑
         </button>
 
         <!-- HEADER -->
@@ -34,17 +34,17 @@
             <div id="Prestations" class="bg-gray-100 text-sm border-b border-gray-300 py-2">
                 <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row flex-wrap sm:justify-between text-gray-700 gap-2 sm:gap-0">
                     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-                        <span><i class="fas fa-map-marker-alt text-green-700"></i> 184 rue agnan quartier djidjolé</span>
+                        <span><i class="fas fa-map-marker-alt text-green-700"></i> {{ __('messages.address') }}</span>
                         <span><i class="fas fa-envelope text-green-700"></i> {{ $general['email_contact'] ?? 'contact@agence-pharmacol.com' }}</span>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center">
                         <span>
                             <i class="fas fa-clock text-green-700"></i>
-                            Lun-Ven: 7h30-12h 14h30-18h
+                            {{ __('messages.working_hours') }}
                             <span class="hidden sm:inline"> / </span>
                         </span>
                         <span class="sm:ml-1">
-                            Fermé les weekends et jours fériés
+                            {{ __('messages.closed_weekends') }}
                         </span>
                     </div>
                 </div>
@@ -76,8 +76,7 @@
                         <a href="{{ $general['instagram_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a href="{{ $general['linkedin_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="{{ $general['youtube_url'] ?? '#' }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                        <a href="{{ route('lang.switch', 'fr') }}" class="ml-2 px-2 py-1 bg-white text-[#3C74A8] rounded">FR</a>
-                        <a href="{{ route('lang.switch', 'en') }}" class="ml-1 px-2 py-1 bg-white text-[#3C74A8] rounded">EN</a>
+                        @include('partials.language-switcher')
                     </div>
                 </div>
             </div>
@@ -91,7 +90,7 @@
                             <!-- Logo -->
                             <a href="{{ route('accueil') }}" class="flex items-center space-x-2">
                                 <div class="qlogo">
-                                    <img src="images/Page prestations 2/logo-350100.png" alt="Logo Pharmacol" class="h-12 md:h-16">
+                                    <img src="images/Page prestations 2/logo-350100.png" alt="{{ __('messages.logo_pharmacol_alt') }}" class="h-12 md:h-16">
                                 </div>
                             </a>
                             <!-- Hamburger bouton mobile -->
@@ -280,48 +279,48 @@
     <section class="py-10 sm:py-16 px-2 sm:px-4">
         <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 items-stretch">
             <aside class="flex flex-col justify-between overflow-hidden shadow-lg bg-white mb-6 md:mb-0 rounded-xl">
-                <div class="bg-[#3f73a3] text-white text-center py-4 font-semibold text-lg sm:text-xl">Tous les services</div>
+                <div class="bg-[#3f73a3] text-white text-center py-4 font-semibold text-lg sm:text-xl">{{ __('messages.all_services') }}</div>
                     <div class="bg-[#437305] p-4 sm:p-6 flex-grow flex flex-col justify-between">
                         <ul class="space-y-2 sm:space-y-4">
                             <li>
                             <button onclick="showContent('promotion')" data-key="promotion"
                                 class="service-btn group w-full text-left flex justify-between items-center bg-white px-4 sm:px-5 py-3 sm:py-4 text-[#3f73a3] font-semibold hover:bg-[#3f73a3] hover:text-white shadow transition rounded">
-                                Promotion médicale
+                                {{ __('messages.medical_promotion') }}
                                 <span class="text-[#437305] group-hover:text-blue-200 transition">&rarr;</span>
                             </button>
                             </li>
                             <li>
                             <button onclick="showContent('encadrement')" data-key="encadrement"
                                 class="service-btn group w-full text-left flex justify-between items-center bg-white px-4 sm:px-5 py-3 sm:py-4 text-[#3f73a3] font-semibold hover:bg-[#3f73a3] hover:text-white shadow transition rounded">
-                                Encadrement force de vente
+                                {{ __('messages.medical_supervision') }}
                                 <span class="text-[#437305] group-hover:text-blue-200 transition">&rarr;</span>
                             </button>
                             </li>
                             <li>
                             <button onclick="showContent('representation')" data-key="representation"
                                 class="service-btn group w-full text-left flex justify-between items-center bg-white px-4 sm:px-5 py-3 sm:py-4 text-[#3f73a3] font-semibold hover:bg-[#3f73a3] hover:text-white shadow transition rounded">
-                                Représentation pharmaceutique
+                                {{ __('messages.pharmaceutical_representation_title') }}
                                 <span class="text-[#437305] group-hover:text-blue-200 transition">&rarr;</span>
                             </button>
                             </li>
                             <li>
                             <button onclick="showContent('autorisation')" data-key="autorisation"
                                 class="service-btn group w-full text-left flex justify-between items-center bg-white px-4 sm:px-5 py-3 sm:py-4 text-[#3f73a3] font-semibold hover:bg-[#3f73a3] hover:text-white shadow transition rounded">
-                                Autorisation de mise sur le marché
+                                {{ __('messages.market_authorization_title') }}
                                 <span class="text-[#437305] group-hover:text-blue-200 transition">&rarr;</span>
                             </button>
                             </li>
                             <li>
                             <button onclick="showContent('marketing')" data-key="marketing"
                                 class="service-btn group w-full text-left flex justify-between items-center bg-white px-4 sm:px-5 py-3 sm:py-4 text-[#3f73a3] font-semibold hover:bg-[#3f73a3] hover:text-white shadow transition rounded">
-                                Marketing & Communication
+                                {{ __('messages.marketing_communication_title') }}
                                 <span class="text-[#437305] group-hover:text-blue-200 transition">&rarr;</span>
                             </button>
                             </li>
                             <li>
                             <button onclick="showContent('consulting')" data-key="consulting"
                                 class="service-btn group w-full text-left flex justify-between items-center bg-white px-4 sm:px-5 py-3 sm:py-4 text-[#3f73a3] font-semibold hover:bg-[#3f73a3] hover:text-white shadow transition rounded">
-                                Consulting
+                                {{ __('messages.consulting_title') }}
                                 <span class="text-[#437305] group-hover:text-blue-200 transition">&rarr;</span>
                             </button>
                             </li>
@@ -349,28 +348,28 @@
                     <div class="space-y-4">
                         <h2 class="text-2xl font-bold text-[#3f73a3] mb-4 flex items-center gap-2">
                             <i class="fas fa-bullhorn text-[#437305]"></i>
-                            Promotion médicale
+                            {{ __('messages.medical_promotion_full_title') }}
                         </h2>
                         <p class="mb-2 text-gray-700 text-lg">
-                            Notre service de <strong>promotion médicale</strong> s’appuie sur une équipe de délégués médicaux hautement qualifiés, formés aux dernières innovations thérapeutiques et aux techniques de communication scientifique. Nous développons des stratégies personnalisées pour valoriser vos produits auprès des professionnels de santé, en tenant compte des spécificités locales et des exigences réglementaires.
+                            {!! __('messages.medical_promotion_full_desc') !!}
                         </p>
                         <ul class="list-disc ml-6 text-gray-700 space-y-2">
                             <li>
                                 <i class="fas fa-user-md text-[#3f73a3] mr-2"></i>
-                                <strong>Visites médicales ciblées :</strong> Présentation de vos produits auprès des médecins, pharmaciens et établissements de santé, avec un argumentaire scientifique rigoureux et adapté à chaque interlocuteur.
+                                <strong>{{ __('messages.targeted_medical_visits') }}</strong> {{ __('messages.targeted_medical_visits_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-chalkboard-teacher text-[#3f73a3] mr-2"></i>
-                                <strong>Organisation de réunions scientifiques :</strong> Mise en place de conférences, ateliers et webinaires animés par des experts, favorisant l’échange et la formation continue des professionnels de santé.
+                                <strong>{{ __('messages.scientific_meetings_org') }}</strong> {{ __('messages.scientific_meetings_org_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-file-medical-alt text-[#3f73a3] mr-2"></i>
-                                <strong>Distribution de documentation :</strong> Élaboration et diffusion de supports pédagogiques, fiches produits et études cliniques pour renforcer la notoriété et la crédibilité de vos solutions thérapeutiques.
+                                <strong>{{ __('messages.documentation_distribution') }}</strong> {{ __('messages.documentation_distribution_desc') }}
                             </li>
                         </ul>
                         <div class="mt-6 bg-blue-50 border-l-4 border-[#3f73a3] p-4 rounded">
                             <i class="fas fa-info-circle text-[#3f73a3] mr-2"></i>
-                            <span class="text-gray-700">Notre approche repose sur l’éthique, la transparence et le respect des bonnes pratiques de promotion du médicament.</span>
+                            <span class="text-gray-700">{{ __('messages.ethical_approach_note') }}</span>
                         </div>
                     </div>
                 `,
@@ -378,28 +377,28 @@
                     <div class="space-y-4">
                         <h2 class="text-2xl font-bold text-[#3f73a3] mb-4 flex items-center gap-2">
                             <i class="fas fa-users-cog text-[#437305]"></i>
-                            Encadrement force de vente
+                            {{ __('messages.sales_force_supervision_title') }}
                         </h2>
                         <p class="mb-2 text-gray-700 text-lg">
-                            L’<strong>encadrement de la force de vente</strong> est un levier essentiel pour garantir la performance commerciale et la cohésion de vos équipes sur le terrain. Nous proposons un accompagnement sur-mesure, de la formation initiale au suivi opérationnel, afin de maximiser l’impact de vos actions commerciales.
+                            {!! __('messages.sales_force_supervision_desc') !!}
                         </p>
                         <ul class="list-disc ml-6 text-gray-700 space-y-2">
                             <li>
                                 <i class="fas fa-chalkboard text-[#3f73a3] mr-2"></i>
-                                <strong>Coaching personnalisé :</strong> Sessions individuelles ou collectives pour développer les compétences en négociation, gestion de portefeuille clients et argumentation scientifique.
+                                <strong>{{ __('messages.personalized_coaching') }}</strong> {{ __('messages.personalized_coaching_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-chart-line text-[#3f73a3] mr-2"></i>
-                                <strong>Suivi des performances :</strong> Mise en place d’indicateurs de suivi, reporting régulier et analyse des résultats pour ajuster les stratégies en temps réel.
+                                <strong>{{ __('messages.performance_monitoring') }}</strong> {{ __('messages.performance_monitoring_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-graduation-cap text-[#3f73a3] mr-2"></i>
-                                <strong>Formation continue :</strong> Programmes de formation adaptés aux évolutions du marché, aux nouvelles réglementations et aux innovations produits.
+                                <strong>{{ __('messages.continuous_training') }}</strong> {{ __('messages.continuous_training_desc') }}
                             </li>
                         </ul>
                         <div class="mt-6 bg-green-50 border-l-4 border-[#437305] p-4 rounded">
                             <i class="fas fa-hands-helping text-[#437305] mr-2"></i>
-                            <span class="text-gray-700">Nous croyons en la valorisation des talents et en la création d’un esprit d’équipe fort pour atteindre vos objectifs commerciaux.</span>
+                            <span class="text-gray-700">{{ __('messages.talent_valorization_note') }}</span>
                         </div>
                     </div>
                 `,
@@ -407,28 +406,28 @@
                     <div class="space-y-4">
                         <h2 class="text-2xl font-bold text-[#3f73a3] mb-4 flex items-center gap-2">
                             <i class="fas fa-handshake text-[#437305]"></i>
-                            Représentation pharmaceutique
+                            {{ __('messages.pharma_representation_full_title') }}
                         </h2>
                         <p class="mb-2 text-gray-700 text-lg">
-                            Notre service de <strong>représentation pharmaceutique</strong> vous permet de bénéficier d’un relais local fiable et expérimenté pour défendre vos intérêts auprès des autorités sanitaires, des partenaires institutionnels et des acteurs du secteur de la santé.
+                            {!! __('messages.pharma_representation_full_desc') !!}
                         </p>
                         <ul class="list-disc ml-6 text-gray-700 space-y-2">
                             <li>
                                 <i class="fas fa-file-signature text-[#3f73a3] mr-2"></i>
-                                <strong>Gestion administrative :</strong> Prise en charge des démarches administratives, dépôt de dossiers et suivi des autorisations nécessaires à la commercialisation de vos produits.
+                                <strong>{{ __('messages.administrative_management') }}</strong> {{ __('messages.administrative_management_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-balance-scale text-[#3f73a3] mr-2"></i>
-                                <strong>Suivi réglementaire :</strong> Veille active sur les évolutions législatives et réglementaires, conseil sur la conformité et anticipation des changements de cadre.
+                                <strong>{{ __('messages.regulatory_monitoring') }}</strong> {{ __('messages.regulatory_monitoring_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-network-wired text-[#3f73a3] mr-2"></i>
-                                <strong>Développement de partenariats :</strong> Mise en relation avec des distributeurs, établissements de santé et réseaux professionnels pour renforcer votre présence sur le marché.
+                                <strong>{{ __('messages.partnership_development') }}</strong> {{ __('messages.partnership_development_desc') }}
                             </li>
                         </ul>
                         <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
                             <i class="fas fa-user-shield text-yellow-600 mr-2"></i>
-                            <span class="text-gray-700">Nous sommes votre interlocuteur privilégié pour garantir la conformité et la visibilité de vos produits sur le territoire.</span>
+                            <span class="text-gray-700">{{ __('messages.privileged_interlocutor_note') }}</span>
                         </div>
                     </div>
                 `,
@@ -436,28 +435,28 @@
                     <div class="space-y-4">
                         <h2 class="text-2xl font-bold text-[#3f73a3] mb-4 flex items-center gap-2">
                             <i class="fas fa-certificate text-[#437305]"></i>
-                            Autorisation de mise sur le marché
+                            {{ __('messages.market_authorization_full_title') }}
                         </h2>
                         <p class="mb-2 text-gray-700 text-lg">
-                            L’<strong>obtention de l’autorisation de mise sur le marché (AMM)</strong> est une étape cruciale pour la commercialisation de vos produits pharmaceutiques. Notre équipe vous accompagne à chaque phase du processus, de la constitution du dossier à la validation finale par les autorités compétentes.
+                            {!! __('messages.market_authorization_full_desc') !!}
                         </p>
                         <ul class="list-disc ml-6 text-gray-700 space-y-2">
                             <li>
                                 <i class="fas fa-folder-open text-[#3f73a3] mr-2"></i>
-                                <strong>Dossier d’enregistrement :</strong> Rédaction, compilation et vérification des documents scientifiques, techniques et administratifs requis.
+                                <strong>{{ __('messages.registration_file') }}</strong> {{ __('messages.registration_file_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-tasks text-[#3f73a3] mr-2"></i>
-                                <strong>Suivi des procédures :</strong> Interface avec les agences de régulation, gestion des échanges et réponses aux demandes de compléments.
+                                <strong>{{ __('messages.procedures_monitoring') }}</strong> {{ __('messages.procedures_monitoring_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-search text-[#3f73a3] mr-2"></i>
-                                <strong>Veille réglementaire :</strong> Surveillance continue des évolutions réglementaires pour anticiper les exigences et garantir la conformité de vos produits.
+                                <strong>{{ __('messages.regulatory_watch') }}</strong> {{ __('messages.regulatory_watch_desc') }}
                             </li>
                         </ul>
                         <div class="mt-6 bg-red-50 border-l-4 border-red-400 p-4 rounded">
                             <i class="fas fa-exclamation-circle text-red-600 mr-2"></i>
-                            <span class="text-gray-700">Notre expertise vous assure un dépôt de dossier optimisé et un suivi rigoureux jusqu’à l’obtention de l’AMM.</span>
+                            <span class="text-gray-700">{{ __('messages.optimized_filing_note') }}</span>
                         </div>
                     </div>
                 `,
@@ -465,28 +464,28 @@
                     <div class="space-y-4">
                         <h2 class="text-2xl font-bold text-[#3f73a3] mb-4 flex items-center gap-2">
                             <i class="fas fa-bullseye text-[#437305]"></i>
-                            Marketing & Communication
+                            {{ __('messages.marketing_comm_full_title') }}
                         </h2>
                         <p class="mb-2 text-gray-700 text-lg">
-                            Nous concevons et déployons des <strong>stratégies marketing innovantes</strong> et des campagnes de communication sur-mesure pour valoriser vos produits et renforcer votre image de marque dans le secteur de la santé.
+                            {!! __('messages.marketing_comm_full_desc') !!}
                         </p>
                         <ul class="list-disc ml-6 text-gray-700 space-y-2">
                             <li>
                                 <i class="fas fa-broadcast-tower text-[#3f73a3] mr-2"></i>
-                                <strong>Campagnes promotionnelles :</strong> Création de plans médias, gestion des relations presse et animation des réseaux sociaux pour accroître votre visibilité.
+                                <strong>{{ __('messages.promotional_campaigns') }}</strong> {{ __('messages.promotional_campaigns_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-paint-brush text-[#3f73a3] mr-2"></i>
-                                <strong>Supports de communication :</strong> Conception de brochures, affiches, vidéos et contenus digitaux adaptés à vos cibles et à vos objectifs.
+                                <strong>{{ __('messages.communication_materials') }}</strong> {{ __('messages.communication_materials_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-calendar-check text-[#3f73a3] mr-2"></i>
-                                <strong>Événements professionnels :</strong> Organisation de salons, congrès, ateliers et rencontres B2B pour favoriser les échanges et développer votre réseau.
+                                <strong>{{ __('messages.professional_events') }}</strong> {{ __('messages.professional_events_desc') }}
                             </li>
                         </ul>
                         <div class="mt-6 bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded">
                             <i class="fas fa-lightbulb text-indigo-600 mr-2"></i>
-                            <span class="text-gray-700">Notre équipe créative et expérimentée vous accompagne pour faire rayonner vos innovations.</span>
+                            <span class="text-gray-700">{{ __('messages.creative_team_note') }}</span>
                         </div>
                     </div>
                 `,
@@ -494,28 +493,28 @@
                     <div class="space-y-4">
                         <h2 class="text-2xl font-bold text-[#3f73a3] mb-4 flex items-center gap-2">
                             <i class="fas fa-user-tie text-[#437305]"></i>
-                            Consulting
+                            {{ __('messages.consulting_full_title') }}
                         </h2>
                         <p class="mb-2 text-gray-700 text-lg">
-                            Notre pôle <strong>consulting</strong> met à votre disposition une expertise pluridisciplinaire pour accompagner le développement de vos activités, optimiser vos processus et relever les défis du secteur pharmaceutique.
+                            {!! __('messages.consulting_full_desc') !!}
                         </p>
                         <ul class="list-disc ml-6 text-gray-700 space-y-2">
                             <li>
                                 <i class="fas fa-search-dollar text-[#3f73a3] mr-2"></i>
-                                <strong>Audit organisationnel :</strong> Analyse approfondie de vos structures, identification des axes d’amélioration et recommandations personnalisées.
+                                <strong>{{ __('messages.organizational_audit') }}</strong> {{ __('messages.organizational_audit_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-lightbulb text-[#3f73a3] mr-2"></i>
-                                <strong>Stratégie de développement :</strong> Élaboration de plans d’action pour conquérir de nouveaux marchés, diversifier votre offre et renforcer votre compétitivité.
+                                <strong>{{ __('messages.development_strategy') }}</strong> {{ __('messages.development_strategy_desc') }}
                             </li>
                             <li>
                                 <i class="fas fa-hands-holding text-[#3f73a3] mr-2"></i>
-                                <strong>Accompagnement personnalisé :</strong> Suivi régulier, conseils sur la gestion du changement et formation des équipes pour garantir la réussite de vos projets.
+                                <strong>{{ __('messages.personalized_support') }}</strong> {{ __('messages.personalized_support_desc') }}
                             </li>
                         </ul>
                         <div class="mt-6 bg-gray-100 border-l-4 border-[#3f73a3] p-4 rounded">
                             <i class="fas fa-star text-[#3f73a3] mr-2"></i>
-                            <span class="text-gray-700">Faites confiance à notre savoir-faire pour transformer vos ambitions en succès durables.</span>
+                            <span class="text-gray-700">{{ __('messages.trust_expertise_note') }}</span>
                         </div>
                     </div>
                 `
@@ -567,9 +566,9 @@
                             <circle cx="12" cy="12" r="9" stroke="#3C74A8" stroke-width="2" fill="#e6f2ff"/>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6" stroke="#437305" stroke-width="2"/>
                         </svg>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight text-[#3C74A8]">Besoin d'une aide rapide ?</h2>
-                        <p class="mb-6 text-base sm:text-lg text-[#437305] opacity-90">Notre équipe médicale vous répond gratuitement et en toute confidentialité.</p>
-                        <a href="{{ route('contact') }}" class="inline-block bg-[#3C74A8] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#437305] transition-all duration-200">Contactez-nous</a>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight text-[#3C74A8]">{{ __('messages.need_quick_help') }}</h2>
+                        <p class="mb-6 text-base sm:text-lg text-[#437305] opacity-90">{{ __('messages.medical_team_responds') }}</p>
+                        <a href="{{ route('contact') }}" class="inline-block bg-[#3C74A8] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#437305] transition-all duration-200">{{ __('messages.contact_us_now') }}</a>
                     </div>
                 </div>
 
@@ -582,10 +581,10 @@
                                 <circle cx="12" cy="12" r="8" stroke="#3C74A8" stroke-width="2" fill="#e6f2ff"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01" stroke="#437305"/>
                             </svg>
-                            Pourquoi choisir notre expertise ?
+                            {{ __('messages.why_choose_expertise') }}
                         </h2>
                         <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
-                            Notre engagement : offrir à chaque patient et partenaire un accompagnement humain, une expertise de pointe et une réactivité sans faille. Nous croyons que la santé est un droit fondamental et que chaque projet mérite une attention personnalisée, du conseil à la réalisation.
+                            {{ __('messages.our_commitment') }}
                         </p>
                     </div>
 
@@ -593,20 +592,20 @@
                     <div class="space-y-2 sm:space-y-4">
                         <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-[#437305] flex items-center gap-2">
                             <i class="fas fa-heartbeat text-[#3C74A8]"></i>
-                            Nos valeurs
+                            {{ __('messages.our_values_title') }}
                         </h3>
                         <ul class="flex flex-wrap gap-4 sm:gap-6">
                             <li class="flex items-center bg-white border border-[#d1e7ef] rounded-lg shadow px-4 py-2 text-[#3C74A8] font-semibold text-sm sm:text-base">
-                                <i class="fas fa-bolt text-[#437305] mr-2"></i> Réactivité
+                                <i class="fas fa-bolt text-[#437305] mr-2"></i> {{ __('messages.reactivity') }}
                             </li>
                             <li class="flex items-center bg-white border border-[#d1e7ef] rounded-lg shadow px-4 py-2 text-[#3C74A8] font-semibold text-sm sm:text-base">
-                                <i class="fas fa-sync-alt text-[#437305] mr-2"></i> Adaptabilité
+                                <i class="fas fa-sync-alt text-[#437305] mr-2"></i> {{ __('messages.adaptability') }}
                             </li>
                             <li class="flex items-center bg-white border border-[#d1e7ef] rounded-lg shadow px-4 py-2 text-[#3C74A8] font-semibold text-sm sm:text-base">
-                                <i class="fas fa-balance-scale text-[#437305] mr-2"></i> Rigueur
+                                <i class="fas fa-balance-scale text-[#437305] mr-2"></i> {{ __('messages.rigor') }}
                             </li>
                             <li class="flex items-center bg-white border border-[#d1e7ef] rounded-lg shadow px-4 py-2 text-[#3C74A8] font-semibold text-sm sm:text-base">
-                                <i class="fas fa-eye text-[#437305] mr-2"></i> Transparence
+                                <i class="fas fa-eye text-[#437305] mr-2"></i> {{ __('messages.transparency') }}
                             </li>
                         </ul>
                     </div>
@@ -615,7 +614,7 @@
                     <div>
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#3C74A8] mb-2 flex items-center gap-2">
                             <i class="fas fa-star text-[#437305]"></i>
-                            Nos avantages
+                            {{ __('messages.our_advantages') }}
                         </h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex bg-white border border-[#d1e7ef] shadow rounded-xl overflow-hidden">
@@ -623,8 +622,8 @@
                                     <i class="fas fa-microscope text-[#3C74A8] text-2xl"></i>
                                 </div>
                                 <div class="p-4 flex flex-col justify-center">
-                                    <h4 class="text-lg font-bold text-[#3C74A8]">Technologie de pointe</h4>
-                                    <p class="text-sm text-[#6A6A6A]">Des équipements récents pour des diagnostics fiables et rapides.</p>
+                                    <h4 class="text-lg font-bold text-[#3C74A8]">{{ __('messages.cutting_edge_technology') }}</h4>
+                                    <p class="text-sm text-[#6A6A6A]">{{ __('messages.cutting_edge_technology_desc') }}</p>
                                 </div>
                             </div>
                             <div class="flex bg-white border border-[#d1e7ef] shadow rounded-xl overflow-hidden">
@@ -632,8 +631,8 @@
                                     <i class="fas fa-user-shield text-[#3C74A8] text-2xl"></i>
                                 </div>
                                 <div class="p-4 flex flex-col justify-center">
-                                    <h4 class="text-lg font-bold text-[#3C74A8]">Fiabilité & sécurité</h4>
-                                    <p class="text-sm text-[#6A6A6A]">Des procédures certifiées et une confidentialité totale de vos données.</p>
+                                    <h4 class="text-lg font-bold text-[#3C74A8]">{{ __('messages.reliability_security') }}</h4>
+                                    <p class="text-sm text-[#6A6A6A]">{{ __('messages.reliability_security_desc') }}</p>
                                 </div>
                             </div>
                             <div class="flex bg-white border border-[#d1e7ef] shadow rounded-xl overflow-hidden">
@@ -641,8 +640,8 @@
                                     <i class="fas fa-users text-[#3C74A8] text-2xl"></i>
                                 </div>
                                 <div class="p-4 flex flex-col justify-center">
-                                    <h4 class="text-lg font-bold text-[#3C74A8]">Équipe pluridisciplinaire</h4>
-                                    <p class="text-sm text-[#6A6A6A]">Des experts passionnés à votre écoute, pour chaque étape de votre projet.</p>
+                                    <h4 class="text-lg font-bold text-[#3C74A8]">{{ __('messages.multidisciplinary_team') }}</h4>
+                                    <p class="text-sm text-[#6A6A6A]">{{ __('messages.multidisciplinary_team_desc') }}</p>
                                 </div>
                             </div>
                             <div class="flex bg-white border border-[#d1e7ef] shadow rounded-xl overflow-hidden">
@@ -650,8 +649,8 @@
                                     <i class="fas fa-hand-holding-heart text-[#3C74A8] text-2xl"></i>
                                 </div>
                                 <div class="p-4 flex flex-col justify-center">
-                                    <h4 class="text-lg font-bold text-[#3C74A8]">Accompagnement humain</h4>
-                                    <p class="text-sm text-[#6A6A6A]">Un suivi personnalisé et bienveillant, centré sur vos besoins réels.</p>
+                                    <h4 class="text-lg font-bold text-[#3C74A8]">{{ __('messages.human_support') }}</h4>
+                                    <p class="text-sm text-[#6A6A6A]">{{ __('messages.human_support_desc') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -661,7 +660,7 @@
                     <div>
                         <h3 class="text-lg sm:text-xl md:text-2xl text-[#437305] mt-4 mb-4 sm:mb-6 font-semibold flex items-center gap-2">
                             <i class="fas fa-handshake-angle text-[#3C74A8]"></i>
-                            Nos engagements pour votre santé
+                            {{ __('messages.our_commitments') }}
                         </h3>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3">
@@ -670,7 +669,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </span>
-                                <span class="text-base font-semibold text-[#3C74A8]">Conseils personnalisés et orientation claire</span>
+                                <span class="text-base font-semibold text-[#3C74A8]">{{ __('messages.personalized_advice') }}</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <span class="bg-[#e6f2ff] p-2 rounded-full">
@@ -678,7 +677,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </span>
-                                <span class="text-base font-semibold text-[#3C74A8]">Respect strict des normes internationales</span>
+                                <span class="text-base font-semibold text-[#3C74A8]">{{ __('messages.international_standards') }}</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <span class="bg-[#e6f2ff] p-2 rounded-full">
@@ -686,7 +685,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </span>
-                                <span class="text-base font-semibold text-[#3C74A8]">Transparence sur les tarifs et les délais</span>
+                                <span class="text-base font-semibold text-[#3C74A8]">{{ __('messages.pricing_transparency') }}</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <span class="bg-[#e6f2ff] p-2 rounded-full">
@@ -694,7 +693,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </span>
-                                <span class="text-base font-semibold text-[#3C74A8]">Suivi continu et disponibilité 7j/7</span>
+                                <span class="text-base font-semibold text-[#3C74A8]">{{ __('messages.continuous_follow_up') }}</span>
                             </li>
                         </ul>
                     </div>
@@ -709,9 +708,9 @@
                 <div class="space-y-4 relative flex flex-col items-center md:items-start">
                     <div class="absolute top-2 left-1/2 md:left-[120px] -translate-x-1/2 w-32 md:w-44 h-12 md:h-16 bg-white rounded-full blur-md z-0"></div>
                     <img src="{{ asset('images/Page contact/logo-350100.png') }}" class="h-10 md:h-12 mb-4 mx-auto md:ml-10 relative z-10" />
-                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">Un réseau de délégués médicaux sur le Togo, le Bénin et le Niger</h2>
+                    <h2 class="text font-semibold relative z-10 text-center md:text-left text-base md:text-lg">{{ __('messages.network_tagline') }}</h2>
                     <div class="flex w-full max-w-xs">
-                        <input type="text" placeholder="Email"
+                        <input type="text" placeholder="{{ __('messages.email_placeholder') }}"
                             class="w-full px-3 py-2 bg-white text-black border border-gray-600 rounded-l-md focus:outline-none" />
                         <button class="bg-[#437305] px-4 py-2 border border-[#437305] rounded-r-md">
                             <i class="fas fa-arrow-up transform rotate-45 text-white"></i>
@@ -720,21 +719,21 @@
                 </div>
                 <!-- Liens rapides -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Liens rapides</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.quick_links') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li><a href="{{ route('accueil') }}" class="hover:underline">À propos</a></li>
-                        <li><a href="{{ route('prestation') }}" class="hover:underline">Services</a></li>
-                        <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
-                        <li><a href="{{ route('recrutement') }}" class="hover:underline">Recrutement</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
+                        <li><a href="{{ route('accueil') }}" class="hover:underline">{{ __('messages.about') }}</a></li>
+                        <li><a href="{{ route('prestation') }}" class="hover:underline">{{ __('messages.services') }}</a></li>
+                        <li><a href="{{ route('blog') }}" class="hover:underline">{{ __('messages.blog') }}</a></li>
+                        <li><a href="{{ route('recrutement') }}" class="hover:underline">{{ __('messages.recrutement') }}</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:underline">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Contact</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.contact') }}</h2>
                     <ul class="space-y-2 text-center md:text-left">
-                        <li>184 rue Agnan quartier djidjolé</li>
-                        <li>derrière EPP Aflao gakli</li>
+                        <li>{{ __('messages.address') }}</li>
+                        <li>{{ __('messages.behind_epp') }}</li>
                         <li>
                             <i class="fas fa-phone-alt text-[#437305]"></i>
                             <a href="tel:+22890123456" target="_blank" class="ml-1">+228 90 12 34 56</a>
@@ -753,13 +752,13 @@
                 </div>
                 <!-- Horaires -->
                 <div class="md:ml-8 flex flex-col items-center md:items-start">
-                    <h2 class="mb-4 font-semibold text-lg">Heures d’ouvertures</h2>
+                    <h2 class="mb-4 font-semibold text-lg">{{ __('messages.opening_hours_title') }}</h2>
                     <ul class="space-y-1 text-center md:text-left">
-                        <li>Lundi : 7h30 - 18h</li>
-                        <li>Mardi : 7h30 - 18h</li>
-                        <li>Mercredi : 7h30 - 18h</li>
-                        <li>Jeudi : 7h30 - 18h</li>
-                        <li>Vendredi : 7h30 - 18h</li>
+                        <li>{{ __('messages.monday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.tuesday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.wednesday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.thursday') }} : {{ __('messages.hours_schedule') }}</li>
+                        <li>{{ __('messages.friday') }} : {{ __('messages.hours_schedule') }}</li>
                     </ul>
                 </div>
             </div>
@@ -767,15 +766,15 @@
                 <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-y-2 px-4">
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end mb-2 md:mb-0">
                         <span class="text-white text-center md:text-right tracking-wide flex items-center gap-2">
-                            <i class="fa-regular fa-copyright"></i>
-                            Copyright Pharmacol 2025. Tous droits réservés.
+                        <i class="fa-regular fa-copyright"></i>
+                            {{ __('messages.copyright_text') }}
                         </span>
                     </div>
                     <span class="hidden md:inline text-white mx-6 text-lg opacity-60">|</span>
                     <div class="w-full md:w-2/5 flex justify-center md:justify-start items-center gap-4">
                         <a href="https://www.neostart.tech/" target="_blank" class="text-white hover:underline text-center md:text-left tracking-wide flex items-center gap-2 transition-all duration-200">
-                            <i class="fas fa-code"></i>
-                            Développé par Neo Start Technology
+                        <i class="fas fa-code"></i>
+                            {{ __('messages.developed_by') }}
                         </a>
                         <a href="{{ route('admin.login') }}" class="text-white/60 hover:text-white/80 transition-all duration-200 text-xs" title="Administration">
                             <i class="fas fa-cog"></i>
